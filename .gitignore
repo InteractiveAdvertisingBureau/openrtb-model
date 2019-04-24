@@ -1,0 +1,15 @@
+*.class
+target*
+.settings
+.classpath
+.project
+.idea/workspace.xml
+.idea*
+*.iml
+*.DS_STORE
+### Java template
+*.class
+*.pyc
+*.releaseBackup
+*dependency-reduced-pom.xml*
+release.properties
