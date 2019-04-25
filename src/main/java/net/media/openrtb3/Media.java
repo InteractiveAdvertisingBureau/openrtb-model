@@ -26,8 +26,7 @@ public class Media {
 
   public Media() {}
 
-  public @NotNull @Valid
-  Ad getAd() {
+  public @NotNull @Valid Ad getAd() {
     return this.ad;
   }
 

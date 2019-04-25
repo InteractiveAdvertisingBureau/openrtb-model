@@ -18,10 +18,9 @@ package net.media.openrtb25.request;
 
 import net.media.utils.validator.CheckAtLeastOneNotNull;
 
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
 
 @CheckAtLeastOneNotNull(fieldNames = {"title", "img", "video", "data"})
 public class Asset {
@@ -58,8 +57,7 @@ public class Asset {
     this.required = required;
   }
 
-  public @Valid
-  NativeTitle getTitle() {
+  public @Valid NativeTitle getTitle() {
     return this.title;
   }
 

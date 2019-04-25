@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class Deal {
@@ -83,5 +84,26 @@ public class Deal {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Deal deal = (Deal) o;
+    return Objects.equals(getId(), deal.getId())
+        && Objects.equals(getFlr(), deal.getFlr())
+        && Objects.equals(getFlrcur(), deal.getFlrcur())
+        && Objects.equals(getAt(), deal.getAt())
+        && Objects.equals(getWseat(), deal.getWseat())
+        && Objects.equals(getWadomain(), deal.getWadomain())
+        && Objects.equals(getExt(), deal.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getId(), getFlr(), getFlrcur(), getAt(), getWseat(), getWadomain(), getExt());
   }
 }

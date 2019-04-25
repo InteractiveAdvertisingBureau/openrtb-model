@@ -16,10 +16,10 @@
 
 package net.media.openrtb3;
 
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
+import java.util.Objects;
 
 public class Banner {
 
@@ -37,8 +37,7 @@ public class Banner {
     this.img = img;
   }
 
-  public @Valid
-  LinkAsset getLink() {
+  public @Valid LinkAsset getLink() {
     return this.link;
   }
 
@@ -54,45 +53,23 @@ public class Banner {
     this.ext = ext;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Banner)) return false;
-    final Banner other = (Banner) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$img = this.getImg();
-    final Object other$img = other.getImg();
-    if (this$img == null ? other$img != null : !this$img.equals(other$img)) return false;
-    final Object this$link = this.getLink();
-    final Object other$link = other.getLink();
-    if (this$link == null ? other$link != null : !this$link.equals(other$link)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
-  }
-
-  public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $img = this.getImg();
-    result = result * PRIME + ($img == null ? 43 : $img.hashCode());
-    final Object $link = this.getLink();
-    result = result * PRIME + ($link == null ? 43 : $link.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
   protected boolean canEqual(Object other) {
     return other instanceof Banner;
   }
 
-  public String toString() {
-    return "net.media.openrtb3.Banner(img="
-        + this.getImg()
-        + ", link="
-        + this.getLink()
-        + ", ext="
-        + this.getExt()
-        + ")";
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Banner banner = (Banner) o;
+    return Objects.equals(getImg(), banner.getImg())
+        && Objects.equals(getLink(), banner.getLink())
+        && Objects.equals(getExt(), banner.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getImg(), getLink(), getExt());
   }
 }

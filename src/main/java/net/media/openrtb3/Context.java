@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import javax.validation.Valid;
+import java.util.Objects;
 
 public class Context {
   private Site site;
@@ -81,5 +82,26 @@ public class Context {
 
   public void setRestrictions(Restrictions restrictions) {
     this.restrictions = restrictions;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Context context = (Context) o;
+    return Objects.equals(getSite(), context.getSite())
+        && Objects.equals(getApp(), context.getApp())
+        && Objects.equals(getUser(), context.getUser())
+        && Objects.equals(getDooh(), context.getDooh())
+        && Objects.equals(getDevice(), context.getDevice())
+        && Objects.equals(getRegs(), context.getRegs())
+        && Objects.equals(getRestrictions(), context.getRestrictions());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getSite(), getApp(), getUser(), getDooh(), getDevice(), getRegs(), getRestrictions());
   }
 }

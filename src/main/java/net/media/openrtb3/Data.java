@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 public class Data {
 
@@ -56,5 +57,22 @@ public class Data {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Data data = (Data) o;
+    return Objects.equals(getId(), data.getId())
+        && Objects.equals(getName(), data.getName())
+        && Objects.equals(getSegment(), data.getSegment())
+        && Objects.equals(getExt(), data.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getId(), getName(), getSegment(), getExt());
   }
 }

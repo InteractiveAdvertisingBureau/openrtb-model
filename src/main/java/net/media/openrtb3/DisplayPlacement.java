@@ -16,10 +16,10 @@
 
 package net.media.openrtb3;
 
+import javax.validation.Valid;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.validation.Valid;
+import java.util.Objects;
 
 public class DisplayPlacement {
 
@@ -175,8 +175,7 @@ public class DisplayPlacement {
     this.displayfmt = displayfmt;
   }
 
-  public @Valid
-  NativeFormat getNativefmt() {
+  public @Valid NativeFormat getNativefmt() {
     return this.nativefmt;
   }
 
@@ -198,5 +197,56 @@ public class DisplayPlacement {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    DisplayPlacement that = (DisplayPlacement) o;
+    return Objects.equals(getPos(), that.getPos())
+        && Objects.equals(getInstl(), that.getInstl())
+        && Objects.equals(getTopframe(), that.getTopframe())
+        && Objects.equals(getIfrbust(), that.getIfrbust())
+        && Objects.equals(getClktype(), that.getClktype())
+        && Objects.equals(getAmpren(), that.getAmpren())
+        && Objects.equals(getPtype(), that.getPtype())
+        && Objects.equals(getContext(), that.getContext())
+        && Objects.equals(getMime(), that.getMime())
+        && Objects.equals(getApi(), that.getApi())
+        && Objects.equals(getCtype(), that.getCtype())
+        && Objects.equals(getW(), that.getW())
+        && Objects.equals(getH(), that.getH())
+        && Objects.equals(getUnit(), that.getUnit())
+        && Objects.equals(getPriv(), that.getPriv())
+        && Objects.equals(getDisplayfmt(), that.getDisplayfmt())
+        && Objects.equals(getNativefmt(), that.getNativefmt())
+        && Objects.equals(getEvent(), that.getEvent())
+        && Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getPos(),
+        getInstl(),
+        getTopframe(),
+        getIfrbust(),
+        getClktype(),
+        getAmpren(),
+        getPtype(),
+        getContext(),
+        getMime(),
+        getApi(),
+        getCtype(),
+        getW(),
+        getH(),
+        getUnit(),
+        getPriv(),
+        getDisplayfmt(),
+        getNativefmt(),
+        getEvent(),
+        getExt());
   }
 }

@@ -25,8 +25,7 @@ public class Spec {
 
   @NotNull @Valid private Placement placement;
 
-  public @NotNull @Valid
-  Placement getPlacement() {
+  public @NotNull @Valid Placement getPlacement() {
     return this.placement;
   }
 

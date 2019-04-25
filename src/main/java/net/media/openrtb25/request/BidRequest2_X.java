@@ -18,11 +18,10 @@ package net.media.openrtb25.request;
 
 import net.media.utils.validator.CheckAtMostOneNotNull;
 
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import java.util.Collection;
+import java.util.Map;
 
 // @CheckAtLeastOneNotNull(fieldNames = {"site", "app"})
 @CheckAtMostOneNotNull(fieldNames = {"wseat", "bseat"})
@@ -117,8 +116,7 @@ public class BidRequest2_X {
     this.imp = imp;
   }
 
-  public @Valid
-  Site getSite() {
+  public @Valid Site getSite() {
     return this.site;
   }
 
@@ -198,8 +196,7 @@ public class BidRequest2_X {
     this.tmax = tmax;
   }
 
-  public @Valid
-  Source getSource() {
+  public @Valid Source getSource() {
     return this.source;
   }
 

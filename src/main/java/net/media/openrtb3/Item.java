@@ -18,12 +18,12 @@ package net.media.openrtb3;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Objects;
 
 public class Item {
 
@@ -149,5 +149,44 @@ public class Item {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Item item = (Item) o;
+    return Double.compare(item.getFlr(), getFlr()) == 0
+        && Objects.equals(getId(), item.getId())
+        && Objects.equals(getQty(), item.getQty())
+        && Objects.equals(getSeq(), item.getSeq())
+        && Objects.equals(getFlrcur(), item.getFlrcur())
+        && Objects.equals(getExp(), item.getExp())
+        && Objects.equals(getDt(), item.getDt())
+        && Objects.equals(getDlvy(), item.getDlvy())
+        && Objects.equals(getMetric(), item.getMetric())
+        && Objects.equals(getDeal(), item.getDeal())
+        && Objects.equals(getPriv(), item.getPriv())
+        && Objects.equals(getSpec(), item.getSpec())
+        && Objects.equals(getExt(), item.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getId(),
+        getQty(),
+        getSeq(),
+        getFlr(),
+        getFlrcur(),
+        getExp(),
+        getDt(),
+        getDlvy(),
+        getMetric(),
+        getDeal(),
+        getPriv(),
+        getSpec(),
+        getExt());
   }
 }

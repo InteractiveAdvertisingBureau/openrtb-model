@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class AudioPlacement {
@@ -213,5 +214,60 @@ public class AudioPlacement {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    AudioPlacement that = (AudioPlacement) o;
+    return Objects.equals(getDelay(), that.getDelay())
+        && Objects.equals(getSkip(), that.getSkip())
+        && Objects.equals(getSkipmin(), that.getSkipmin())
+        && Objects.equals(getSkipafter(), that.getSkipafter())
+        && Objects.equals(getPlaymethod(), that.getPlaymethod())
+        && Objects.equals(getPlayend(), that.getPlayend())
+        && Objects.equals(getFeed(), that.getFeed())
+        && Objects.equals(getNvol(), that.getNvol())
+        && Objects.equals(getMime(), that.getMime())
+        && Objects.equals(getApi(), that.getApi())
+        && Objects.equals(getCtype(), that.getCtype())
+        && Objects.equals(getMindur(), that.getMindur())
+        && Objects.equals(getMaxdur(), that.getMaxdur())
+        && Objects.equals(getMaxext(), that.getMaxext())
+        && Objects.equals(getMinbitr(), that.getMinbitr())
+        && Objects.equals(getMaxbitr(), that.getMaxbitr())
+        && Objects.equals(getDelivery(), that.getDelivery())
+        && Objects.equals(getMaxseq(), that.getMaxseq())
+        && Objects.equals(getComp(), that.getComp())
+        && Objects.equals(getComptype(), that.getComptype())
+        && Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getDelay(),
+        getSkip(),
+        getSkipmin(),
+        getSkipafter(),
+        getPlaymethod(),
+        getPlayend(),
+        getFeed(),
+        getNvol(),
+        getMime(),
+        getApi(),
+        getCtype(),
+        getMindur(),
+        getMaxdur(),
+        getMaxext(),
+        getMinbitr(),
+        getMaxbitr(),
+        getDelivery(),
+        getMaxseq(),
+        getComp(),
+        getComptype(),
+        getExt());
   }
 }

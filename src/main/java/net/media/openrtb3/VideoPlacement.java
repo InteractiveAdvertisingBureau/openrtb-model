@@ -16,11 +16,10 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotEmpty;
 
 /** Created by shiva.b on 14/12/18. */
 public class VideoPlacement {
