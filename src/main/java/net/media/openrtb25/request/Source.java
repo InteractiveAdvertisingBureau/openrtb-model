@@ -63,16 +63,15 @@ public class Source {
     this.ext = ext;
   }
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Source source = (Source) o;
-    return Objects.equals(getFd(), source.getFd()) &&
-      Objects.equals(getTid(), source.getTid()) &&
-      Objects.equals(getPchain(), source.getPchain()) &&
-      Objects.equals(getExt(), source.getExt());
+    return Objects.equals(getFd(), source.getFd())
+        && Objects.equals(getTid(), source.getTid())
+        && Objects.equals(getPchain(), source.getPchain())
+        && Objects.equals(getExt(), source.getExt());
   }
 
   @Override

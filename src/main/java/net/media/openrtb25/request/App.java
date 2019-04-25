@@ -180,25 +180,40 @@ public class App {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     App app = (App) o;
-    return Objects.equals(getId(), app.getId()) &&
-      Objects.equals(getName(), app.getName()) &&
-      Objects.equals(getBundle(), app.getBundle()) &&
-      Objects.equals(getDomain(), app.getDomain()) &&
-      Objects.equals(getStoreurl(), app.getStoreurl()) &&
-      Objects.equals(getCat(), app.getCat()) &&
-      Objects.equals(getSectioncat(), app.getSectioncat()) &&
-      Objects.equals(getPagecat(), app.getPagecat()) &&
-      Objects.equals(getVer(), app.getVer()) &&
-      Objects.equals(getPrivacypolicy(), app.getPrivacypolicy()) &&
-      Objects.equals(getPaid(), app.getPaid()) &&
-      Objects.equals(getPublisher(), app.getPublisher()) &&
-      Objects.equals(getContent(), app.getContent()) &&
-      Objects.equals(getKeywords(), app.getKeywords()) &&
-      Objects.equals(getExt(), app.getExt());
+    return Objects.equals(getId(), app.getId())
+        && Objects.equals(getName(), app.getName())
+        && Objects.equals(getBundle(), app.getBundle())
+        && Objects.equals(getDomain(), app.getDomain())
+        && Objects.equals(getStoreurl(), app.getStoreurl())
+        && Objects.equals(getCat(), app.getCat())
+        && Objects.equals(getSectioncat(), app.getSectioncat())
+        && Objects.equals(getPagecat(), app.getPagecat())
+        && Objects.equals(getVer(), app.getVer())
+        && Objects.equals(getPrivacypolicy(), app.getPrivacypolicy())
+        && Objects.equals(getPaid(), app.getPaid())
+        && Objects.equals(getPublisher(), app.getPublisher())
+        && Objects.equals(getContent(), app.getContent())
+        && Objects.equals(getKeywords(), app.getKeywords())
+        && Objects.equals(getExt(), app.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getName(), getBundle(), getDomain(), getStoreurl(), getCat(), getSectioncat(), getPagecat(), getVer(), getPrivacypolicy(), getPaid(), getPublisher(), getContent(), getKeywords(), getExt());
+    return Objects.hash(
+        getId(),
+        getName(),
+        getBundle(),
+        getDomain(),
+        getStoreurl(),
+        getCat(),
+        getSectioncat(),
+        getPagecat(),
+        getVer(),
+        getPrivacypolicy(),
+        getPaid(),
+        getPublisher(),
+        getContent(),
+        getKeywords(),
+        getExt());
   }
 }

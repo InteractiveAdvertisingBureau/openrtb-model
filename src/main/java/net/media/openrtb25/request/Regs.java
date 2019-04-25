@@ -49,8 +49,7 @@ public class Regs {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Regs regs = (Regs) o;
-    return Objects.equals(getCoppa(), regs.getCoppa()) &&
-      Objects.equals(getExt(), regs.getExt());
+    return Objects.equals(getCoppa(), regs.getCoppa()) && Objects.equals(getExt(), regs.getExt());
   }
 
   @Override

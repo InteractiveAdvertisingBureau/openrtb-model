@@ -288,36 +288,62 @@ public class Video {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Video video = (Video) o;
-    return Objects.equals(getMimes(), video.getMimes()) &&
-      Objects.equals(getMinduration(), video.getMinduration()) &&
-      Objects.equals(getMaxduration(), video.getMaxduration()) &&
-      Objects.equals(getProtocols(), video.getProtocols()) &&
-      Objects.equals(getW(), video.getW()) &&
-      Objects.equals(getH(), video.getH()) &&
-      Objects.equals(getStartdelay(), video.getStartdelay()) &&
-      Objects.equals(getLinearity(), video.getLinearity()) &&
-      Objects.equals(getSkip(), video.getSkip()) &&
-      Objects.equals(getPlacement(), video.getPlacement()) &&
-      Objects.equals(getSkipmin(), video.getSkipmin()) &&
-      Objects.equals(getSkipafter(), video.getSkipafter()) &&
-      Objects.equals(getSequence(), video.getSequence()) &&
-      Objects.equals(getBattr(), video.getBattr()) &&
-      Objects.equals(getMaxextended(), video.getMaxextended()) &&
-      Objects.equals(getMinbitrate(), video.getMinbitrate()) &&
-      Objects.equals(getMaxbitrate(), video.getMaxbitrate()) &&
-      Objects.equals(getBoxingallowed(), video.getBoxingallowed()) &&
-      Objects.equals(getPlaybackmethod(), video.getPlaybackmethod()) &&
-      Objects.equals(getPlaybackend(), video.getPlaybackend()) &&
-      Objects.equals(getDelivery(), video.getDelivery()) &&
-      Objects.equals(getPos(), video.getPos()) &&
-      Objects.equals(getCompanionad(), video.getCompanionad()) &&
-      Objects.equals(getApi(), video.getApi()) &&
-      Objects.equals(getCompaniontype(), video.getCompaniontype()) &&
-      Objects.equals(getExt(), video.getExt());
+    return Objects.equals(getMimes(), video.getMimes())
+        && Objects.equals(getMinduration(), video.getMinduration())
+        && Objects.equals(getMaxduration(), video.getMaxduration())
+        && Objects.equals(getProtocols(), video.getProtocols())
+        && Objects.equals(getW(), video.getW())
+        && Objects.equals(getH(), video.getH())
+        && Objects.equals(getStartdelay(), video.getStartdelay())
+        && Objects.equals(getLinearity(), video.getLinearity())
+        && Objects.equals(getSkip(), video.getSkip())
+        && Objects.equals(getPlacement(), video.getPlacement())
+        && Objects.equals(getSkipmin(), video.getSkipmin())
+        && Objects.equals(getSkipafter(), video.getSkipafter())
+        && Objects.equals(getSequence(), video.getSequence())
+        && Objects.equals(getBattr(), video.getBattr())
+        && Objects.equals(getMaxextended(), video.getMaxextended())
+        && Objects.equals(getMinbitrate(), video.getMinbitrate())
+        && Objects.equals(getMaxbitrate(), video.getMaxbitrate())
+        && Objects.equals(getBoxingallowed(), video.getBoxingallowed())
+        && Objects.equals(getPlaybackmethod(), video.getPlaybackmethod())
+        && Objects.equals(getPlaybackend(), video.getPlaybackend())
+        && Objects.equals(getDelivery(), video.getDelivery())
+        && Objects.equals(getPos(), video.getPos())
+        && Objects.equals(getCompanionad(), video.getCompanionad())
+        && Objects.equals(getApi(), video.getApi())
+        && Objects.equals(getCompaniontype(), video.getCompaniontype())
+        && Objects.equals(getExt(), video.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getMimes(), getMinduration(), getMaxduration(), getProtocols(), getW(), getH(), getStartdelay(), getLinearity(), getSkip(), getPlacement(), getSkipmin(), getSkipafter(), getSequence(), getBattr(), getMaxextended(), getMinbitrate(), getMaxbitrate(), getBoxingallowed(), getPlaybackmethod(), getPlaybackend(), getDelivery(), getPos(), getCompanionad(), getApi(), getCompaniontype(), getExt());
+    return Objects.hash(
+        getMimes(),
+        getMinduration(),
+        getMaxduration(),
+        getProtocols(),
+        getW(),
+        getH(),
+        getStartdelay(),
+        getLinearity(),
+        getSkip(),
+        getPlacement(),
+        getSkipmin(),
+        getSkipafter(),
+        getSequence(),
+        getBattr(),
+        getMaxextended(),
+        getMinbitrate(),
+        getMaxbitrate(),
+        getBoxingallowed(),
+        getPlaybackmethod(),
+        getPlaybackend(),
+        getDelivery(),
+        getPos(),
+        getCompanionad(),
+        getApi(),
+        getCompaniontype(),
+        getExt());
   }
 }

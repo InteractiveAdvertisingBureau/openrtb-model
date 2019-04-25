@@ -16,12 +16,11 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class NativeVideo {
 
@@ -82,11 +81,11 @@ public class NativeVideo {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeVideo that = (NativeVideo) o;
-    return Objects.equals(getMimes(), that.getMimes()) &&
-      Objects.equals(getMinduration(), that.getMinduration()) &&
-      Objects.equals(getMaxduration(), that.getMaxduration()) &&
-      Objects.equals(getProtocols(), that.getProtocols()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getMimes(), that.getMimes())
+        && Objects.equals(getMinduration(), that.getMinduration())
+        && Objects.equals(getMaxduration(), that.getMaxduration())
+        && Objects.equals(getProtocols(), that.getProtocols())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

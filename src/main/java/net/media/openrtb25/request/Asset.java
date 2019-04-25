@@ -18,11 +18,10 @@ package net.media.openrtb25.request;
 
 import net.media.utils.validator.CheckAtLeastOneNotNull;
 
-import java.util.Map;
-import java.util.Objects;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
+import java.util.Objects;
 
 @CheckAtLeastOneNotNull(fieldNames = {"title", "img", "video", "data"})
 public class Asset {
@@ -59,8 +58,7 @@ public class Asset {
     this.required = required;
   }
 
-  public @Valid
-  NativeTitle getTitle() {
+  public @Valid NativeTitle getTitle() {
     return this.title;
   }
 
@@ -105,17 +103,18 @@ public class Asset {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Asset asset = (Asset) o;
-    return Objects.equals(getId(), asset.getId()) &&
-      Objects.equals(getRequired(), asset.getRequired()) &&
-      Objects.equals(getTitle(), asset.getTitle()) &&
-      Objects.equals(getImg(), asset.getImg()) &&
-      Objects.equals(getVideo(), asset.getVideo()) &&
-      Objects.equals(getData(), asset.getData()) &&
-      Objects.equals(getExt(), asset.getExt());
+    return Objects.equals(getId(), asset.getId())
+        && Objects.equals(getRequired(), asset.getRequired())
+        && Objects.equals(getTitle(), asset.getTitle())
+        && Objects.equals(getImg(), asset.getImg())
+        && Objects.equals(getVideo(), asset.getVideo())
+        && Objects.equals(getData(), asset.getData())
+        && Objects.equals(getExt(), asset.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getRequired(), getTitle(), getImg(), getVideo(), getData(), getExt());
+    return Objects.hash(
+        getId(), getRequired(), getTitle(), getImg(), getVideo(), getData(), getExt());
   }
 }

@@ -130,20 +130,30 @@ public class NativeRequestBody {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeRequestBody that = (NativeRequestBody) o;
-    return Objects.equals(getVer(), that.getVer()) &&
-      Objects.equals(getLayout(), that.getLayout()) &&
-      Objects.equals(getAdunit(), that.getAdunit()) &&
-      Objects.equals(getContext(), that.getContext()) &&
-      Objects.equals(getContextsubtype(), that.getContextsubtype()) &&
-      Objects.equals(getPlcmttype(), that.getPlcmttype()) &&
-      Objects.equals(getPlcmtcnt(), that.getPlcmtcnt()) &&
-      Objects.equals(getSeq(), that.getSeq()) &&
-      Objects.equals(getAssets(), that.getAssets()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getVer(), that.getVer())
+        && Objects.equals(getLayout(), that.getLayout())
+        && Objects.equals(getAdunit(), that.getAdunit())
+        && Objects.equals(getContext(), that.getContext())
+        && Objects.equals(getContextsubtype(), that.getContextsubtype())
+        && Objects.equals(getPlcmttype(), that.getPlcmttype())
+        && Objects.equals(getPlcmtcnt(), that.getPlcmtcnt())
+        && Objects.equals(getSeq(), that.getSeq())
+        && Objects.equals(getAssets(), that.getAssets())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getVer(), getLayout(), getAdunit(), getContext(), getContextsubtype(), getPlcmttype(), getPlcmtcnt(), getSeq(), getAssets(), getExt());
+    return Objects.hash(
+        getVer(),
+        getLayout(),
+        getAdunit(),
+        getContext(),
+        getContextsubtype(),
+        getPlcmttype(),
+        getPlcmtcnt(),
+        getSeq(),
+        getAssets(),
+        getExt());
   }
 }

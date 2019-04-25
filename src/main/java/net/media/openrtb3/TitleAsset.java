@@ -16,10 +16,9 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 public class TitleAsset {
 
@@ -56,14 +55,13 @@ public class TitleAsset {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     TitleAsset that = (TitleAsset) o;
-    return Objects.equals(getText(), that.getText()) &&
-        Objects.equals(getLen(), that.getLen()) &&
-        Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getText(), that.getText())
+        && Objects.equals(getLen(), that.getLen())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getText(), getLen(), getExt());
   }
-
 }

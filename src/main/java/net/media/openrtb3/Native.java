@@ -62,9 +62,9 @@ public class Native {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Native aNative = (Native) o;
-    return Objects.equals(getLink(), aNative.getLink()) &&
-        Objects.equals(getAsset(), aNative.getAsset()) &&
-        Objects.equals(getExt(), aNative.getExt());
+    return Objects.equals(getLink(), aNative.getLink())
+        && Objects.equals(getAsset(), aNative.getAsset())
+        && Objects.equals(getExt(), aNative.getExt());
   }
 
   @Override

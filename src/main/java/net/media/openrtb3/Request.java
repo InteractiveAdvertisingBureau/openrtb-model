@@ -18,14 +18,13 @@ package net.media.openrtb3;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class Request {
 
@@ -46,37 +45,48 @@ public class Request {
   private String cdata;
   @NotNull @Valid private Source source;
   @NotNull @Valid private Collection<Item> item;
+  @JsonProperty("package")
+  private Integer pack;
+  @NotNull @Valid private Context context;
+  private Map<String, Object> ext;
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Request request = (Request) o;
-    return Objects.equals(getId(), request.getId()) &&
-        Objects.equals(getTest(), request.getTest()) &&
-        Objects.equals(getTmax(), request.getTmax()) &&
-        Objects.equals(getAt(), request.getAt()) &&
-        Objects.equals(getCur(), request.getCur()) &&
-        Objects.equals(getSeat(), request.getSeat()) &&
-        Objects.equals(getWseat(), request.getWseat()) &&
-        Objects.equals(getCdata(), request.getCdata()) &&
-        Objects.equals(getSource(), request.getSource()) &&
-        Objects.equals(getItem(), request.getItem()) &&
-        Objects.equals(getPack(), request.getPack()) &&
-        Objects.equals(getContext(), request.getContext()) &&
-        Objects.equals(getExt(), request.getExt());
+    return Objects.equals(getId(), request.getId())
+        && Objects.equals(getTest(), request.getTest())
+        && Objects.equals(getTmax(), request.getTmax())
+        && Objects.equals(getAt(), request.getAt())
+        && Objects.equals(getCur(), request.getCur())
+        && Objects.equals(getSeat(), request.getSeat())
+        && Objects.equals(getWseat(), request.getWseat())
+        && Objects.equals(getCdata(), request.getCdata())
+        && Objects.equals(getSource(), request.getSource())
+        && Objects.equals(getItem(), request.getItem())
+        && Objects.equals(getPack(), request.getPack())
+        && Objects.equals(getContext(), request.getContext())
+        && Objects.equals(getExt(), request.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getTest(), getTmax(), getAt(), getCur(), getSeat(), getWseat(), getCdata(), getSource(), getItem(), getPack(), getContext(), getExt());
+    return Objects.hash(
+        getId(),
+        getTest(),
+        getTmax(),
+        getAt(),
+        getCur(),
+        getSeat(),
+        getWseat(),
+        getCdata(),
+        getSource(),
+        getItem(),
+        getPack(),
+        getContext(),
+        getExt());
   }
-
-  @JsonProperty("package")
-  private Integer pack;
-
-  @NotNull @Valid private Context context;
-  private Map<String, Object> ext;
 
   public @NotEmpty String getId() {
     return this.id;
@@ -142,8 +152,7 @@ public class Request {
     this.cdata = cdata;
   }
 
-  public @NotNull @Valid
-  Source getSource() {
+  public @NotNull @Valid Source getSource() {
     return this.source;
   }
 

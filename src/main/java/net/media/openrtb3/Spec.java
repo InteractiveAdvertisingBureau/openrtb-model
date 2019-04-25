@@ -45,5 +45,4 @@ public class Spec {
   public int hashCode() {
     return Objects.hash(getPlacement());
   }
-
 }

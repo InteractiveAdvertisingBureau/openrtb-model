@@ -275,37 +275,64 @@ public class Bid {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Bid bid = (Bid) o;
-    return Double.compare(bid.getPrice(), getPrice()) == 0 &&
-      Objects.equals(getId(), bid.getId()) &&
-      Objects.equals(getImpid(), bid.getImpid()) &&
-      Objects.equals(getAdid(), bid.getAdid()) &&
-      Objects.equals(getNurl(), bid.getNurl()) &&
-      Objects.equals(getAdm(), bid.getAdm()) &&
-      Objects.equals(getAdomain(), bid.getAdomain()) &&
-      Objects.equals(getIurl(), bid.getIurl()) &&
-      Objects.equals(getCid(), bid.getCid()) &&
-      Objects.equals(getCrid(), bid.getCrid()) &&
-      Objects.equals(getCat(), bid.getCat()) &&
-      Objects.equals(getAttr(), bid.getAttr()) &&
-      Objects.equals(getBundle(), bid.getBundle()) &&
-      Objects.equals(getApi(), bid.getApi()) &&
-      Objects.equals(getProtocol(), bid.getProtocol()) &&
-      Objects.equals(getQagmediarating(), bid.getQagmediarating()) &&
-      Objects.equals(getDealid(), bid.getDealid()) &&
-      Objects.equals(getH(), bid.getH()) &&
-      Objects.equals(getLanguage(), bid.getLanguage()) &&
-      Objects.equals(getW(), bid.getW()) &&
-      Objects.equals(getWratio(), bid.getWratio()) &&
-      Objects.equals(getHratio(), bid.getHratio()) &&
-      Objects.equals(getExp(), bid.getExp()) &&
-      Objects.equals(getBurl(), bid.getBurl()) &&
-      Objects.equals(getLurl(), bid.getLurl()) &&
-      Objects.equals(getTactic(), bid.getTactic()) &&
-      Objects.equals(getExt(), bid.getExt());
+    return Double.compare(bid.getPrice(), getPrice()) == 0
+        && Objects.equals(getId(), bid.getId())
+        && Objects.equals(getImpid(), bid.getImpid())
+        && Objects.equals(getAdid(), bid.getAdid())
+        && Objects.equals(getNurl(), bid.getNurl())
+        && Objects.equals(getAdm(), bid.getAdm())
+        && Objects.equals(getAdomain(), bid.getAdomain())
+        && Objects.equals(getIurl(), bid.getIurl())
+        && Objects.equals(getCid(), bid.getCid())
+        && Objects.equals(getCrid(), bid.getCrid())
+        && Objects.equals(getCat(), bid.getCat())
+        && Objects.equals(getAttr(), bid.getAttr())
+        && Objects.equals(getBundle(), bid.getBundle())
+        && Objects.equals(getApi(), bid.getApi())
+        && Objects.equals(getProtocol(), bid.getProtocol())
+        && Objects.equals(getQagmediarating(), bid.getQagmediarating())
+        && Objects.equals(getDealid(), bid.getDealid())
+        && Objects.equals(getH(), bid.getH())
+        && Objects.equals(getLanguage(), bid.getLanguage())
+        && Objects.equals(getW(), bid.getW())
+        && Objects.equals(getWratio(), bid.getWratio())
+        && Objects.equals(getHratio(), bid.getHratio())
+        && Objects.equals(getExp(), bid.getExp())
+        && Objects.equals(getBurl(), bid.getBurl())
+        && Objects.equals(getLurl(), bid.getLurl())
+        && Objects.equals(getTactic(), bid.getTactic())
+        && Objects.equals(getExt(), bid.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getImpid(), getPrice(), getAdid(), getNurl(), getAdm(), getAdomain(), getIurl(), getCid(), getCrid(), getCat(), getAttr(), getBundle(), getApi(), getProtocol(), getQagmediarating(), getDealid(), getH(), getLanguage(), getW(), getWratio(), getHratio(), getExp(), getBurl(), getLurl(), getTactic(), getExt());
+    return Objects.hash(
+        getId(),
+        getImpid(),
+        getPrice(),
+        getAdid(),
+        getNurl(),
+        getAdm(),
+        getAdomain(),
+        getIurl(),
+        getCid(),
+        getCrid(),
+        getCat(),
+        getAttr(),
+        getBundle(),
+        getApi(),
+        getProtocol(),
+        getQagmediarating(),
+        getDealid(),
+        getH(),
+        getLanguage(),
+        getW(),
+        getWratio(),
+        getHratio(),
+        getExp(),
+        getBurl(),
+        getLurl(),
+        getTactic(),
+        getExt());
   }
 }

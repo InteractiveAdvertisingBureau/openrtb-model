@@ -290,36 +290,62 @@ public class Content {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Content content = (Content) o;
-    return Objects.equals(getId(), content.getId()) &&
-      Objects.equals(getEpisode(), content.getEpisode()) &&
-      Objects.equals(getTitle(), content.getTitle()) &&
-      Objects.equals(getSeries(), content.getSeries()) &&
-      Objects.equals(getSeason(), content.getSeason()) &&
-      Objects.equals(getArtist(), content.getArtist()) &&
-      Objects.equals(getGenre(), content.getGenre()) &&
-      Objects.equals(getAlbum(), content.getAlbum()) &&
-      Objects.equals(getIsrc(), content.getIsrc()) &&
-      Objects.equals(getProducer(), content.getProducer()) &&
-      Objects.equals(getUrl(), content.getUrl()) &&
-      Objects.equals(getVideoquality(), content.getVideoquality()) &&
-      Objects.equals(getCat(), content.getCat()) &&
-      Objects.equals(getProdq(), content.getProdq()) &&
-      Objects.equals(getContext(), content.getContext()) &&
-      Objects.equals(getContentrating(), content.getContentrating()) &&
-      Objects.equals(getUserrating(), content.getUserrating()) &&
-      Objects.equals(getQagmediarating(), content.getQagmediarating()) &&
-      Objects.equals(getKeywords(), content.getKeywords()) &&
-      Objects.equals(getLivestream(), content.getLivestream()) &&
-      Objects.equals(getSourcerelationship(), content.getSourcerelationship()) &&
-      Objects.equals(getLen(), content.getLen()) &&
-      Objects.equals(getLanguage(), content.getLanguage()) &&
-      Objects.equals(getEmbeddable(), content.getEmbeddable()) &&
-      Objects.equals(getData(), content.getData()) &&
-      Objects.equals(getExt(), content.getExt());
+    return Objects.equals(getId(), content.getId())
+        && Objects.equals(getEpisode(), content.getEpisode())
+        && Objects.equals(getTitle(), content.getTitle())
+        && Objects.equals(getSeries(), content.getSeries())
+        && Objects.equals(getSeason(), content.getSeason())
+        && Objects.equals(getArtist(), content.getArtist())
+        && Objects.equals(getGenre(), content.getGenre())
+        && Objects.equals(getAlbum(), content.getAlbum())
+        && Objects.equals(getIsrc(), content.getIsrc())
+        && Objects.equals(getProducer(), content.getProducer())
+        && Objects.equals(getUrl(), content.getUrl())
+        && Objects.equals(getVideoquality(), content.getVideoquality())
+        && Objects.equals(getCat(), content.getCat())
+        && Objects.equals(getProdq(), content.getProdq())
+        && Objects.equals(getContext(), content.getContext())
+        && Objects.equals(getContentrating(), content.getContentrating())
+        && Objects.equals(getUserrating(), content.getUserrating())
+        && Objects.equals(getQagmediarating(), content.getQagmediarating())
+        && Objects.equals(getKeywords(), content.getKeywords())
+        && Objects.equals(getLivestream(), content.getLivestream())
+        && Objects.equals(getSourcerelationship(), content.getSourcerelationship())
+        && Objects.equals(getLen(), content.getLen())
+        && Objects.equals(getLanguage(), content.getLanguage())
+        && Objects.equals(getEmbeddable(), content.getEmbeddable())
+        && Objects.equals(getData(), content.getData())
+        && Objects.equals(getExt(), content.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getEpisode(), getTitle(), getSeries(), getSeason(), getArtist(), getGenre(), getAlbum(), getIsrc(), getProducer(), getUrl(), getVideoquality(), getCat(), getProdq(), getContext(), getContentrating(), getUserrating(), getQagmediarating(), getKeywords(), getLivestream(), getSourcerelationship(), getLen(), getLanguage(), getEmbeddable(), getData(), getExt());
+    return Objects.hash(
+        getId(),
+        getEpisode(),
+        getTitle(),
+        getSeries(),
+        getSeason(),
+        getArtist(),
+        getGenre(),
+        getAlbum(),
+        getIsrc(),
+        getProducer(),
+        getUrl(),
+        getVideoquality(),
+        getCat(),
+        getProdq(),
+        getContext(),
+        getContentrating(),
+        getUserrating(),
+        getQagmediarating(),
+        getKeywords(),
+        getLivestream(),
+        getSourcerelationship(),
+        getLen(),
+        getLanguage(),
+        getEmbeddable(),
+        getData(),
+        getExt());
   }
 }

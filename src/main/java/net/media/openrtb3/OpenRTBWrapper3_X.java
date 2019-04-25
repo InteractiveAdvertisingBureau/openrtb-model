@@ -33,7 +33,6 @@ public class OpenRTBWrapper3_X {
     this.openrtb = openrtb;
   }
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -50,5 +49,4 @@ public class OpenRTBWrapper3_X {
   protected boolean canEqual(Object other) {
     return other instanceof OpenRTBWrapper3_X;
   }
-
 }

@@ -135,17 +135,24 @@ public class Native {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Native aNative = (Native) o;
-    return Objects.equals(getRequest(), aNative.getRequest()) &&
-      Objects.equals(getVer(), aNative.getVer()) &&
-      Objects.equals(getApi(), aNative.getApi()) &&
-      Objects.equals(getBattr(), aNative.getBattr()) &&
-      Objects.equals(getExt(), aNative.getExt()) &&
-      Objects.equals(getNativeRequestBody(), aNative.getNativeRequestBody()) &&
-      Objects.equals(getRequestAsString(), aNative.getRequestAsString());
+    return Objects.equals(getRequest(), aNative.getRequest())
+        && Objects.equals(getVer(), aNative.getVer())
+        && Objects.equals(getApi(), aNative.getApi())
+        && Objects.equals(getBattr(), aNative.getBattr())
+        && Objects.equals(getExt(), aNative.getExt())
+        && Objects.equals(getNativeRequestBody(), aNative.getNativeRequestBody())
+        && Objects.equals(getRequestAsString(), aNative.getRequestAsString());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getRequest(), getVer(), getApi(), getBattr(), getExt(), getNativeRequestBody(), getRequestAsString());
+    return Objects.hash(
+        getRequest(),
+        getVer(),
+        getApi(),
+        getBattr(),
+        getExt(),
+        getNativeRequestBody(),
+        getRequestAsString());
   }
 }

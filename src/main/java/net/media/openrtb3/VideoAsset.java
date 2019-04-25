@@ -63,14 +63,13 @@ public class VideoAsset {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     VideoAsset that = (VideoAsset) o;
-    return Objects.equals(getAdm(), that.getAdm()) &&
-        Objects.equals(getCurl(), that.getCurl()) &&
-        Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getAdm(), that.getAdm())
+        && Objects.equals(getCurl(), that.getCurl())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getAdm(), getCurl(), getExt());
   }
-
 }

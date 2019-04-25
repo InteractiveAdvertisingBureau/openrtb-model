@@ -217,28 +217,46 @@ public class Imp {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Imp imp = (Imp) o;
-    return Double.compare(imp.getBidfloor(), getBidfloor()) == 0 &&
-      Objects.equals(getId(), imp.getId()) &&
-      Objects.equals(getVideo(), imp.getVideo()) &&
-      Objects.equals(getBanner(), imp.getBanner()) &&
-      Objects.equals(getAudio(), imp.getAudio()) &&
-      Objects.equals(getNat(), imp.getNat()) &&
-      Objects.equals(getTagId(), imp.getTagId()) &&
-      Objects.equals(getDisplaymanager(), imp.getDisplaymanager()) &&
-      Objects.equals(getDisplaymanagerver(), imp.getDisplaymanagerver()) &&
-      Objects.equals(getInstl(), imp.getInstl()) &&
-      Objects.equals(getBidfloorcur(), imp.getBidfloorcur()) &&
-      Objects.equals(getSecure(), imp.getSecure()) &&
-      Objects.equals(getIframebuster(), imp.getIframebuster()) &&
-      Objects.equals(getPmp(), imp.getPmp()) &&
-      Objects.equals(getClickbrowser(), imp.getClickbrowser()) &&
-      Objects.equals(getExp(), imp.getExp()) &&
-      Objects.equals(getMetric(), imp.getMetric()) &&
-      Objects.equals(getExt(), imp.getExt());
+    return Double.compare(imp.getBidfloor(), getBidfloor()) == 0
+        && Objects.equals(getId(), imp.getId())
+        && Objects.equals(getVideo(), imp.getVideo())
+        && Objects.equals(getBanner(), imp.getBanner())
+        && Objects.equals(getAudio(), imp.getAudio())
+        && Objects.equals(getNat(), imp.getNat())
+        && Objects.equals(getTagId(), imp.getTagId())
+        && Objects.equals(getDisplaymanager(), imp.getDisplaymanager())
+        && Objects.equals(getDisplaymanagerver(), imp.getDisplaymanagerver())
+        && Objects.equals(getInstl(), imp.getInstl())
+        && Objects.equals(getBidfloorcur(), imp.getBidfloorcur())
+        && Objects.equals(getSecure(), imp.getSecure())
+        && Objects.equals(getIframebuster(), imp.getIframebuster())
+        && Objects.equals(getPmp(), imp.getPmp())
+        && Objects.equals(getClickbrowser(), imp.getClickbrowser())
+        && Objects.equals(getExp(), imp.getExp())
+        && Objects.equals(getMetric(), imp.getMetric())
+        && Objects.equals(getExt(), imp.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getVideo(), getBanner(), getAudio(), getNat(), getTagId(), getDisplaymanager(), getDisplaymanagerver(), getInstl(), getBidfloor(), getBidfloorcur(), getSecure(), getIframebuster(), getPmp(), getClickbrowser(), getExp(), getMetric(), getExt());
+    return Objects.hash(
+        getId(),
+        getVideo(),
+        getBanner(),
+        getAudio(),
+        getNat(),
+        getTagId(),
+        getDisplaymanager(),
+        getDisplaymanagerver(),
+        getInstl(),
+        getBidfloor(),
+        getBidfloorcur(),
+        getSecure(),
+        getIframebuster(),
+        getPmp(),
+        getClickbrowser(),
+        getExp(),
+        getMetric(),
+        getExt());
   }
 }

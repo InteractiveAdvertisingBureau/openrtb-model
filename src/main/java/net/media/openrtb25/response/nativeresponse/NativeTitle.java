@@ -48,8 +48,7 @@ public class NativeTitle {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeTitle that = (NativeTitle) o;
-    return Objects.equals(getText(), that.getText()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getText(), that.getText()) && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

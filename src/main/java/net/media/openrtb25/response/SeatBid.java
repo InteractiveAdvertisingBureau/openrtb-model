@@ -16,12 +16,11 @@
 
 package net.media.openrtb25.response;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /** Created by vishnu on 30/5/16. */
 public class SeatBid {
@@ -73,10 +72,10 @@ public class SeatBid {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     SeatBid seatBid = (SeatBid) o;
-    return Objects.equals(getBid(), seatBid.getBid()) &&
-      Objects.equals(getSeat(), seatBid.getSeat()) &&
-      Objects.equals(getGroup(), seatBid.getGroup()) &&
-      Objects.equals(getExt(), seatBid.getExt());
+    return Objects.equals(getBid(), seatBid.getBid())
+        && Objects.equals(getSeat(), seatBid.getSeat())
+        && Objects.equals(getGroup(), seatBid.getGroup())
+        && Objects.equals(getExt(), seatBid.getExt());
   }
 
   @Override

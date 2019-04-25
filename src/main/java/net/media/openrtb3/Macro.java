@@ -16,10 +16,9 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 public class Macro {
 
@@ -49,24 +48,23 @@ public class Macro {
     return this.value;
   }
 
+  public void setValue(String value) {
+    this.value = value;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Macro macro = (Macro) o;
-    return Objects.equals(getKey(), macro.getKey()) &&
-        Objects.equals(getValue(), macro.getValue()) &&
-        Objects.equals(getExt(), macro.getExt());
+    return Objects.equals(getKey(), macro.getKey())
+        && Objects.equals(getValue(), macro.getValue())
+        && Objects.equals(getExt(), macro.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getKey(), getValue(), getExt());
-  }
-
-
-  public void setValue(String value) {
-    this.value = value;
   }
 
   protected boolean canEqual(Object other) {

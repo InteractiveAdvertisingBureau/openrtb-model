@@ -68,10 +68,10 @@ public class Link {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Link link = (Link) o;
-    return Objects.equals(getUrl(), link.getUrl()) &&
-      Objects.equals(getClicktrackers(), link.getClicktrackers()) &&
-      Objects.equals(getFallback(), link.getFallback()) &&
-      Objects.equals(getExt(), link.getExt());
+    return Objects.equals(getUrl(), link.getUrl())
+        && Objects.equals(getClicktrackers(), link.getClicktrackers())
+        && Objects.equals(getFallback(), link.getFallback())
+        && Objects.equals(getExt(), link.getExt());
   }
 
   @Override

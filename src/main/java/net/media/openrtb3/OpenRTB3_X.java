@@ -68,11 +68,11 @@ public class OpenRTB3_X {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     OpenRTB3_X that = (OpenRTB3_X) o;
-    return Objects.equals(getVer(), that.getVer()) &&
-        Objects.equals(getDomainSpec(), that.getDomainSpec()) &&
-        Objects.equals(getDomainVer(), that.getDomainVer()) &&
-        Objects.equals(getRequest(), that.getRequest()) &&
-        Objects.equals(getResponse(), that.getResponse());
+    return Objects.equals(getVer(), that.getVer())
+        && Objects.equals(getDomainSpec(), that.getDomainSpec())
+        && Objects.equals(getDomainVer(), that.getDomainVer())
+        && Objects.equals(getRequest(), that.getRequest())
+        && Objects.equals(getResponse(), that.getResponse());
   }
 
   @Override
@@ -80,8 +80,7 @@ public class OpenRTB3_X {
     return Objects.hash(getVer(), getDomainSpec(), getDomainVer(), getRequest(), getResponse());
   }
 
-  public @Valid
-  Response getResponse() {
+  public @Valid Response getResponse() {
     return this.response;
   }
 

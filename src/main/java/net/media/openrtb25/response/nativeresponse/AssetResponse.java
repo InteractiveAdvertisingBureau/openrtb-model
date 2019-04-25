@@ -110,18 +110,19 @@ public class AssetResponse {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     AssetResponse that = (AssetResponse) o;
-    return Objects.equals(getId(), that.getId()) &&
-      Objects.equals(getRequired(), that.getRequired()) &&
-      Objects.equals(getTitle(), that.getTitle()) &&
-      Objects.equals(getImg(), that.getImg()) &&
-      Objects.equals(getVideo(), that.getVideo()) &&
-      Objects.equals(getData(), that.getData()) &&
-      Objects.equals(getLink(), that.getLink()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getId(), that.getId())
+        && Objects.equals(getRequired(), that.getRequired())
+        && Objects.equals(getTitle(), that.getTitle())
+        && Objects.equals(getImg(), that.getImg())
+        && Objects.equals(getVideo(), that.getVideo())
+        && Objects.equals(getData(), that.getData())
+        && Objects.equals(getLink(), that.getLink())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getRequired(), getTitle(), getImg(), getVideo(), getData(), getLink(), getExt());
+    return Objects.hash(
+        getId(), getRequired(), getTitle(), getImg(), getVideo(), getData(), getLink(), getExt());
   }
 }

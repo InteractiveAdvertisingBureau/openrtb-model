@@ -132,20 +132,30 @@ public class User {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     User user = (User) o;
-    return Objects.equals(getId(), user.getId()) &&
-      Objects.equals(getBuyeruid(), user.getBuyeruid()) &&
-      Objects.equals(getYob(), user.getYob()) &&
-      Objects.equals(getGender(), user.getGender()) &&
-      Objects.equals(getGeo(), user.getGeo()) &&
-      Objects.equals(getKeywords(), user.getKeywords()) &&
-      Objects.equals(getCustomdata(), user.getCustomdata()) &&
-      Objects.equals(getData(), user.getData()) &&
-      Objects.equals(getExt(), user.getExt()) &&
-      Objects.equals(getAge(), user.getAge());
+    return Objects.equals(getId(), user.getId())
+        && Objects.equals(getBuyeruid(), user.getBuyeruid())
+        && Objects.equals(getYob(), user.getYob())
+        && Objects.equals(getGender(), user.getGender())
+        && Objects.equals(getGeo(), user.getGeo())
+        && Objects.equals(getKeywords(), user.getKeywords())
+        && Objects.equals(getCustomdata(), user.getCustomdata())
+        && Objects.equals(getData(), user.getData())
+        && Objects.equals(getExt(), user.getExt())
+        && Objects.equals(getAge(), user.getAge());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getBuyeruid(), getYob(), getGender(), getGeo(), getKeywords(), getCustomdata(), getData(), getExt(), getAge());
+    return Objects.hash(
+        getId(),
+        getBuyeruid(),
+        getYob(),
+        getGender(),
+        getGeo(),
+        getKeywords(),
+        getCustomdata(),
+        getData(),
+        getExt(),
+        getAge());
   }
 }

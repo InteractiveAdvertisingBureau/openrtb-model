@@ -60,9 +60,9 @@ public class Pmp {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Pmp pmp = (Pmp) o;
-    return Objects.equals(getPrivate_auction(), pmp.getPrivate_auction()) &&
-      Objects.equals(getDeals(), pmp.getDeals()) &&
-      Objects.equals(getExt(), pmp.getExt());
+    return Objects.equals(getPrivate_auction(), pmp.getPrivate_auction())
+        && Objects.equals(getDeals(), pmp.getDeals())
+        && Objects.equals(getExt(), pmp.getExt());
   }
 
   @Override

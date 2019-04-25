@@ -154,24 +154,38 @@ public class Geo {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Geo geo = (Geo) o;
-    return Objects.equals(getType(), geo.getType()) &&
-      Objects.equals(getRegion(), geo.getRegion()) &&
-      Objects.equals(getRegionfips104(), geo.getRegionfips104()) &&
-      Objects.equals(getMetro(), geo.getMetro()) &&
-      Objects.equals(getCity(), geo.getCity()) &&
-      Objects.equals(getZip(), geo.getZip()) &&
-      Objects.equals(getUtcoffset(), geo.getUtcoffset()) &&
-      Objects.equals(getCountry(), geo.getCountry()) &&
-      Objects.equals(getLat(), geo.getLat()) &&
-      Objects.equals(getLon(), geo.getLon()) &&
-      Objects.equals(getAccuracy(), geo.getAccuracy()) &&
-      Objects.equals(getLastfix(), geo.getLastfix()) &&
-      Objects.equals(getIpservice(), geo.getIpservice()) &&
-      Objects.equals(getExt(), geo.getExt());
+    return Objects.equals(getType(), geo.getType())
+        && Objects.equals(getRegion(), geo.getRegion())
+        && Objects.equals(getRegionfips104(), geo.getRegionfips104())
+        && Objects.equals(getMetro(), geo.getMetro())
+        && Objects.equals(getCity(), geo.getCity())
+        && Objects.equals(getZip(), geo.getZip())
+        && Objects.equals(getUtcoffset(), geo.getUtcoffset())
+        && Objects.equals(getCountry(), geo.getCountry())
+        && Objects.equals(getLat(), geo.getLat())
+        && Objects.equals(getLon(), geo.getLon())
+        && Objects.equals(getAccuracy(), geo.getAccuracy())
+        && Objects.equals(getLastfix(), geo.getLastfix())
+        && Objects.equals(getIpservice(), geo.getIpservice())
+        && Objects.equals(getExt(), geo.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getType(), getRegion(), getRegionfips104(), getMetro(), getCity(), getZip(), getUtcoffset(), getCountry(), getLat(), getLon(), getAccuracy(), getLastfix(), getIpservice(), getExt());
+    return Objects.hash(
+        getType(),
+        getRegion(),
+        getRegionfips104(),
+        getMetro(),
+        getCity(),
+        getZip(),
+        getUtcoffset(),
+        getCountry(),
+        getLat(),
+        getLon(),
+        getAccuracy(),
+        getLastfix(),
+        getIpservice(),
+        getExt());
   }
 }

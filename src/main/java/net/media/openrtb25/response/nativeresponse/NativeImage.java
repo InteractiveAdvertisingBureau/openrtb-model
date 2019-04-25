@@ -67,10 +67,10 @@ public class NativeImage {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeImage that = (NativeImage) o;
-    return Objects.equals(getUrl(), that.getUrl()) &&
-      Objects.equals(getW(), that.getW()) &&
-      Objects.equals(getH(), that.getH()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getUrl(), that.getUrl())
+        && Objects.equals(getW(), that.getW())
+        && Objects.equals(getH(), that.getH())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

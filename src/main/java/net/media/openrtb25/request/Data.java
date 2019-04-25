@@ -69,10 +69,10 @@ public class Data {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Data data = (Data) o;
-    return Objects.equals(getId(), data.getId()) &&
-      Objects.equals(getName(), data.getName()) &&
-      Objects.equals(getSegment(), data.getSegment()) &&
-      Objects.equals(getExt(), data.getExt());
+    return Objects.equals(getId(), data.getId())
+        && Objects.equals(getName(), data.getName())
+        && Objects.equals(getSegment(), data.getSegment())
+        && Objects.equals(getExt(), data.getExt());
   }
 
   @Override

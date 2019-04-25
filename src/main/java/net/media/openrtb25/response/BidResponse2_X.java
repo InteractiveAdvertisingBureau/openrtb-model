@@ -16,12 +16,11 @@
 
 package net.media.openrtb25.response;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /** Created by vishnu on 30/5/16. */
 public class BidResponse2_X {
@@ -97,17 +96,18 @@ public class BidResponse2_X {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     BidResponse2_X that = (BidResponse2_X) o;
-    return Objects.equals(getId(), that.getId()) &&
-      Objects.equals(getSeatbid(), that.getSeatbid()) &&
-      Objects.equals(getBidid(), that.getBidid()) &&
-      Objects.equals(getCur(), that.getCur()) &&
-      Objects.equals(getCustomdata(), that.getCustomdata()) &&
-      Objects.equals(getNbr(), that.getNbr()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getId(), that.getId())
+        && Objects.equals(getSeatbid(), that.getSeatbid())
+        && Objects.equals(getBidid(), that.getBidid())
+        && Objects.equals(getCur(), that.getCur())
+        && Objects.equals(getCustomdata(), that.getCustomdata())
+        && Objects.equals(getNbr(), that.getNbr())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getSeatbid(), getBidid(), getCur(), getCustomdata(), getNbr(), getExt());
+    return Objects.hash(
+        getId(), getSeatbid(), getBidid(), getCur(), getCustomdata(), getNbr(), getExt());
   }
 }

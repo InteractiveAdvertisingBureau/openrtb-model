@@ -98,19 +98,19 @@ public class Source {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Source source = (Source) o;
-    return Objects.equals(getTid(), source.getTid()) &&
-        Objects.equals(getTs(), source.getTs()) &&
-        Objects.equals(getDs(), source.getDs()) &&
-        Objects.equals(getDsmap(), source.getDsmap()) &&
-        Objects.equals(getCert(), source.getCert()) &&
-        Objects.equals(getDigest(), source.getDigest()) &&
-        Objects.equals(getPchain(), source.getPchain()) &&
-        Objects.equals(getExt(), source.getExt());
+    return Objects.equals(getTid(), source.getTid())
+        && Objects.equals(getTs(), source.getTs())
+        && Objects.equals(getDs(), source.getDs())
+        && Objects.equals(getDsmap(), source.getDsmap())
+        && Objects.equals(getCert(), source.getCert())
+        && Objects.equals(getDigest(), source.getDigest())
+        && Objects.equals(getPchain(), source.getPchain())
+        && Objects.equals(getExt(), source.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getTid(), getTs(), getDs(), getDsmap(), getCert(), getDigest(), getPchain(), getExt());
+    return Objects.hash(
+        getTid(), getTs(), getDs(), getDsmap(), getCert(), getDigest(), getPchain(), getExt());
   }
-
 }

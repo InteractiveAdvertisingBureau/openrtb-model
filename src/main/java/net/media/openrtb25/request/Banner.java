@@ -215,27 +215,44 @@ public class Banner {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Banner banner = (Banner) o;
-    return Objects.equals(getW(), banner.getW()) &&
-      Objects.equals(getH(), banner.getH()) &&
-      Objects.equals(getFormat(), banner.getFormat()) &&
-      Objects.equals(getId(), banner.getId()) &&
-      Objects.equals(getBtype(), banner.getBtype()) &&
-      Objects.equals(getBattr(), banner.getBattr()) &&
-      Objects.equals(getPos(), banner.getPos()) &&
-      Objects.equals(getMimes(), banner.getMimes()) &&
-      Objects.equals(getTopframe(), banner.getTopframe()) &&
-      Objects.equals(getWmax(), banner.getWmax()) &&
-      Objects.equals(getWmin(), banner.getWmin()) &&
-      Objects.equals(getHmax(), banner.getHmax()) &&
-      Objects.equals(getHmin(), banner.getHmin()) &&
-      Objects.equals(getExpdir(), banner.getExpdir()) &&
-      Objects.equals(getApi(), banner.getApi()) &&
-      Objects.equals(getVcm(), banner.getVcm()) &&
-      Objects.equals(getExt(), banner.getExt());
+    return Objects.equals(getW(), banner.getW())
+        && Objects.equals(getH(), banner.getH())
+        && Objects.equals(getFormat(), banner.getFormat())
+        && Objects.equals(getId(), banner.getId())
+        && Objects.equals(getBtype(), banner.getBtype())
+        && Objects.equals(getBattr(), banner.getBattr())
+        && Objects.equals(getPos(), banner.getPos())
+        && Objects.equals(getMimes(), banner.getMimes())
+        && Objects.equals(getTopframe(), banner.getTopframe())
+        && Objects.equals(getWmax(), banner.getWmax())
+        && Objects.equals(getWmin(), banner.getWmin())
+        && Objects.equals(getHmax(), banner.getHmax())
+        && Objects.equals(getHmin(), banner.getHmin())
+        && Objects.equals(getExpdir(), banner.getExpdir())
+        && Objects.equals(getApi(), banner.getApi())
+        && Objects.equals(getVcm(), banner.getVcm())
+        && Objects.equals(getExt(), banner.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getW(), getH(), getFormat(), getId(), getBtype(), getBattr(), getPos(), getMimes(), getTopframe(), getWmax(), getWmin(), getHmax(), getHmin(), getExpdir(), getApi(), getVcm(), getExt());
+    return Objects.hash(
+        getW(),
+        getH(),
+        getFormat(),
+        getId(),
+        getBtype(),
+        getBattr(),
+        getPos(),
+        getMimes(),
+        getTopframe(),
+        getWmax(),
+        getWmin(),
+        getHmax(),
+        getHmin(),
+        getExpdir(),
+        getApi(),
+        getVcm(),
+        getExt());
   }
 }

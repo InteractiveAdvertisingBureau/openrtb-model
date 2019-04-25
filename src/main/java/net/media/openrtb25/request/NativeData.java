@@ -16,10 +16,9 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 public class NativeData {
 
@@ -60,9 +59,9 @@ public class NativeData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeData that = (NativeData) o;
-    return Objects.equals(getType(), that.getType()) &&
-      Objects.equals(getLen(), that.getLen()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getType(), that.getType())
+        && Objects.equals(getLen(), that.getLen())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

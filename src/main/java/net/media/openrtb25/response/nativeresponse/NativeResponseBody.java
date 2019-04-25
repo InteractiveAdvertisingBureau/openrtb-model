@@ -92,16 +92,17 @@ public class NativeResponseBody {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeResponseBody that = (NativeResponseBody) o;
-    return Objects.equals(getVer(), that.getVer()) &&
-      Objects.equals(getAsset(), that.getAsset()) &&
-      Objects.equals(getLink(), that.getLink()) &&
-      Objects.equals(getImptrackers(), that.getImptrackers()) &&
-      Objects.equals(getJstracker(), that.getJstracker()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getVer(), that.getVer())
+        && Objects.equals(getAsset(), that.getAsset())
+        && Objects.equals(getLink(), that.getLink())
+        && Objects.equals(getImptrackers(), that.getImptrackers())
+        && Objects.equals(getJstracker(), that.getJstracker())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getVer(), getAsset(), getLink(), getImptrackers(), getJstracker(), getExt());
+    return Objects.hash(
+        getVer(), getAsset(), getLink(), getImptrackers(), getJstracker(), getExt());
   }
 }

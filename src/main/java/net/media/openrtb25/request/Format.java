@@ -89,12 +89,12 @@ public class Format {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Format format = (Format) o;
-    return Objects.equals(getW(), format.getW()) &&
-      Objects.equals(getH(), format.getH()) &&
-      Objects.equals(getWratio(), format.getWratio()) &&
-      Objects.equals(getHratio(), format.getHratio()) &&
-      Objects.equals(getWmin(), format.getWmin()) &&
-      Objects.equals(getExt(), format.getExt());
+    return Objects.equals(getW(), format.getW())
+        && Objects.equals(getH(), format.getH())
+        && Objects.equals(getWratio(), format.getWratio())
+        && Objects.equals(getHratio(), format.getHratio())
+        && Objects.equals(getWmin(), format.getWmin())
+        && Objects.equals(getExt(), format.getExt());
   }
 
   @Override

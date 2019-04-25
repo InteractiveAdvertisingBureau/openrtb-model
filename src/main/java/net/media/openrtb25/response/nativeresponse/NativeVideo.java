@@ -46,8 +46,8 @@ public class NativeVideo {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeVideo that = (NativeVideo) o;
-    return Objects.equals(getVasttag(), that.getVasttag()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getVasttag(), that.getVasttag())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

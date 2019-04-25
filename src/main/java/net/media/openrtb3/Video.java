@@ -97,18 +97,17 @@ public class Video {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Video video = (Video) o;
-    return Objects.equals(getMime(), video.getMime()) &&
-        Objects.equals(getApi(), video.getApi()) &&
-        Objects.equals(getCtype(), video.getCtype()) &&
-        Objects.equals(getDur(), video.getDur()) &&
-        Objects.equals(getAdm(), video.getAdm()) &&
-        Objects.equals(getCurl(), video.getCurl()) &&
-        Objects.equals(getExt(), video.getExt());
+    return Objects.equals(getMime(), video.getMime())
+        && Objects.equals(getApi(), video.getApi())
+        && Objects.equals(getCtype(), video.getCtype())
+        && Objects.equals(getDur(), video.getDur())
+        && Objects.equals(getAdm(), video.getAdm())
+        && Objects.equals(getCurl(), video.getCurl())
+        && Objects.equals(getExt(), video.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getMime(), getApi(), getCtype(), getDur(), getAdm(), getCurl(), getExt());
   }
-
 }

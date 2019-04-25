@@ -18,12 +18,11 @@ package net.media.openrtb25.request;
 
 import net.media.utils.validator.CheckAtMostOneNotNull;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
 
 // @CheckAtLeastOneNotNull(fieldNames = {"site", "app"})
 @CheckAtMostOneNotNull(fieldNames = {"wseat", "bseat"})
@@ -118,8 +117,7 @@ public class BidRequest2_X {
     this.imp = imp;
   }
 
-  public @Valid
-  Site getSite() {
+  public @Valid Site getSite() {
     return this.site;
   }
 
@@ -199,8 +197,7 @@ public class BidRequest2_X {
     this.tmax = tmax;
   }
 
-  public @Valid
-  Source getSource() {
+  public @Valid Source getSource() {
     return this.source;
   }
 
@@ -301,34 +298,58 @@ public class BidRequest2_X {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     BidRequest2_X that = (BidRequest2_X) o;
-    return Objects.equals(getId(), that.getId()) &&
-      Objects.equals(getImp(), that.getImp()) &&
-      Objects.equals(getSite(), that.getSite()) &&
-      Objects.equals(getApp(), that.getApp()) &&
-      Objects.equals(getDevice(), that.getDevice()) &&
-      Objects.equals(getUser(), that.getUser()) &&
-      Objects.equals(getBadv(), that.getBadv()) &&
-      Objects.equals(getAt(), that.getAt()) &&
-      Objects.equals(getTest(), that.getTest()) &&
-      Objects.equals(getWseat(), that.getWseat()) &&
-      Objects.equals(getBseat(), that.getBseat()) &&
-      Objects.equals(getTmax(), that.getTmax()) &&
-      Objects.equals(getSource(), that.getSource()) &&
-      Objects.equals(getBcat(), that.getBcat()) &&
-      Objects.equals(getAllimps(), that.getAllimps()) &&
-      Objects.equals(getCur(), that.getCur()) &&
-      Objects.equals(getWlang(), that.getWlang()) &&
-      Objects.equals(getBapp(), that.getBapp()) &&
-      Objects.equals(getRegs(), that.getRegs()) &&
-      Objects.equals(getExt(), that.getExt()) &&
-      Objects.equals(getGdpr(), that.getGdpr()) &&
-      Objects.equals(getGdprconsent(), that.getGdprconsent()) &&
-      Objects.equals(getGdprstring(), that.getGdprstring()) &&
-      Objects.equals(getGoogleConsents(), that.getGoogleConsents());
+    return Objects.equals(getId(), that.getId())
+        && Objects.equals(getImp(), that.getImp())
+        && Objects.equals(getSite(), that.getSite())
+        && Objects.equals(getApp(), that.getApp())
+        && Objects.equals(getDevice(), that.getDevice())
+        && Objects.equals(getUser(), that.getUser())
+        && Objects.equals(getBadv(), that.getBadv())
+        && Objects.equals(getAt(), that.getAt())
+        && Objects.equals(getTest(), that.getTest())
+        && Objects.equals(getWseat(), that.getWseat())
+        && Objects.equals(getBseat(), that.getBseat())
+        && Objects.equals(getTmax(), that.getTmax())
+        && Objects.equals(getSource(), that.getSource())
+        && Objects.equals(getBcat(), that.getBcat())
+        && Objects.equals(getAllimps(), that.getAllimps())
+        && Objects.equals(getCur(), that.getCur())
+        && Objects.equals(getWlang(), that.getWlang())
+        && Objects.equals(getBapp(), that.getBapp())
+        && Objects.equals(getRegs(), that.getRegs())
+        && Objects.equals(getExt(), that.getExt())
+        && Objects.equals(getGdpr(), that.getGdpr())
+        && Objects.equals(getGdprconsent(), that.getGdprconsent())
+        && Objects.equals(getGdprstring(), that.getGdprstring())
+        && Objects.equals(getGoogleConsents(), that.getGoogleConsents());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getImp(), getSite(), getApp(), getDevice(), getUser(), getBadv(), getAt(), getTest(), getWseat(), getBseat(), getTmax(), getSource(), getBcat(), getAllimps(), getCur(), getWlang(), getBapp(), getRegs(), getExt(), getGdpr(), getGdprconsent(), getGdprstring(), getGoogleConsents());
+    return Objects.hash(
+        getId(),
+        getImp(),
+        getSite(),
+        getApp(),
+        getDevice(),
+        getUser(),
+        getBadv(),
+        getAt(),
+        getTest(),
+        getWseat(),
+        getBseat(),
+        getTmax(),
+        getSource(),
+        getBcat(),
+        getAllimps(),
+        getCur(),
+        getWlang(),
+        getBapp(),
+        getRegs(),
+        getExt(),
+        getGdpr(),
+        getGdprconsent(),
+        getGdprstring(),
+        getGoogleConsents());
   }
 }

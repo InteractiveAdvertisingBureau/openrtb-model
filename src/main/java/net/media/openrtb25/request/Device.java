@@ -337,41 +337,72 @@ public class Device {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Device device = (Device) o;
-    return Objects.equals(getUa(), device.getUa()) &&
-      Objects.equals(getGeo(), device.getGeo()) &&
-      Objects.equals(getDnt(), device.getDnt()) &&
-      Objects.equals(getLmt(), device.getLmt()) &&
-      Objects.equals(getIp(), device.getIp()) &&
-      Objects.equals(getIpv6(), device.getIpv6()) &&
-      Objects.equals(getOs(), device.getOs()) &&
-      Objects.equals(getDevicetype(), device.getDevicetype()) &&
-      Objects.equals(getMake(), device.getMake()) &&
-      Objects.equals(getModel(), device.getModel()) &&
-      Objects.equals(getOsv(), device.getOsv()) &&
-      Objects.equals(getHwv(), device.getHwv()) &&
-      Objects.equals(getH(), device.getH()) &&
-      Objects.equals(getW(), device.getW()) &&
-      Objects.equals(getPpi(), device.getPpi()) &&
-      Objects.equals(getPxratio(), device.getPxratio()) &&
-      Objects.equals(getJs(), device.getJs()) &&
-      Objects.equals(getGeofetch(), device.getGeofetch()) &&
-      Objects.equals(getMccmnc(), device.getMccmnc()) &&
-      Objects.equals(getFlashver(), device.getFlashver()) &&
-      Objects.equals(getLanguage(), device.getLanguage()) &&
-      Objects.equals(getCarrier(), device.getCarrier()) &&
-      Objects.equals(getConnectiontype(), device.getConnectiontype()) &&
-      Objects.equals(getIfa(), device.getIfa()) &&
-      Objects.equals(getDidsha1(), device.getDidsha1()) &&
-      Objects.equals(getDidmd5(), device.getDidmd5()) &&
-      Objects.equals(getDpidsha1(), device.getDpidsha1()) &&
-      Objects.equals(getDpidmd5(), device.getDpidmd5()) &&
-      Objects.equals(getMacsha1(), device.getMacsha1()) &&
-      Objects.equals(getMacmd5(), device.getMacmd5()) &&
-      Objects.equals(getExt(), device.getExt());
+    return Objects.equals(getUa(), device.getUa())
+        && Objects.equals(getGeo(), device.getGeo())
+        && Objects.equals(getDnt(), device.getDnt())
+        && Objects.equals(getLmt(), device.getLmt())
+        && Objects.equals(getIp(), device.getIp())
+        && Objects.equals(getIpv6(), device.getIpv6())
+        && Objects.equals(getOs(), device.getOs())
+        && Objects.equals(getDevicetype(), device.getDevicetype())
+        && Objects.equals(getMake(), device.getMake())
+        && Objects.equals(getModel(), device.getModel())
+        && Objects.equals(getOsv(), device.getOsv())
+        && Objects.equals(getHwv(), device.getHwv())
+        && Objects.equals(getH(), device.getH())
+        && Objects.equals(getW(), device.getW())
+        && Objects.equals(getPpi(), device.getPpi())
+        && Objects.equals(getPxratio(), device.getPxratio())
+        && Objects.equals(getJs(), device.getJs())
+        && Objects.equals(getGeofetch(), device.getGeofetch())
+        && Objects.equals(getMccmnc(), device.getMccmnc())
+        && Objects.equals(getFlashver(), device.getFlashver())
+        && Objects.equals(getLanguage(), device.getLanguage())
+        && Objects.equals(getCarrier(), device.getCarrier())
+        && Objects.equals(getConnectiontype(), device.getConnectiontype())
+        && Objects.equals(getIfa(), device.getIfa())
+        && Objects.equals(getDidsha1(), device.getDidsha1())
+        && Objects.equals(getDidmd5(), device.getDidmd5())
+        && Objects.equals(getDpidsha1(), device.getDpidsha1())
+        && Objects.equals(getDpidmd5(), device.getDpidmd5())
+        && Objects.equals(getMacsha1(), device.getMacsha1())
+        && Objects.equals(getMacmd5(), device.getMacmd5())
+        && Objects.equals(getExt(), device.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getUa(), getGeo(), getDnt(), getLmt(), getIp(), getIpv6(), getOs(), getDevicetype(), getMake(), getModel(), getOsv(), getHwv(), getH(), getW(), getPpi(), getPxratio(), getJs(), getGeofetch(), getMccmnc(), getFlashver(), getLanguage(), getCarrier(), getConnectiontype(), getIfa(), getDidsha1(), getDidmd5(), getDpidsha1(), getDpidmd5(), getMacsha1(), getMacmd5(), getExt());
+    return Objects.hash(
+        getUa(),
+        getGeo(),
+        getDnt(),
+        getLmt(),
+        getIp(),
+        getIpv6(),
+        getOs(),
+        getDevicetype(),
+        getMake(),
+        getModel(),
+        getOsv(),
+        getHwv(),
+        getH(),
+        getW(),
+        getPpi(),
+        getPxratio(),
+        getJs(),
+        getGeofetch(),
+        getMccmnc(),
+        getFlashver(),
+        getLanguage(),
+        getCarrier(),
+        getConnectiontype(),
+        getIfa(),
+        getDidsha1(),
+        getDidmd5(),
+        getDpidsha1(),
+        getDpidmd5(),
+        getMacsha1(),
+        getMacmd5(),
+        getExt());
   }
 }

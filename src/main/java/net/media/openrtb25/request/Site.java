@@ -180,25 +180,40 @@ public class Site {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Site site = (Site) o;
-    return Objects.equals(getId(), site.getId()) &&
-      Objects.equals(getName(), site.getName()) &&
-      Objects.equals(getDomain(), site.getDomain()) &&
-      Objects.equals(getCat(), site.getCat()) &&
-      Objects.equals(getSectioncat(), site.getSectioncat()) &&
-      Objects.equals(getPagecat(), site.getPagecat()) &&
-      Objects.equals(getPage(), site.getPage()) &&
-      Objects.equals(getRef(), site.getRef()) &&
-      Objects.equals(getSearch(), site.getSearch()) &&
-      Objects.equals(getMobile(), site.getMobile()) &&
-      Objects.equals(getPrivacypolicy(), site.getPrivacypolicy()) &&
-      Objects.equals(getPublisher(), site.getPublisher()) &&
-      Objects.equals(getContent(), site.getContent()) &&
-      Objects.equals(getKeywords(), site.getKeywords()) &&
-      Objects.equals(getExt(), site.getExt());
+    return Objects.equals(getId(), site.getId())
+        && Objects.equals(getName(), site.getName())
+        && Objects.equals(getDomain(), site.getDomain())
+        && Objects.equals(getCat(), site.getCat())
+        && Objects.equals(getSectioncat(), site.getSectioncat())
+        && Objects.equals(getPagecat(), site.getPagecat())
+        && Objects.equals(getPage(), site.getPage())
+        && Objects.equals(getRef(), site.getRef())
+        && Objects.equals(getSearch(), site.getSearch())
+        && Objects.equals(getMobile(), site.getMobile())
+        && Objects.equals(getPrivacypolicy(), site.getPrivacypolicy())
+        && Objects.equals(getPublisher(), site.getPublisher())
+        && Objects.equals(getContent(), site.getContent())
+        && Objects.equals(getKeywords(), site.getKeywords())
+        && Objects.equals(getExt(), site.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getName(), getDomain(), getCat(), getSectioncat(), getPagecat(), getPage(), getRef(), getSearch(), getMobile(), getPrivacypolicy(), getPublisher(), getContent(), getKeywords(), getExt());
+    return Objects.hash(
+        getId(),
+        getName(),
+        getDomain(),
+        getCat(),
+        getSectioncat(),
+        getPagecat(),
+        getPage(),
+        getRef(),
+        getSearch(),
+        getMobile(),
+        getPrivacypolicy(),
+        getPublisher(),
+        getContent(),
+        getKeywords(),
+        getExt());
   }
 }

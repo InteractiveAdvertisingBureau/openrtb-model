@@ -57,9 +57,9 @@ public class NativeData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeData that = (NativeData) o;
-    return Objects.equals(getLabel(), that.getLabel()) &&
-      Objects.equals(getValue(), that.getValue()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getLabel(), that.getLabel())
+        && Objects.equals(getValue(), that.getValue())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

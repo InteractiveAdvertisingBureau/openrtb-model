@@ -16,10 +16,9 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 /** Created by shiva.b on 14/12/18. */
 public class Metric {
@@ -56,23 +55,23 @@ public class Metric {
     return this.ext;
   }
 
+  public void setExt(Map<String, Object> ext) {
+    this.ext = ext;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Metric metric = (Metric) o;
-    return Objects.equals(getType(), metric.getType()) &&
-        Objects.equals(getValue(), metric.getValue()) &&
-        Objects.equals(getVendor(), metric.getVendor()) &&
-        Objects.equals(getExt(), metric.getExt());
+    return Objects.equals(getType(), metric.getType())
+        && Objects.equals(getValue(), metric.getValue())
+        && Objects.equals(getVendor(), metric.getVendor())
+        && Objects.equals(getExt(), metric.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getType(), getValue(), getVendor(), getExt());
-  }
-
-  public void setExt(Map<String, Object> ext) {
-    this.ext = ext;
   }
 }

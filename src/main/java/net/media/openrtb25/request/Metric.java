@@ -16,11 +16,10 @@
 
 package net.media.openrtb25.request;
 
-import java.util.Map;
-import java.util.Objects;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
+import java.util.Objects;
 
 /** Created by rajat.go on 30/12/18. */
 public class Metric {
@@ -70,10 +69,10 @@ public class Metric {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Metric metric = (Metric) o;
-    return Objects.equals(getType(), metric.getType()) &&
-      Objects.equals(getValue(), metric.getValue()) &&
-      Objects.equals(getVendor(), metric.getVendor()) &&
-      Objects.equals(getExt(), metric.getExt());
+    return Objects.equals(getType(), metric.getType())
+        && Objects.equals(getValue(), metric.getValue())
+        && Objects.equals(getVendor(), metric.getVendor())
+        && Objects.equals(getExt(), metric.getExt());
   }
 
   @Override

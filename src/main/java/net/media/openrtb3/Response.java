@@ -16,12 +16,11 @@
 
 package net.media.openrtb3;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 public class Response {
 
@@ -47,27 +46,28 @@ public class Response {
     return this.bidid;
   }
 
+  public void setBidid(String bidid) {
+    this.bidid = bidid;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Response response = (Response) o;
-    return Objects.equals(getId(), response.getId()) &&
-        Objects.equals(getBidid(), response.getBidid()) &&
-        Objects.equals(getNbr(), response.getNbr()) &&
-        Objects.equals(getCur(), response.getCur()) &&
-        Objects.equals(getCdata(), response.getCdata()) &&
-        Objects.equals(getSeatbid(), response.getSeatbid()) &&
-        Objects.equals(getExt(), response.getExt());
+    return Objects.equals(getId(), response.getId())
+        && Objects.equals(getBidid(), response.getBidid())
+        && Objects.equals(getNbr(), response.getNbr())
+        && Objects.equals(getCur(), response.getCur())
+        && Objects.equals(getCdata(), response.getCdata())
+        && Objects.equals(getSeatbid(), response.getSeatbid())
+        && Objects.equals(getExt(), response.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getBidid(), getNbr(), getCur(), getCdata(), getSeatbid(), getExt());
-  }
-
-  public void setBidid(String bidid) {
-    this.bidid = bidid;
+    return Objects.hash(
+        getId(), getBidid(), getNbr(), getCur(), getCdata(), getSeatbid(), getExt());
   }
 
   public Integer getNbr() {
@@ -113,5 +113,4 @@ public class Response {
   protected boolean canEqual(Object other) {
     return other instanceof Response;
   }
-
 }

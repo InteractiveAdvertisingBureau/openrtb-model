@@ -16,12 +16,11 @@
 
 package net.media.openrtb3;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotEmpty;
 
 /** Created by shiva.b on 14/12/18. */
 public class NativeFormat {
@@ -41,8 +40,7 @@ public class NativeFormat {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeFormat that = (NativeFormat) o;
-    return Objects.equals(getAsset(), that.getAsset()) &&
-        Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getAsset(), that.getAsset()) && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

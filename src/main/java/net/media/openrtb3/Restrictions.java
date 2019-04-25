@@ -84,12 +84,12 @@ public class Restrictions {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Restrictions that = (Restrictions) o;
-    return Objects.equals(getBcat(), that.getBcat()) &&
-        Objects.equals(getCattax(), that.getCattax()) &&
-        Objects.equals(getBadv(), that.getBadv()) &&
-        Objects.equals(getBapp(), that.getBapp()) &&
-        Objects.equals(getBattr(), that.getBattr()) &&
-        Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getBcat(), that.getBcat())
+        && Objects.equals(getCattax(), that.getCattax())
+        && Objects.equals(getBadv(), that.getBadv())
+        && Objects.equals(getBapp(), that.getBapp())
+        && Objects.equals(getBattr(), that.getBattr())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

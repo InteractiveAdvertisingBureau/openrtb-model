@@ -103,17 +103,18 @@ public class Deal {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Deal deal = (Deal) o;
-    return Double.compare(deal.getBidFloor(), getBidFloor()) == 0 &&
-      Objects.equals(getId(), deal.getId()) &&
-      Objects.equals(getBidFloorCur(), deal.getBidFloorCur()) &&
-      Objects.equals(getAt(), deal.getAt()) &&
-      Objects.equals(getWseat(), deal.getWseat()) &&
-      Objects.equals(getWadomain(), deal.getWadomain()) &&
-      Objects.equals(getExt(), deal.getExt());
+    return Double.compare(deal.getBidFloor(), getBidFloor()) == 0
+        && Objects.equals(getId(), deal.getId())
+        && Objects.equals(getBidFloorCur(), deal.getBidFloorCur())
+        && Objects.equals(getAt(), deal.getAt())
+        && Objects.equals(getWseat(), deal.getWseat())
+        && Objects.equals(getWadomain(), deal.getWadomain())
+        && Objects.equals(getExt(), deal.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getBidFloor(), getBidFloorCur(), getAt(), getWseat(), getWadomain(), getExt());
+    return Objects.hash(
+        getId(), getBidFloor(), getBidFloorCur(), getAt(), getWseat(), getWadomain(), getExt());
   }
 }

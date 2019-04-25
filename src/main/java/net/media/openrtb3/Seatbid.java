@@ -18,12 +18,11 @@ package net.media.openrtb3;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 public class Seatbid {
 
@@ -78,15 +77,14 @@ public class Seatbid {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Seatbid seatbid = (Seatbid) o;
-    return Objects.equals(getSeat(), seatbid.getSeat()) &&
-        Objects.equals(get_package(), seatbid.get_package()) &&
-        Objects.equals(getBid(), seatbid.getBid()) &&
-        Objects.equals(getExt(), seatbid.getExt());
+    return Objects.equals(getSeat(), seatbid.getSeat())
+        && Objects.equals(get_package(), seatbid.get_package())
+        && Objects.equals(getBid(), seatbid.getBid())
+        && Objects.equals(getExt(), seatbid.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getSeat(), get_package(), getBid(), getExt());
   }
-
 }

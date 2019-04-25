@@ -16,8 +16,6 @@
 
 package net.media.openrtb3;
 
-import com.oracle.webservices.internal.api.databinding.DatabindingMode;
-
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;

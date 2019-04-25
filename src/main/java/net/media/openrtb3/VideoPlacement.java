@@ -275,38 +275,64 @@ public class VideoPlacement {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     VideoPlacement that = (VideoPlacement) o;
-    return Objects.equals(getPtype(), that.getPtype()) &&
-        Objects.equals(getPos(), that.getPos()) &&
-        Objects.equals(getDelay(), that.getDelay()) &&
-        Objects.equals(getSkip(), that.getSkip()) &&
-        Objects.equals(getSkipmin(), that.getSkipmin()) &&
-        Objects.equals(getSkipafter(), that.getSkipafter()) &&
-        Objects.equals(getPlaymethod(), that.getPlaymethod()) &&
-        Objects.equals(getPlayend(), that.getPlayend()) &&
-        Objects.equals(getClktype(), that.getClktype()) &&
-        Objects.equals(getMime(), that.getMime()) &&
-        Objects.equals(getApi(), that.getApi()) &&
-        Objects.equals(getCtype(), that.getCtype()) &&
-        Objects.equals(getW(), that.getW()) &&
-        Objects.equals(getH(), that.getH()) &&
-        Objects.equals(getUnit(), that.getUnit()) &&
-        Objects.equals(getMindur(), that.getMindur()) &&
-        Objects.equals(getMaxdur(), that.getMaxdur()) &&
-        Objects.equals(getMaxext(), that.getMaxext()) &&
-        Objects.equals(getMinbitr(), that.getMinbitr()) &&
-        Objects.equals(getMaxbitr(), that.getMaxbitr()) &&
-        Objects.equals(getDelivery(), that.getDelivery()) &&
-        Objects.equals(getMaxseq(), that.getMaxseq()) &&
-        Objects.equals(getLinear(), that.getLinear()) &&
-        Objects.equals(getBoxing(), that.getBoxing()) &&
-        Objects.equals(getComp(), that.getComp()) &&
-        Objects.equals(getComptype(), that.getComptype()) &&
-        Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getPtype(), that.getPtype())
+        && Objects.equals(getPos(), that.getPos())
+        && Objects.equals(getDelay(), that.getDelay())
+        && Objects.equals(getSkip(), that.getSkip())
+        && Objects.equals(getSkipmin(), that.getSkipmin())
+        && Objects.equals(getSkipafter(), that.getSkipafter())
+        && Objects.equals(getPlaymethod(), that.getPlaymethod())
+        && Objects.equals(getPlayend(), that.getPlayend())
+        && Objects.equals(getClktype(), that.getClktype())
+        && Objects.equals(getMime(), that.getMime())
+        && Objects.equals(getApi(), that.getApi())
+        && Objects.equals(getCtype(), that.getCtype())
+        && Objects.equals(getW(), that.getW())
+        && Objects.equals(getH(), that.getH())
+        && Objects.equals(getUnit(), that.getUnit())
+        && Objects.equals(getMindur(), that.getMindur())
+        && Objects.equals(getMaxdur(), that.getMaxdur())
+        && Objects.equals(getMaxext(), that.getMaxext())
+        && Objects.equals(getMinbitr(), that.getMinbitr())
+        && Objects.equals(getMaxbitr(), that.getMaxbitr())
+        && Objects.equals(getDelivery(), that.getDelivery())
+        && Objects.equals(getMaxseq(), that.getMaxseq())
+        && Objects.equals(getLinear(), that.getLinear())
+        && Objects.equals(getBoxing(), that.getBoxing())
+        && Objects.equals(getComp(), that.getComp())
+        && Objects.equals(getComptype(), that.getComptype())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getPtype(), getPos(), getDelay(), getSkip(), getSkipmin(), getSkipafter(), getPlaymethod(), getPlayend(), getClktype(), getMime(), getApi(), getCtype(), getW(), getH(), getUnit(), getMindur(), getMaxdur(), getMaxext(), getMinbitr(), getMaxbitr(), getDelivery(), getMaxseq(), getLinear(), getBoxing(), getComp(), getComptype(), getExt());
+    return Objects.hash(
+        getPtype(),
+        getPos(),
+        getDelay(),
+        getSkip(),
+        getSkipmin(),
+        getSkipafter(),
+        getPlaymethod(),
+        getPlayend(),
+        getClktype(),
+        getMime(),
+        getApi(),
+        getCtype(),
+        getW(),
+        getH(),
+        getUnit(),
+        getMindur(),
+        getMaxdur(),
+        getMaxext(),
+        getMinbitr(),
+        getMaxbitr(),
+        getDelivery(),
+        getMaxseq(),
+        getLinear(),
+        getBoxing(),
+        getComp(),
+        getComptype(),
+        getExt());
   }
-
 }

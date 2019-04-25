@@ -99,13 +99,13 @@ public class NativeImage {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     NativeImage that = (NativeImage) o;
-    return Objects.equals(getType(), that.getType()) &&
-      Objects.equals(getW(), that.getW()) &&
-      Objects.equals(getWmin(), that.getWmin()) &&
-      Objects.equals(getH(), that.getH()) &&
-      Objects.equals(getHmin(), that.getHmin()) &&
-      Objects.equals(getMimes(), that.getMimes()) &&
-      Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getType(), that.getType())
+        && Objects.equals(getW(), that.getW())
+        && Objects.equals(getWmin(), that.getWmin())
+        && Objects.equals(getH(), that.getH())
+        && Objects.equals(getHmin(), that.getHmin())
+        && Objects.equals(getMimes(), that.getMimes())
+        && Objects.equals(getExt(), that.getExt());
   }
 
   @Override

@@ -147,24 +147,36 @@ public class Site extends DistributionChannel {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Site site = (Site) o;
-    return Objects.equals(getDomain(), site.getDomain()) &&
-        Objects.equals(getCat(), site.getCat()) &&
-        Objects.equals(getSectcat(), site.getSectcat()) &&
-        Objects.equals(getPagecat(), site.getPagecat()) &&
-        Objects.equals(getCattax(), site.getCattax()) &&
-        Objects.equals(getPrivpolicy(), site.getPrivpolicy()) &&
-        Objects.equals(getKeywords(), site.getKeywords()) &&
-        Objects.equals(getPage(), site.getPage()) &&
-        Objects.equals(getRef(), site.getRef()) &&
-        Objects.equals(getSearch(), site.getSearch()) &&
-        Objects.equals(getMobile(), site.getMobile()) &&
-        Objects.equals(getAmp(), site.getAmp()) &&
-        Objects.equals(getExt(), site.getExt());
+    return Objects.equals(getDomain(), site.getDomain())
+        && Objects.equals(getCat(), site.getCat())
+        && Objects.equals(getSectcat(), site.getSectcat())
+        && Objects.equals(getPagecat(), site.getPagecat())
+        && Objects.equals(getCattax(), site.getCattax())
+        && Objects.equals(getPrivpolicy(), site.getPrivpolicy())
+        && Objects.equals(getKeywords(), site.getKeywords())
+        && Objects.equals(getPage(), site.getPage())
+        && Objects.equals(getRef(), site.getRef())
+        && Objects.equals(getSearch(), site.getSearch())
+        && Objects.equals(getMobile(), site.getMobile())
+        && Objects.equals(getAmp(), site.getAmp())
+        && Objects.equals(getExt(), site.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getDomain(), getCat(), getSectcat(), getPagecat(), getCattax(), getPrivpolicy(), getKeywords(), getPage(), getRef(), getSearch(), getMobile(), getAmp(), getExt());
+    return Objects.hash(
+        getDomain(),
+        getCat(),
+        getSectcat(),
+        getPagecat(),
+        getCattax(),
+        getPrivpolicy(),
+        getKeywords(),
+        getPage(),
+        getRef(),
+        getSearch(),
+        getMobile(),
+        getAmp(),
+        getExt());
   }
-
 }

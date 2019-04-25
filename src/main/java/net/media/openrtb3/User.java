@@ -111,20 +111,28 @@ public class User {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     User user = (User) o;
-    return Objects.equals(getId(), user.getId()) &&
-        Objects.equals(getBuyeruid(), user.getBuyeruid()) &&
-        Objects.equals(getYob(), user.getYob()) &&
-        Objects.equals(getGender(), user.getGender()) &&
-        Objects.equals(getKeywords(), user.getKeywords()) &&
-        Objects.equals(getConsent(), user.getConsent()) &&
-        Objects.equals(getGeo(), user.getGeo()) &&
-        Objects.equals(getData(), user.getData()) &&
-        Objects.equals(getExt(), user.getExt());
+    return Objects.equals(getId(), user.getId())
+        && Objects.equals(getBuyeruid(), user.getBuyeruid())
+        && Objects.equals(getYob(), user.getYob())
+        && Objects.equals(getGender(), user.getGender())
+        && Objects.equals(getKeywords(), user.getKeywords())
+        && Objects.equals(getConsent(), user.getConsent())
+        && Objects.equals(getGeo(), user.getGeo())
+        && Objects.equals(getData(), user.getData())
+        && Objects.equals(getExt(), user.getExt());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getId(), getBuyeruid(), getYob(), getGender(), getKeywords(), getConsent(), getGeo(), getData(), getExt());
+    return Objects.hash(
+        getId(),
+        getBuyeruid(),
+        getYob(),
+        getGender(),
+        getKeywords(),
+        getConsent(),
+        getGeo(),
+        getData(),
+        getExt());
   }
-
 }

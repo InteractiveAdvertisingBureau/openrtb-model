@@ -16,10 +16,9 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 /** Created by shiva.b on 14/12/18. */
 public class TitleAssetFormat {
@@ -47,13 +46,11 @@ public class TitleAssetFormat {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     TitleAssetFormat that = (TitleAssetFormat) o;
-    return Objects.equals(getLen(), that.getLen()) &&
-        Objects.equals(getExt(), that.getExt());
+    return Objects.equals(getLen(), that.getLen()) && Objects.equals(getExt(), that.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getLen(), getExt());
   }
-
 }

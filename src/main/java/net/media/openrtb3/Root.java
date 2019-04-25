@@ -35,5 +35,4 @@ public class Root {
   public int hashCode() {
     return Objects.hash(openrtb);
   }
-
 }

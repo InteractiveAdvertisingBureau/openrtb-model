@@ -60,12 +60,12 @@ public class Producer {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Producer producer = (Producer) o;
-    return Objects.equals(getId(), producer.getId()) &&
-        Objects.equals(getName(), producer.getName()) &&
-        Objects.equals(getDomain(), producer.getDomain()) &&
-        Objects.equals(getCat(), producer.getCat()) &&
-        Objects.equals(getCattax(), producer.getCattax()) &&
-        Objects.equals(getExt(), producer.getExt());
+    return Objects.equals(getId(), producer.getId())
+        && Objects.equals(getName(), producer.getName())
+        && Objects.equals(getDomain(), producer.getDomain())
+        && Objects.equals(getCat(), producer.getCat())
+        && Objects.equals(getCattax(), producer.getCattax())
+        && Objects.equals(getExt(), producer.getExt());
   }
 
   @Override

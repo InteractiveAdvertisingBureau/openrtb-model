@@ -53,12 +53,12 @@ public class Publisher {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Publisher publisher = (Publisher) o;
-    return Objects.equals(getId(), publisher.getId()) &&
-        Objects.equals(getName(), publisher.getName()) &&
-        Objects.equals(getDomain(), publisher.getDomain()) &&
-        Objects.equals(getCat(), publisher.getCat()) &&
-        Objects.equals(getCattax(), publisher.getCattax()) &&
-        Objects.equals(getExt(), publisher.getExt());
+    return Objects.equals(getId(), publisher.getId())
+        && Objects.equals(getName(), publisher.getName())
+        && Objects.equals(getDomain(), publisher.getDomain())
+        && Objects.equals(getCat(), publisher.getCat())
+        && Objects.equals(getCattax(), publisher.getCattax())
+        && Objects.equals(getExt(), publisher.getExt());
   }
 
   @Override

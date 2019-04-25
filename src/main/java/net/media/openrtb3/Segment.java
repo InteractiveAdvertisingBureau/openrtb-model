@@ -63,15 +63,14 @@ public class Segment {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Segment segment = (Segment) o;
-    return Objects.equals(getId(), segment.getId()) &&
-        Objects.equals(getName(), segment.getName()) &&
-        Objects.equals(getValue(), segment.getValue()) &&
-        Objects.equals(getExt(), segment.getExt());
+    return Objects.equals(getId(), segment.getId())
+        && Objects.equals(getName(), segment.getName())
+        && Objects.equals(getValue(), segment.getValue())
+        && Objects.equals(getExt(), segment.getExt());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(getId(), getName(), getValue(), getExt());
   }
-
 }
