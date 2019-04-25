@@ -18,9 +18,8 @@ package net.media.openrtb3;
 
 import net.media.utils.validator.CheckAtLeastOneNotNull;
 
-import java.util.Collection;
-
 import javax.validation.Valid;
+import java.util.Collection;
 
 /** Created by shiva.b on 14/12/18. */
 @CheckAtLeastOneNotNull(fieldNames = {"display", "video", "audio"})
@@ -123,8 +122,7 @@ public class Placement {
     this.display = display;
   }
 
-  public @Valid
-  VideoPlacement getVideo() {
+  public @Valid VideoPlacement getVideo() {
     return this.video;
   }
 
@@ -132,8 +130,7 @@ public class Placement {
     this.video = video;
   }
 
-  public @Valid
-  AudioPlacement getAudio() {
+  public @Valid AudioPlacement getAudio() {
     return this.audio;
   }
 

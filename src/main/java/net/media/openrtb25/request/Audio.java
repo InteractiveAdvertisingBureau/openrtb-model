@@ -16,11 +16,10 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotEmpty;
 
 /** Created by rajat.go on 19/12/18. */
 public class Audio {

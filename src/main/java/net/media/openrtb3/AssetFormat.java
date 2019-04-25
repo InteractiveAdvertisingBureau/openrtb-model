@@ -18,10 +18,10 @@ package net.media.openrtb3;
 
 import net.media.utils.validator.CheckExactlyOneNotNull;
 
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 @CheckExactlyOneNotNull(fieldNames = {"title", "img", "video", "data"})
@@ -69,8 +69,7 @@ public class AssetFormat {
     this.img = img;
   }
 
-  public @Valid
-  VideoPlacement getVideo() {
+  public @Valid VideoPlacement getVideo() {
     return this.video;
   }
 
@@ -92,5 +91,25 @@ public class AssetFormat {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    AssetFormat that = (AssetFormat) o;
+    return Objects.equals(getId(), that.getId())
+        && Objects.equals(getReq(), that.getReq())
+        && Objects.equals(getTitle(), that.getTitle())
+        && Objects.equals(getImg(), that.getImg())
+        && Objects.equals(getVideo(), that.getVideo())
+        && Objects.equals(getData(), that.getData())
+        && Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getId(), getReq(), getTitle(), getImg(), getVideo(), getData(), getExt());
   }
 }

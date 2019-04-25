@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Device {
   private Integer type;
@@ -261,5 +262,72 @@ public class Device {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Device device = (Device) o;
+    return Objects.equals(getType(), device.getType())
+        && Objects.equals(getUa(), device.getUa())
+        && Objects.equals(getIfa(), device.getIfa())
+        && Objects.equals(getDnt(), device.getDnt())
+        && Objects.equals(getLmt(), device.getLmt())
+        && Objects.equals(getMake(), device.getMake())
+        && Objects.equals(getModel(), device.getModel())
+        && Objects.equals(getOs(), device.getOs())
+        && Objects.equals(getOsv(), device.getOsv())
+        && Objects.equals(getHwv(), device.getHwv())
+        && Objects.equals(getH(), device.getH())
+        && Objects.equals(getW(), device.getW())
+        && Objects.equals(getPpi(), device.getPpi())
+        && Objects.equals(getPxratio(), device.getPxratio())
+        && Objects.equals(getJs(), device.getJs())
+        && Objects.equals(getLang(), device.getLang())
+        && Objects.equals(getIp(), device.getIp())
+        && Objects.equals(getIpv6(), device.getIpv6())
+        && Objects.equals(getXff(), device.getXff())
+        && Objects.equals(getIptr(), device.getIptr())
+        && Objects.equals(getCarrier(), device.getCarrier())
+        && Objects.equals(getMccmnc(), device.getMccmnc())
+        && Objects.equals(getMccmncsim(), device.getMccmncsim())
+        && Objects.equals(getContype(), device.getContype())
+        && Objects.equals(getGeofetch(), device.getGeofetch())
+        && Objects.equals(getGeo(), device.getGeo())
+        && Objects.equals(getExt(), device.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getType(),
+        getUa(),
+        getIfa(),
+        getDnt(),
+        getLmt(),
+        getMake(),
+        getModel(),
+        getOs(),
+        getOsv(),
+        getHwv(),
+        getH(),
+        getW(),
+        getPpi(),
+        getPxratio(),
+        getJs(),
+        getLang(),
+        getIp(),
+        getIpv6(),
+        getXff(),
+        getIptr(),
+        getCarrier(),
+        getMccmnc(),
+        getMccmncsim(),
+        getContype(),
+        getGeofetch(),
+        getGeo(),
+        getExt());
   }
 }

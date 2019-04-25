@@ -18,9 +18,9 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import static net.media.utils.CommonConstants.DEFAULT_CATTAX_THREEDOTX;
-
 
 public class Content {
 
@@ -257,5 +257,70 @@ public class Content {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Content content = (Content) o;
+    return Objects.equals(getId(), content.getId())
+        && Objects.equals(getEpisode(), content.getEpisode())
+        && Objects.equals(getTitle(), content.getTitle())
+        && Objects.equals(getSeries(), content.getSeries())
+        && Objects.equals(getSeason(), content.getSeason())
+        && Objects.equals(getArtist(), content.getArtist())
+        && Objects.equals(getGenre(), content.getGenre())
+        && Objects.equals(getAlbum(), content.getAlbum())
+        && Objects.equals(getIsrc(), content.getIsrc())
+        && Objects.equals(getUrl(), content.getUrl())
+        && Objects.equals(getCat(), content.getCat())
+        && Objects.equals(getCattax(), content.getCattax())
+        && Objects.equals(getProdq(), content.getProdq())
+        && Objects.equals(getContext(), content.getContext())
+        && Objects.equals(getRating(), content.getRating())
+        && Objects.equals(getUrating(), content.getUrating())
+        && Objects.equals(getMrating(), content.getMrating())
+        && Objects.equals(getKeywords(), content.getKeywords())
+        && Objects.equals(getLive(), content.getLive())
+        && Objects.equals(getSrcrel(), content.getSrcrel())
+        && Objects.equals(getLen(), content.getLen())
+        && Objects.equals(getLang(), content.getLang())
+        && Objects.equals(getEmbed(), content.getEmbed())
+        && Objects.equals(getProducer(), content.getProducer())
+        && Objects.equals(getData(), content.getData())
+        && Objects.equals(getExt(), content.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getId(),
+        getEpisode(),
+        getTitle(),
+        getSeries(),
+        getSeason(),
+        getArtist(),
+        getGenre(),
+        getAlbum(),
+        getIsrc(),
+        getUrl(),
+        getCat(),
+        getCattax(),
+        getProdq(),
+        getContext(),
+        getRating(),
+        getUrating(),
+        getMrating(),
+        getKeywords(),
+        getLive(),
+        getSrcrel(),
+        getLen(),
+        getLang(),
+        getEmbed(),
+        getProducer(),
+        getData(),
+        getExt());
   }
 }

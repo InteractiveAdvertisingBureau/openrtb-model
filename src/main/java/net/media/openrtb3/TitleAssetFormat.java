@@ -16,9 +16,8 @@
 
 package net.media.openrtb3;
 
-import java.util.Map;
-
 import javax.validation.constraints.NotNull;
+import java.util.Map;
 
 /** Created by shiva.b on 14/12/18. */
 public class TitleAssetFormat {

@@ -18,12 +18,11 @@ package net.media.openrtb25.request;
 
 import net.media.utils.JacksonObjectMapper;
 
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 import static java.util.Objects.isNull;
 import static java.util.Objects.nonNull;

@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class Companion {
@@ -55,5 +56,22 @@ public class Companion {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Companion companion = (Companion) o;
+    return Objects.equals(getId(), companion.getId())
+        && Objects.equals(getVcm(), companion.getVcm())
+        && Objects.equals(getDisplay(), companion.getDisplay())
+        && Objects.equals(getExt(), companion.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getId(), getVcm(), getDisplay(), getExt());
   }
 }

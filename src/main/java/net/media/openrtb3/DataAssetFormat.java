@@ -16,9 +16,9 @@
 
 package net.media.openrtb3;
 
-import java.util.Map;
-
 import javax.validation.constraints.NotNull;
+import java.util.Map;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class DataAssetFormat {
@@ -48,5 +48,21 @@ public class DataAssetFormat {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    DataAssetFormat that = (DataAssetFormat) o;
+    return Objects.equals(getType(), that.getType())
+        && Objects.equals(getLen(), that.getLen())
+        && Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getType(), getLen(), getExt());
   }
 }

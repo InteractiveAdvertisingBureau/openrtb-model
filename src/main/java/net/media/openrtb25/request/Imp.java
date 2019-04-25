@@ -17,7 +17,6 @@
 package net.media.openrtb25.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import net.media.utils.validator.CheckAtLeastOneNotNull;
 
 import java.util.Collection;

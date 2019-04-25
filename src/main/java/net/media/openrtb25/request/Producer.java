@@ -16,11 +16,10 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
-
-import javax.validation.constraints.NotNull;
 
 /** Created by vishnu on 6/5/16. */
 public class Producer {
