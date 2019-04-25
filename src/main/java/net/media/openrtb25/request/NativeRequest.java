@@ -18,6 +18,8 @@ package net.media.openrtb25.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class NativeRequest {
 
   @JsonProperty("native")
@@ -33,33 +35,16 @@ public class NativeRequest {
     this.nativeRequestBody = nativeRequestBody;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeRequest)) return false;
-    final NativeRequest other = (NativeRequest) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$nativeRequestBody = this.getNativeRequestBody();
-    final Object other$nativeRequestBody = other.getNativeRequestBody();
-    return this$nativeRequestBody == null
-        ? other$nativeRequestBody == null
-        : this$nativeRequestBody.equals(other$nativeRequestBody);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeRequest that = (NativeRequest) o;
+    return Objects.equals(getNativeRequestBody(), that.getNativeRequestBody());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $nativeRequestBody = this.getNativeRequestBody();
-    result = result * PRIME + ($nativeRequestBody == null ? 43 : $nativeRequestBody.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeRequest;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.NativeRequest(nativeRequestBody="
-        + this.getNativeRequestBody()
-        + ")";
+    return Objects.hash(getNativeRequestBody());
   }
 }

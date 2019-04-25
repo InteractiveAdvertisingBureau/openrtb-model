@@ -17,6 +17,7 @@
 package net.media.openrtb25.request;
 
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -44,38 +45,17 @@ public class NativeTitle {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeTitle)) return false;
-    final NativeTitle other = (NativeTitle) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$len = this.getLen();
-    final Object other$len = other.getLen();
-    if (this$len == null ? other$len != null : !this$len.equals(other$len)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeTitle that = (NativeTitle) o;
+    return Objects.equals(getLen(), that.getLen()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $len = this.getLen();
-    result = result * PRIME + ($len == null ? 43 : $len.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeTitle;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.NativeTitle(len="
-        + this.getLen()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getLen(), getExt());
   }
 }

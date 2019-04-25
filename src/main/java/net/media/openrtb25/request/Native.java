@@ -21,6 +21,7 @@ import net.media.utils.JacksonObjectMapper;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -130,64 +131,22 @@ public class Native {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Native)) return false;
-    final Native other = (Native) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$request = this.getRequest();
-    final Object other$request = other.getRequest();
-    if (this$request == null ? other$request != null : !this$request.equals(other$request))
-      return false;
-    final Object this$ver = this.getVer();
-    final Object other$ver = other.getVer();
-    if (this$ver == null ? other$ver != null : !this$ver.equals(other$ver)) return false;
-    final Object this$api = this.getApi();
-    final Object other$api = other.getApi();
-    if (this$api == null ? other$api != null : !this$api.equals(other$api)) return false;
-    final Object this$battr = this.getBattr();
-    final Object other$battr = other.getBattr();
-    if (this$battr == null ? other$battr != null : !this$battr.equals(other$battr)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Native aNative = (Native) o;
+    return Objects.equals(getRequest(), aNative.getRequest()) &&
+      Objects.equals(getVer(), aNative.getVer()) &&
+      Objects.equals(getApi(), aNative.getApi()) &&
+      Objects.equals(getBattr(), aNative.getBattr()) &&
+      Objects.equals(getExt(), aNative.getExt()) &&
+      Objects.equals(getNativeRequestBody(), aNative.getNativeRequestBody()) &&
+      Objects.equals(getRequestAsString(), aNative.getRequestAsString());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $request = this.getRequest();
-    result = result * PRIME + ($request == null ? 43 : $request.hashCode());
-    final Object $ver = this.getVer();
-    result = result * PRIME + ($ver == null ? 43 : $ver.hashCode());
-    final Object $api = this.getApi();
-    result = result * PRIME + ($api == null ? 43 : $api.hashCode());
-    final Object $battr = this.getBattr();
-    result = result * PRIME + ($battr == null ? 43 : $battr.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Native;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.Native(request="
-        + this.getRequest()
-        + ", ver="
-        + this.getVer()
-        + ", api="
-        + this.getApi()
-        + ", battr="
-        + this.getBattr()
-        + ", ext="
-        + this.getExt()
-        + ", nativeRequestBody="
-        + this.getNativeRequestBody()
-        + ", requestAsString="
-        + this.getRequestAsString()
-        + ")";
+    return Objects.hash(getRequest(), getVer(), getApi(), getBattr(), getExt(), getNativeRequestBody(), getRequestAsString());
   }
 }

@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by vishnu on 6/5/16. */
 public class Deal {
@@ -97,74 +98,22 @@ public class Deal {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Deal)) return false;
-    final Deal other = (Deal) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    if (Double.compare(this.getBidFloor(), other.getBidFloor()) != 0) return false;
-    final Object this$bidFloorCur = this.getBidFloorCur();
-    final Object other$bidFloorCur = other.getBidFloorCur();
-    if (this$bidFloorCur == null
-        ? other$bidFloorCur != null
-        : !this$bidFloorCur.equals(other$bidFloorCur)) return false;
-    final Object this$at = this.getAt();
-    final Object other$at = other.getAt();
-    if (this$at == null ? other$at != null : !this$at.equals(other$at)) return false;
-    final Object this$wseat = this.getWseat();
-    final Object other$wseat = other.getWseat();
-    if (this$wseat == null ? other$wseat != null : !this$wseat.equals(other$wseat)) return false;
-    final Object this$wadomain = this.getWadomain();
-    final Object other$wadomain = other.getWadomain();
-    if (this$wadomain == null ? other$wadomain != null : !this$wadomain.equals(other$wadomain))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Deal deal = (Deal) o;
+    return Double.compare(deal.getBidFloor(), getBidFloor()) == 0 &&
+      Objects.equals(getId(), deal.getId()) &&
+      Objects.equals(getBidFloorCur(), deal.getBidFloorCur()) &&
+      Objects.equals(getAt(), deal.getAt()) &&
+      Objects.equals(getWseat(), deal.getWseat()) &&
+      Objects.equals(getWadomain(), deal.getWadomain()) &&
+      Objects.equals(getExt(), deal.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final long $bidFloor = Double.doubleToLongBits(this.getBidFloor());
-    result = result * PRIME + (int) ($bidFloor >>> 32 ^ $bidFloor);
-    final Object $bidFloorCur = this.getBidFloorCur();
-    result = result * PRIME + ($bidFloorCur == null ? 43 : $bidFloorCur.hashCode());
-    final Object $at = this.getAt();
-    result = result * PRIME + ($at == null ? 43 : $at.hashCode());
-    final Object $wseat = this.getWseat();
-    result = result * PRIME + ($wseat == null ? 43 : $wseat.hashCode());
-    final Object $wadomain = this.getWadomain();
-    result = result * PRIME + ($wadomain == null ? 43 : $wadomain.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Deal;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.Deal(id="
-        + this.getId()
-        + ", bidFloor="
-        + this.getBidFloor()
-        + ", bidFloorCur="
-        + this.getBidFloorCur()
-        + ", at="
-        + this.getAt()
-        + ", wseat="
-        + this.getWseat()
-        + ", wadomain="
-        + this.getWadomain()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getId(), getBidFloor(), getBidFloorCur(), getAt(), getWseat(), getWadomain(), getExt());
   }
 }

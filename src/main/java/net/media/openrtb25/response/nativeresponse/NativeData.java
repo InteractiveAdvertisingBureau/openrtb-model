@@ -17,6 +17,7 @@
 package net.media.openrtb25.response.nativeresponse;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class NativeData {
   private String label;
@@ -51,45 +52,18 @@ public class NativeData {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeData)) return false;
-    final NativeData other = (NativeData) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$label = this.getLabel();
-    final Object other$label = other.getLabel();
-    if (this$label == null ? other$label != null : !this$label.equals(other$label)) return false;
-    final Object this$value = this.getValue();
-    final Object other$value = other.getValue();
-    if (this$value == null ? other$value != null : !this$value.equals(other$value)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeData that = (NativeData) o;
+    return Objects.equals(getLabel(), that.getLabel()) &&
+      Objects.equals(getValue(), that.getValue()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $label = this.getLabel();
-    result = result * PRIME + ($label == null ? 43 : $label.hashCode());
-    final Object $value = this.getValue();
-    result = result * PRIME + ($value == null ? 43 : $value.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeData;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.nativeresponse.NativeData(label="
-        + this.getLabel()
-        + ", value="
-        + this.getValue()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getLabel(), getValue(), getExt());
   }
 }

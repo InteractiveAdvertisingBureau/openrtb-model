@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -175,140 +176,30 @@ public class Site {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Site)) return false;
-    final Site other = (Site) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    final Object this$name = this.getName();
-    final Object other$name = other.getName();
-    if (this$name == null ? other$name != null : !this$name.equals(other$name)) return false;
-    final Object this$domain = this.getDomain();
-    final Object other$domain = other.getDomain();
-    if (this$domain == null ? other$domain != null : !this$domain.equals(other$domain))
-      return false;
-    final Object this$cat = this.getCat();
-    final Object other$cat = other.getCat();
-    if (this$cat == null ? other$cat != null : !this$cat.equals(other$cat)) return false;
-    final Object this$sectioncat = this.getSectioncat();
-    final Object other$sectioncat = other.getSectioncat();
-    if (this$sectioncat == null
-        ? other$sectioncat != null
-        : !this$sectioncat.equals(other$sectioncat)) return false;
-    final Object this$pagecat = this.getPagecat();
-    final Object other$pagecat = other.getPagecat();
-    if (this$pagecat == null ? other$pagecat != null : !this$pagecat.equals(other$pagecat))
-      return false;
-    final Object this$page = this.getPage();
-    final Object other$page = other.getPage();
-    if (this$page == null ? other$page != null : !this$page.equals(other$page)) return false;
-    final Object this$ref = this.getRef();
-    final Object other$ref = other.getRef();
-    if (this$ref == null ? other$ref != null : !this$ref.equals(other$ref)) return false;
-    final Object this$search = this.getSearch();
-    final Object other$search = other.getSearch();
-    if (this$search == null ? other$search != null : !this$search.equals(other$search))
-      return false;
-    final Object this$mobile = this.getMobile();
-    final Object other$mobile = other.getMobile();
-    if (this$mobile == null ? other$mobile != null : !this$mobile.equals(other$mobile))
-      return false;
-    final Object this$privacypolicy = this.getPrivacypolicy();
-    final Object other$privacypolicy = other.getPrivacypolicy();
-    if (this$privacypolicy == null
-        ? other$privacypolicy != null
-        : !this$privacypolicy.equals(other$privacypolicy)) return false;
-    final Object this$publisher = this.getPublisher();
-    final Object other$publisher = other.getPublisher();
-    if (this$publisher == null ? other$publisher != null : !this$publisher.equals(other$publisher))
-      return false;
-    final Object this$content = this.getContent();
-    final Object other$content = other.getContent();
-    if (this$content == null ? other$content != null : !this$content.equals(other$content))
-      return false;
-    final Object this$keywords = this.getKeywords();
-    final Object other$keywords = other.getKeywords();
-    if (this$keywords == null ? other$keywords != null : !this$keywords.equals(other$keywords))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Site site = (Site) o;
+    return Objects.equals(getId(), site.getId()) &&
+      Objects.equals(getName(), site.getName()) &&
+      Objects.equals(getDomain(), site.getDomain()) &&
+      Objects.equals(getCat(), site.getCat()) &&
+      Objects.equals(getSectioncat(), site.getSectioncat()) &&
+      Objects.equals(getPagecat(), site.getPagecat()) &&
+      Objects.equals(getPage(), site.getPage()) &&
+      Objects.equals(getRef(), site.getRef()) &&
+      Objects.equals(getSearch(), site.getSearch()) &&
+      Objects.equals(getMobile(), site.getMobile()) &&
+      Objects.equals(getPrivacypolicy(), site.getPrivacypolicy()) &&
+      Objects.equals(getPublisher(), site.getPublisher()) &&
+      Objects.equals(getContent(), site.getContent()) &&
+      Objects.equals(getKeywords(), site.getKeywords()) &&
+      Objects.equals(getExt(), site.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final Object $name = this.getName();
-    result = result * PRIME + ($name == null ? 43 : $name.hashCode());
-    final Object $domain = this.getDomain();
-    result = result * PRIME + ($domain == null ? 43 : $domain.hashCode());
-    final Object $cat = this.getCat();
-    result = result * PRIME + ($cat == null ? 43 : $cat.hashCode());
-    final Object $sectioncat = this.getSectioncat();
-    result = result * PRIME + ($sectioncat == null ? 43 : $sectioncat.hashCode());
-    final Object $pagecat = this.getPagecat();
-    result = result * PRIME + ($pagecat == null ? 43 : $pagecat.hashCode());
-    final Object $page = this.getPage();
-    result = result * PRIME + ($page == null ? 43 : $page.hashCode());
-    final Object $ref = this.getRef();
-    result = result * PRIME + ($ref == null ? 43 : $ref.hashCode());
-    final Object $search = this.getSearch();
-    result = result * PRIME + ($search == null ? 43 : $search.hashCode());
-    final Object $mobile = this.getMobile();
-    result = result * PRIME + ($mobile == null ? 43 : $mobile.hashCode());
-    final Object $privacypolicy = this.getPrivacypolicy();
-    result = result * PRIME + ($privacypolicy == null ? 43 : $privacypolicy.hashCode());
-    final Object $publisher = this.getPublisher();
-    result = result * PRIME + ($publisher == null ? 43 : $publisher.hashCode());
-    final Object $content = this.getContent();
-    result = result * PRIME + ($content == null ? 43 : $content.hashCode());
-    final Object $keywords = this.getKeywords();
-    result = result * PRIME + ($keywords == null ? 43 : $keywords.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Site;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.Site(id="
-        + this.getId()
-        + ", name="
-        + this.getName()
-        + ", domain="
-        + this.getDomain()
-        + ", cat="
-        + this.getCat()
-        + ", sectioncat="
-        + this.getSectioncat()
-        + ", pagecat="
-        + this.getPagecat()
-        + ", page="
-        + this.getPage()
-        + ", ref="
-        + this.getRef()
-        + ", search="
-        + this.getSearch()
-        + ", mobile="
-        + this.getMobile()
-        + ", privacypolicy="
-        + this.getPrivacypolicy()
-        + ", publisher="
-        + this.getPublisher()
-        + ", content="
-        + this.getContent()
-        + ", keywords="
-        + this.getKeywords()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getId(), getName(), getDomain(), getCat(), getSectioncat(), getPagecat(), getPage(), getRef(), getSearch(), getMobile(), getPrivacypolicy(), getPublisher(), getContent(), getKeywords(), getExt());
   }
 }

@@ -18,6 +18,7 @@ package net.media.openrtb25.response.nativeresponse;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by rajat.go on 06/12/17. */
 public class NativeResponseBody {
@@ -86,70 +87,21 @@ public class NativeResponseBody {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeResponseBody)) return false;
-    final NativeResponseBody other = (NativeResponseBody) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$ver = this.getVer();
-    final Object other$ver = other.getVer();
-    if (this$ver == null ? other$ver != null : !this$ver.equals(other$ver)) return false;
-    final Object this$assets = this.getAsset();
-    final Object other$assets = other.getAsset();
-    if (this$assets == null ? other$assets != null : !this$assets.equals(other$assets))
-      return false;
-    final Object this$link = this.getLink();
-    final Object other$link = other.getLink();
-    if (this$link == null ? other$link != null : !this$link.equals(other$link)) return false;
-    final Object this$imptrackers = this.getImptrackers();
-    final Object other$imptrackers = other.getImptrackers();
-    if (this$imptrackers == null
-        ? other$imptrackers != null
-        : !this$imptrackers.equals(other$imptrackers)) return false;
-    final Object this$jstracker = this.getJstracker();
-    final Object other$jstracker = other.getJstracker();
-    if (this$jstracker == null ? other$jstracker != null : !this$jstracker.equals(other$jstracker))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeResponseBody that = (NativeResponseBody) o;
+    return Objects.equals(getVer(), that.getVer()) &&
+      Objects.equals(getAsset(), that.getAsset()) &&
+      Objects.equals(getLink(), that.getLink()) &&
+      Objects.equals(getImptrackers(), that.getImptrackers()) &&
+      Objects.equals(getJstracker(), that.getJstracker()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $ver = this.getVer();
-    result = result * PRIME + ($ver == null ? 43 : $ver.hashCode());
-    final Object $assets = this.getAsset();
-    result = result * PRIME + ($assets == null ? 43 : $assets.hashCode());
-    final Object $link = this.getLink();
-    result = result * PRIME + ($link == null ? 43 : $link.hashCode());
-    final Object $imptrackers = this.getImptrackers();
-    result = result * PRIME + ($imptrackers == null ? 43 : $imptrackers.hashCode());
-    final Object $jstracker = this.getJstracker();
-    result = result * PRIME + ($jstracker == null ? 43 : $jstracker.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeResponseBody;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.nativeresponse.NativeResponseBody(ver="
-        + this.getVer()
-        + ", asset="
-        + this.getAsset()
-        + ", link="
-        + this.getLink()
-        + ", imptrackers="
-        + this.getImptrackers()
-        + ", jstracker="
-        + this.getJstracker()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getVer(), getAsset(), getLink(), getImptrackers(), getJstracker(), getExt());
   }
 }

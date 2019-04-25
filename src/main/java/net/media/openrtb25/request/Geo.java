@@ -17,6 +17,7 @@
 package net.media.openrtb25.request;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Geo {
   private Integer type;
@@ -148,130 +149,29 @@ public class Geo {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Geo)) return false;
-    final Geo other = (Geo) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$type = this.getType();
-    final Object other$type = other.getType();
-    if (this$type == null ? other$type != null : !this$type.equals(other$type)) return false;
-    final Object this$region = this.getRegion();
-    final Object other$region = other.getRegion();
-    if (this$region == null ? other$region != null : !this$region.equals(other$region))
-      return false;
-    final Object this$regionfips104 = this.getRegionfips104();
-    final Object other$regionfips104 = other.getRegionfips104();
-    if (this$regionfips104 == null
-        ? other$regionfips104 != null
-        : !this$regionfips104.equals(other$regionfips104)) return false;
-    final Object this$metro = this.getMetro();
-    final Object other$metro = other.getMetro();
-    if (this$metro == null ? other$metro != null : !this$metro.equals(other$metro)) return false;
-    final Object this$city = this.getCity();
-    final Object other$city = other.getCity();
-    if (this$city == null ? other$city != null : !this$city.equals(other$city)) return false;
-    final Object this$zip = this.getZip();
-    final Object other$zip = other.getZip();
-    if (this$zip == null ? other$zip != null : !this$zip.equals(other$zip)) return false;
-    final Object this$utcoffset = this.getUtcoffset();
-    final Object other$utcoffset = other.getUtcoffset();
-    if (this$utcoffset == null ? other$utcoffset != null : !this$utcoffset.equals(other$utcoffset))
-      return false;
-    final Object this$country = this.getCountry();
-    final Object other$country = other.getCountry();
-    if (this$country == null ? other$country != null : !this$country.equals(other$country))
-      return false;
-    final Object this$lat = this.getLat();
-    final Object other$lat = other.getLat();
-    if (this$lat == null ? other$lat != null : !this$lat.equals(other$lat)) return false;
-    final Object this$lon = this.getLon();
-    final Object other$lon = other.getLon();
-    if (this$lon == null ? other$lon != null : !this$lon.equals(other$lon)) return false;
-    final Object this$accuracy = this.getAccuracy();
-    final Object other$accuracy = other.getAccuracy();
-    if (this$accuracy == null ? other$accuracy != null : !this$accuracy.equals(other$accuracy))
-      return false;
-    final Object this$lastfix = this.getLastfix();
-    final Object other$lastfix = other.getLastfix();
-    if (this$lastfix == null ? other$lastfix != null : !this$lastfix.equals(other$lastfix))
-      return false;
-    final Object this$ipservice = this.getIpservice();
-    final Object other$ipservice = other.getIpservice();
-    if (this$ipservice == null ? other$ipservice != null : !this$ipservice.equals(other$ipservice))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Geo geo = (Geo) o;
+    return Objects.equals(getType(), geo.getType()) &&
+      Objects.equals(getRegion(), geo.getRegion()) &&
+      Objects.equals(getRegionfips104(), geo.getRegionfips104()) &&
+      Objects.equals(getMetro(), geo.getMetro()) &&
+      Objects.equals(getCity(), geo.getCity()) &&
+      Objects.equals(getZip(), geo.getZip()) &&
+      Objects.equals(getUtcoffset(), geo.getUtcoffset()) &&
+      Objects.equals(getCountry(), geo.getCountry()) &&
+      Objects.equals(getLat(), geo.getLat()) &&
+      Objects.equals(getLon(), geo.getLon()) &&
+      Objects.equals(getAccuracy(), geo.getAccuracy()) &&
+      Objects.equals(getLastfix(), geo.getLastfix()) &&
+      Objects.equals(getIpservice(), geo.getIpservice()) &&
+      Objects.equals(getExt(), geo.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $type = this.getType();
-    result = result * PRIME + ($type == null ? 43 : $type.hashCode());
-    final Object $region = this.getRegion();
-    result = result * PRIME + ($region == null ? 43 : $region.hashCode());
-    final Object $regionfips104 = this.getRegionfips104();
-    result = result * PRIME + ($regionfips104 == null ? 43 : $regionfips104.hashCode());
-    final Object $metro = this.getMetro();
-    result = result * PRIME + ($metro == null ? 43 : $metro.hashCode());
-    final Object $city = this.getCity();
-    result = result * PRIME + ($city == null ? 43 : $city.hashCode());
-    final Object $zip = this.getZip();
-    result = result * PRIME + ($zip == null ? 43 : $zip.hashCode());
-    final Object $utcoffset = this.getUtcoffset();
-    result = result * PRIME + ($utcoffset == null ? 43 : $utcoffset.hashCode());
-    final Object $country = this.getCountry();
-    result = result * PRIME + ($country == null ? 43 : $country.hashCode());
-    final Object $lat = this.getLat();
-    result = result * PRIME + ($lat == null ? 43 : $lat.hashCode());
-    final Object $lon = this.getLon();
-    result = result * PRIME + ($lon == null ? 43 : $lon.hashCode());
-    final Object $accuracy = this.getAccuracy();
-    result = result * PRIME + ($accuracy == null ? 43 : $accuracy.hashCode());
-    final Object $lastfix = this.getLastfix();
-    result = result * PRIME + ($lastfix == null ? 43 : $lastfix.hashCode());
-    final Object $ipservice = this.getIpservice();
-    result = result * PRIME + ($ipservice == null ? 43 : $ipservice.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Geo;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.Geo(type="
-        + this.getType()
-        + ", region="
-        + this.getRegion()
-        + ", regionfips104="
-        + this.getRegionfips104()
-        + ", metro="
-        + this.getMetro()
-        + ", city="
-        + this.getCity()
-        + ", zip="
-        + this.getZip()
-        + ", utcoffset="
-        + this.getUtcoffset()
-        + ", country="
-        + this.getCountry()
-        + ", lat="
-        + this.getLat()
-        + ", lon="
-        + this.getLon()
-        + ", accuracy="
-        + this.getAccuracy()
-        + ", lastfix="
-        + this.getLastfix()
-        + ", ipservice="
-        + this.getIpservice()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getType(), getRegion(), getRegionfips104(), getMetro(), getCity(), getZip(), getUtcoffset(), getCountry(), getLat(), getLon(), getAccuracy(), getLastfix(), getIpservice(), getExt());
   }
 }

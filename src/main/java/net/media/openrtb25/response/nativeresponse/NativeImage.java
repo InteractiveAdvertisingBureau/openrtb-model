@@ -17,6 +17,7 @@
 package net.media.openrtb25.response.nativeresponse;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class NativeImage {
   private String url;
@@ -61,52 +62,19 @@ public class NativeImage {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeImage)) return false;
-    final NativeImage other = (NativeImage) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$url = this.getUrl();
-    final Object other$url = other.getUrl();
-    if (this$url == null ? other$url != null : !this$url.equals(other$url)) return false;
-    final Object this$w = this.getW();
-    final Object other$w = other.getW();
-    if (this$w == null ? other$w != null : !this$w.equals(other$w)) return false;
-    final Object this$h = this.getH();
-    final Object other$h = other.getH();
-    if (this$h == null ? other$h != null : !this$h.equals(other$h)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeImage that = (NativeImage) o;
+    return Objects.equals(getUrl(), that.getUrl()) &&
+      Objects.equals(getW(), that.getW()) &&
+      Objects.equals(getH(), that.getH()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $url = this.getUrl();
-    result = result * PRIME + ($url == null ? 43 : $url.hashCode());
-    final Object $w = this.getW();
-    result = result * PRIME + ($w == null ? 43 : $w.hashCode());
-    final Object $h = this.getH();
-    result = result * PRIME + ($h == null ? 43 : $h.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeImage;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.nativeresponse.NativeImage(url="
-        + this.getUrl()
-        + ", w="
-        + this.getW()
-        + ", h="
-        + this.getH()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getUrl(), getW(), getH(), getExt());
   }
 }

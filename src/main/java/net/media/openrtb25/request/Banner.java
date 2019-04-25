@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by vishnu on 6/5/16. */
 public class Banner {
@@ -209,138 +210,32 @@ public class Banner {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Banner)) return false;
-    final Banner other = (Banner) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$w = this.getW();
-    final Object other$w = other.getW();
-    if (this$w == null ? other$w != null : !this$w.equals(other$w)) return false;
-    final Object this$h = this.getH();
-    final Object other$h = other.getH();
-    if (this$h == null ? other$h != null : !this$h.equals(other$h)) return false;
-    final Object this$format = this.getFormat();
-    final Object other$format = other.getFormat();
-    if (this$format == null ? other$format != null : !this$format.equals(other$format))
-      return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    final Object this$btype = this.getBtype();
-    final Object other$btype = other.getBtype();
-    if (this$btype == null ? other$btype != null : !this$btype.equals(other$btype)) return false;
-    final Object this$battr = this.getBattr();
-    final Object other$battr = other.getBattr();
-    if (this$battr == null ? other$battr != null : !this$battr.equals(other$battr)) return false;
-    final Object this$pos = this.getPos();
-    final Object other$pos = other.getPos();
-    if (this$pos == null ? other$pos != null : !this$pos.equals(other$pos)) return false;
-    final Object this$mimes = this.getMimes();
-    final Object other$mimes = other.getMimes();
-    if (this$mimes == null ? other$mimes != null : !this$mimes.equals(other$mimes)) return false;
-    final Object this$topframe = this.getTopframe();
-    final Object other$topframe = other.getTopframe();
-    if (this$topframe == null ? other$topframe != null : !this$topframe.equals(other$topframe))
-      return false;
-    final Object this$hmax = this.getHmax();
-    final Object other$hmax = other.getHmax();
-    if (this$hmax == null ? other$hmax != null : !this$hmax.equals(other$hmax)) return false;
-    final Object this$hmin = this.getHmin();
-    final Object other$hmin = other.getHmin();
-    if (this$hmin == null ? other$hmin != null : !this$hmin.equals(other$hmin)) return false;
-    final Object this$wmax = this.getWmax();
-    final Object other$wmax = other.getWmax();
-    if (this$wmax == null ? other$wmax != null : !this$wmax.equals(other$wmax)) return false;
-    final Object this$wmin = this.getWmin();
-    final Object other$wmin = other.getWmin();
-    if (this$wmin == null ? other$wmin != null : !this$wmin.equals(other$wmin)) return false;
-    final Object this$expdir = this.getExpdir();
-    final Object other$expdir = other.getExpdir();
-    if (this$expdir == null ? other$expdir != null : !this$expdir.equals(other$expdir))
-      return false;
-    final Object this$api = this.getApi();
-    final Object other$api = other.getApi();
-    if (this$api == null ? other$api != null : !this$api.equals(other$api)) return false;
-    final Object this$vcm = this.getVcm();
-    final Object other$vcm = other.getVcm();
-    if (this$vcm == null ? other$vcm != null : !this$vcm.equals(other$vcm)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Banner banner = (Banner) o;
+    return Objects.equals(getW(), banner.getW()) &&
+      Objects.equals(getH(), banner.getH()) &&
+      Objects.equals(getFormat(), banner.getFormat()) &&
+      Objects.equals(getId(), banner.getId()) &&
+      Objects.equals(getBtype(), banner.getBtype()) &&
+      Objects.equals(getBattr(), banner.getBattr()) &&
+      Objects.equals(getPos(), banner.getPos()) &&
+      Objects.equals(getMimes(), banner.getMimes()) &&
+      Objects.equals(getTopframe(), banner.getTopframe()) &&
+      Objects.equals(getWmax(), banner.getWmax()) &&
+      Objects.equals(getWmin(), banner.getWmin()) &&
+      Objects.equals(getHmax(), banner.getHmax()) &&
+      Objects.equals(getHmin(), banner.getHmin()) &&
+      Objects.equals(getExpdir(), banner.getExpdir()) &&
+      Objects.equals(getApi(), banner.getApi()) &&
+      Objects.equals(getVcm(), banner.getVcm()) &&
+      Objects.equals(getExt(), banner.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $w = this.getW();
-    result = result * PRIME + ($w == null ? 43 : $w.hashCode());
-    final Object $h = this.getH();
-    result = result * PRIME + ($h == null ? 43 : $h.hashCode());
-    final Object $format = this.getFormat();
-    result = result * PRIME + ($format == null ? 43 : $format.hashCode());
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final Object $btype = this.getBtype();
-    result = result * PRIME + ($btype == null ? 43 : $btype.hashCode());
-    final Object $battr = this.getBattr();
-    result = result * PRIME + ($battr == null ? 43 : $battr.hashCode());
-    final Object $pos = this.getPos();
-    result = result * PRIME + ($pos == null ? 43 : $pos.hashCode());
-    final Object $mimes = this.getMimes();
-    result = result * PRIME + ($mimes == null ? 43 : $mimes.hashCode());
-    final Object $hmax = this.getHmax();
-    result = result * PRIME + ($hmax == null ? 43 : $hmax.hashCode());
-    final Object $hmin = this.getHmin();
-    result = result * PRIME + ($hmin == null ? 43 : $hmin.hashCode());
-    final Object $wmax = this.getWmax();
-    result = result * PRIME + ($wmax == null ? 43 : $wmax.hashCode());
-    final Object $wmin = this.getWmin();
-    result = result * PRIME + ($wmin == null ? 43 : $wmin.hashCode());
-    final Object $topframe = this.getTopframe();
-    result = result * PRIME + ($topframe == null ? 43 : $topframe.hashCode());
-    final Object $expdir = this.getExpdir();
-    result = result * PRIME + ($expdir == null ? 43 : $expdir.hashCode());
-    final Object $api = this.getApi();
-    result = result * PRIME + ($api == null ? 43 : $api.hashCode());
-    final Object $vcm = this.getVcm();
-    result = result * PRIME + ($vcm == null ? 43 : $vcm.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Banner;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.Banner(w="
-        + this.getW()
-        + ", h="
-        + this.getH()
-        + ", format="
-        + this.getFormat()
-        + ", id="
-        + this.getId()
-        + ", btype="
-        + this.getBtype()
-        + ", battr="
-        + this.getBattr()
-        + ", pos="
-        + this.getPos()
-        + ", mimes="
-        + this.getMimes()
-        + ", topframe="
-        + this.getTopframe()
-        + ", expdir="
-        + this.getExpdir()
-        + ", api="
-        + this.getApi()
-        + ", vcm="
-        + this.getVcm()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getW(), getH(), getFormat(), getId(), getBtype(), getBattr(), getPos(), getMimes(), getTopframe(), getWmax(), getWmin(), getHmax(), getHmin(), getExpdir(), getApi(), getVcm(), getExt());
   }
 }

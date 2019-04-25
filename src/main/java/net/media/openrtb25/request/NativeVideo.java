@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -76,64 +77,20 @@ public class NativeVideo {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeVideo)) return false;
-    final NativeVideo other = (NativeVideo) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$mimes = this.getMimes();
-    final Object other$mimes = other.getMimes();
-    if (this$mimes == null ? other$mimes != null : !this$mimes.equals(other$mimes)) return false;
-    final Object this$minduration = this.getMinduration();
-    final Object other$minduration = other.getMinduration();
-    if (this$minduration == null
-        ? other$minduration != null
-        : !this$minduration.equals(other$minduration)) return false;
-    final Object this$maxduration = this.getMaxduration();
-    final Object other$maxduration = other.getMaxduration();
-    if (this$maxduration == null
-        ? other$maxduration != null
-        : !this$maxduration.equals(other$maxduration)) return false;
-    final Object this$protocols = this.getProtocols();
-    final Object other$protocols = other.getProtocols();
-    if (this$protocols == null ? other$protocols != null : !this$protocols.equals(other$protocols))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeVideo that = (NativeVideo) o;
+    return Objects.equals(getMimes(), that.getMimes()) &&
+      Objects.equals(getMinduration(), that.getMinduration()) &&
+      Objects.equals(getMaxduration(), that.getMaxduration()) &&
+      Objects.equals(getProtocols(), that.getProtocols()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $mimes = this.getMimes();
-    result = result * PRIME + ($mimes == null ? 43 : $mimes.hashCode());
-    final Object $minduration = this.getMinduration();
-    result = result * PRIME + ($minduration == null ? 43 : $minduration.hashCode());
-    final Object $maxduration = this.getMaxduration();
-    result = result * PRIME + ($maxduration == null ? 43 : $maxduration.hashCode());
-    final Object $protocols = this.getProtocols();
-    result = result * PRIME + ($protocols == null ? 43 : $protocols.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeVideo;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.NativeVideo(mimes="
-        + this.getMimes()
-        + ", minduration="
-        + this.getMinduration()
-        + ", maxduration="
-        + this.getMaxduration()
-        + ", protocols="
-        + this.getProtocols()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getMimes(), getMinduration(), getMaxduration(), getProtocols(), getExt());
   }
 }

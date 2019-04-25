@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -212,5 +213,36 @@ public class Audio {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Audio audio = (Audio) o;
+    return Objects.equals(getMimes(), audio.getMimes()) &&
+      Objects.equals(getMinduration(), audio.getMinduration()) &&
+      Objects.equals(getMaxduration(), audio.getMaxduration()) &&
+      Objects.equals(getProtocols(), audio.getProtocols()) &&
+      Objects.equals(getStartdelay(), audio.getStartdelay()) &&
+      Objects.equals(getSequence(), audio.getSequence()) &&
+      Objects.equals(getBattr(), audio.getBattr()) &&
+      Objects.equals(getMaxextended(), audio.getMaxextended()) &&
+      Objects.equals(getMinbitrate(), audio.getMinbitrate()) &&
+      Objects.equals(getMaxbitrate(), audio.getMaxbitrate()) &&
+      Objects.equals(getDelivery(), audio.getDelivery()) &&
+      Objects.equals(getCompanionad(), audio.getCompanionad()) &&
+      Objects.equals(getApi(), audio.getApi()) &&
+      Objects.equals(getCompaniontype(), audio.getCompaniontype()) &&
+      Objects.equals(getMaxseq(), audio.getMaxseq()) &&
+      Objects.equals(getFeed(), audio.getFeed()) &&
+      Objects.equals(getStitched(), audio.getStitched()) &&
+      Objects.equals(getNvol(), audio.getNvol()) &&
+      Objects.equals(getExt(), audio.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getMimes(), getMinduration(), getMaxduration(), getProtocols(), getStartdelay(), getSequence(), getBattr(), getMaxextended(), getMinbitrate(), getMaxbitrate(), getDelivery(), getCompanionad(), getApi(), getCompaniontype(), getMaxseq(), getFeed(), getStitched(), getNvol(), getExt());
   }
 }

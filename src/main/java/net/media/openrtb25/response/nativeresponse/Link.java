@@ -18,6 +18,7 @@ package net.media.openrtb25.response.nativeresponse;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 public class Link {
   private String url;
@@ -62,55 +63,19 @@ public class Link {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Link)) return false;
-    final Link other = (Link) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$url = this.getUrl();
-    final Object other$url = other.getUrl();
-    if (this$url == null ? other$url != null : !this$url.equals(other$url)) return false;
-    final Object this$clicktrackers = this.getClicktrackers();
-    final Object other$clicktrackers = other.getClicktrackers();
-    if (this$clicktrackers == null
-        ? other$clicktrackers != null
-        : !this$clicktrackers.equals(other$clicktrackers)) return false;
-    final Object this$fallback = this.getFallback();
-    final Object other$fallback = other.getFallback();
-    if (this$fallback == null ? other$fallback != null : !this$fallback.equals(other$fallback))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Link link = (Link) o;
+    return Objects.equals(getUrl(), link.getUrl()) &&
+      Objects.equals(getClicktrackers(), link.getClicktrackers()) &&
+      Objects.equals(getFallback(), link.getFallback()) &&
+      Objects.equals(getExt(), link.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $url = this.getUrl();
-    result = result * PRIME + ($url == null ? 43 : $url.hashCode());
-    final Object $clicktrackers = this.getClicktrackers();
-    result = result * PRIME + ($clicktrackers == null ? 43 : $clicktrackers.hashCode());
-    final Object $fallback = this.getFallback();
-    result = result * PRIME + ($fallback == null ? 43 : $fallback.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Link;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.nativeresponse.Link(url="
-        + this.getUrl()
-        + ", clicktrackers="
-        + this.getClicktrackers()
-        + ", fallback="
-        + this.getFallback()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getUrl(), getClicktrackers(), getFallback(), getExt());
   }
 }

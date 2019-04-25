@@ -17,6 +17,7 @@
 package net.media.openrtb25.request;
 
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -62,5 +63,21 @@ public class Metric {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Metric metric = (Metric) o;
+    return Objects.equals(getType(), metric.getType()) &&
+      Objects.equals(getValue(), metric.getValue()) &&
+      Objects.equals(getVendor(), metric.getVendor()) &&
+      Objects.equals(getExt(), metric.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getType(), getValue(), getVendor(), getExt());
   }
 }

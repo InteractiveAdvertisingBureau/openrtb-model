@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -76,60 +77,20 @@ public class Producer {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Producer)) return false;
-    final Producer other = (Producer) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    final Object this$name = this.getName();
-    final Object other$name = other.getName();
-    if (this$name == null ? other$name != null : !this$name.equals(other$name)) return false;
-    final Object this$cat = this.getCat();
-    final Object other$cat = other.getCat();
-    if (this$cat == null ? other$cat != null : !this$cat.equals(other$cat)) return false;
-    final Object this$domain = this.getDomain();
-    final Object other$domain = other.getDomain();
-    if (this$domain == null ? other$domain != null : !this$domain.equals(other$domain))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Producer producer = (Producer) o;
+    return Objects.equals(getId(), producer.getId()) &&
+      Objects.equals(getName(), producer.getName()) &&
+      Objects.equals(getCat(), producer.getCat()) &&
+      Objects.equals(getDomain(), producer.getDomain()) &&
+      Objects.equals(getExt(), producer.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final Object $name = this.getName();
-    result = result * PRIME + ($name == null ? 43 : $name.hashCode());
-    final Object $cat = this.getCat();
-    result = result * PRIME + ($cat == null ? 43 : $cat.hashCode());
-    final Object $domain = this.getDomain();
-    result = result * PRIME + ($domain == null ? 43 : $domain.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Producer;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.request.Producer(id="
-        + this.getId()
-        + ", name="
-        + this.getName()
-        + ", cat="
-        + this.getCat()
-        + ", domain="
-        + this.getDomain()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getId(), getName(), getCat(), getDomain(), getExt());
   }
 }

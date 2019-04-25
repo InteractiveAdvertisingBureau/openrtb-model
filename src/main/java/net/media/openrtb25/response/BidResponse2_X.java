@@ -18,6 +18,7 @@ package net.media.openrtb25.response;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -91,76 +92,22 @@ public class BidResponse2_X {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof BidResponse2_X)) return false;
-    final BidResponse2_X other = (BidResponse2_X) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    final Object this$seatbid = this.getSeatbid();
-    final Object other$seatbid = other.getSeatbid();
-    if (this$seatbid == null ? other$seatbid != null : !this$seatbid.equals(other$seatbid))
-      return false;
-    final Object this$bidid = this.getBidid();
-    final Object other$bidid = other.getBidid();
-    if (this$bidid == null ? other$bidid != null : !this$bidid.equals(other$bidid)) return false;
-    final Object this$cur = this.getCur();
-    final Object other$cur = other.getCur();
-    if (this$cur == null ? other$cur != null : !this$cur.equals(other$cur)) return false;
-    final Object this$customdata = this.getCustomdata();
-    final Object other$customdata = other.getCustomdata();
-    if (this$customdata == null
-        ? other$customdata != null
-        : !this$customdata.equals(other$customdata)) return false;
-    final Object this$nbr = this.getNbr();
-    final Object other$nbr = other.getNbr();
-    if (this$nbr == null ? other$nbr != null : !this$nbr.equals(other$nbr)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    BidResponse2_X that = (BidResponse2_X) o;
+    return Objects.equals(getId(), that.getId()) &&
+      Objects.equals(getSeatbid(), that.getSeatbid()) &&
+      Objects.equals(getBidid(), that.getBidid()) &&
+      Objects.equals(getCur(), that.getCur()) &&
+      Objects.equals(getCustomdata(), that.getCustomdata()) &&
+      Objects.equals(getNbr(), that.getNbr()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final Object $seatbid = this.getSeatbid();
-    result = result * PRIME + ($seatbid == null ? 43 : $seatbid.hashCode());
-    final Object $bidid = this.getBidid();
-    result = result * PRIME + ($bidid == null ? 43 : $bidid.hashCode());
-    final Object $cur = this.getCur();
-    result = result * PRIME + ($cur == null ? 43 : $cur.hashCode());
-    final Object $customdata = this.getCustomdata();
-    result = result * PRIME + ($customdata == null ? 43 : $customdata.hashCode());
-    final Object $nbr = this.getNbr();
-    result = result * PRIME + ($nbr == null ? 43 : $nbr.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof BidResponse2_X;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.BidResponse2_X(id="
-        + this.getId()
-        + ", seatbid="
-        + this.getSeatbid()
-        + ", bidid="
-        + this.getBidid()
-        + ", cur="
-        + this.getCur()
-        + ", customdata="
-        + this.getCustomdata()
-        + ", nbr="
-        + this.getNbr()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getId(), getSeatbid(), getBidid(), getCur(), getCustomdata(), getNbr(), getExt());
   }
 }

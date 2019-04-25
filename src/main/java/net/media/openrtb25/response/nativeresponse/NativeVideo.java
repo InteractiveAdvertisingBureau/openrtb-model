@@ -17,6 +17,7 @@
 package net.media.openrtb25.response.nativeresponse;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class NativeVideo {
   private String vasttag;
@@ -40,39 +41,17 @@ public class NativeVideo {
     this.ext = ext;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeVideo)) return false;
-    final NativeVideo other = (NativeVideo) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$vasttag = this.getVasttag();
-    final Object other$vasttag = other.getVasttag();
-    if (this$vasttag == null ? other$vasttag != null : !this$vasttag.equals(other$vasttag))
-      return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeVideo that = (NativeVideo) o;
+    return Objects.equals(getVasttag(), that.getVasttag()) &&
+      Objects.equals(getExt(), that.getExt());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $vasttag = this.getVasttag();
-    result = result * PRIME + ($vasttag == null ? 43 : $vasttag.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeVideo;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.nativeresponse.NativeVideo(vasttag="
-        + this.getVasttag()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return Objects.hash(getVasttag(), getExt());
   }
 }

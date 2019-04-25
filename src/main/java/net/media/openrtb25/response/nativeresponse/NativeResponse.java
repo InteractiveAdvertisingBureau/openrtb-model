@@ -18,6 +18,8 @@ package net.media.openrtb25.response.nativeresponse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class NativeResponse {
 
   @JsonProperty("native")
@@ -33,33 +35,16 @@ public class NativeResponse {
     this.nativeResponseBody = nativeResponseBody;
   }
 
+  @Override
   public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof NativeResponse)) return false;
-    final NativeResponse other = (NativeResponse) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$nativeResponseBody = this.getNativeResponseBody();
-    final Object other$nativeResponseBody = other.getNativeResponseBody();
-    return this$nativeResponseBody == null
-        ? other$nativeResponseBody == null
-        : this$nativeResponseBody.equals(other$nativeResponseBody);
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeResponse that = (NativeResponse) o;
+    return Objects.equals(getNativeResponseBody(), that.getNativeResponseBody());
   }
 
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $nativeResponseBody = this.getNativeResponseBody();
-    result = result * PRIME + ($nativeResponseBody == null ? 43 : $nativeResponseBody.hashCode());
-    return result;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof NativeResponse;
-  }
-
-  public String toString() {
-    return "net.media.openrtb25.response.nativeresponse.NativeResponse(nativeResponseBody="
-        + this.getNativeResponseBody()
-        + ")";
+    return Objects.hash(getNativeResponseBody());
   }
 }
