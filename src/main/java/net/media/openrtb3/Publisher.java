@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -44,6 +45,36 @@ public class Publisher {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  @Override
+  public String toString() {
+    return "Publisher{" +
+        "id='" + id + '\'' +
+        ", name='" + name + '\'' +
+        ", domain='" + domain + '\'' +
+        ", cat=" + cat +
+        ", cattax=" + cattax +
+        ", ext=" + ext +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Publisher publisher = (Publisher) o;
+    return Objects.equals(getId(), publisher.getId()) &&
+        Objects.equals(getName(), publisher.getName()) &&
+        Objects.equals(getDomain(), publisher.getDomain()) &&
+        Objects.equals(getCat(), publisher.getCat()) &&
+        Objects.equals(getCattax(), publisher.getCattax()) &&
+        Objects.equals(getExt(), publisher.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getId(), getName(), getDomain(), getCat(), getCattax(), getExt());
   }
 
   public String getDomain() {

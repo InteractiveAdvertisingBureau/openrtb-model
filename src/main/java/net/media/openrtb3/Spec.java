@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /** Created by rajat.go on 14/12/18. */
 public class Spec {
@@ -31,5 +32,25 @@ public class Spec {
 
   public void setPlacement(@NotNull @Valid Placement placement) {
     this.placement = placement;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Spec spec = (Spec) o;
+    return Objects.equals(getPlacement(), spec.getPlacement());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getPlacement());
+  }
+
+  @Override
+  public String toString() {
+    return "Spec{" +
+        "placement=" + placement +
+        '}';
   }
 }

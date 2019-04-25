@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
@@ -33,6 +34,28 @@ public class NativeFormat {
 
   public void setAsset(@NotEmpty @Valid Collection<AssetFormat> asset) {
     this.asset = asset;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    NativeFormat that = (NativeFormat) o;
+    return Objects.equals(getAsset(), that.getAsset()) &&
+        Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public String toString() {
+    return "NativeFormat{" +
+        "asset=" + asset +
+        ", ext=" + ext +
+        '}';
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getAsset(), getExt());
   }
 
   public Map<String, Object> getExt() {

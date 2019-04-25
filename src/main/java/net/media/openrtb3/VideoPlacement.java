@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotEmpty;
 
@@ -268,5 +269,77 @@ public class VideoPlacement {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    VideoPlacement that = (VideoPlacement) o;
+    return Objects.equals(getPtype(), that.getPtype()) &&
+        Objects.equals(getPos(), that.getPos()) &&
+        Objects.equals(getDelay(), that.getDelay()) &&
+        Objects.equals(getSkip(), that.getSkip()) &&
+        Objects.equals(getSkipmin(), that.getSkipmin()) &&
+        Objects.equals(getSkipafter(), that.getSkipafter()) &&
+        Objects.equals(getPlaymethod(), that.getPlaymethod()) &&
+        Objects.equals(getPlayend(), that.getPlayend()) &&
+        Objects.equals(getClktype(), that.getClktype()) &&
+        Objects.equals(getMime(), that.getMime()) &&
+        Objects.equals(getApi(), that.getApi()) &&
+        Objects.equals(getCtype(), that.getCtype()) &&
+        Objects.equals(getW(), that.getW()) &&
+        Objects.equals(getH(), that.getH()) &&
+        Objects.equals(getUnit(), that.getUnit()) &&
+        Objects.equals(getMindur(), that.getMindur()) &&
+        Objects.equals(getMaxdur(), that.getMaxdur()) &&
+        Objects.equals(getMaxext(), that.getMaxext()) &&
+        Objects.equals(getMinbitr(), that.getMinbitr()) &&
+        Objects.equals(getMaxbitr(), that.getMaxbitr()) &&
+        Objects.equals(getDelivery(), that.getDelivery()) &&
+        Objects.equals(getMaxseq(), that.getMaxseq()) &&
+        Objects.equals(getLinear(), that.getLinear()) &&
+        Objects.equals(getBoxing(), that.getBoxing()) &&
+        Objects.equals(getComp(), that.getComp()) &&
+        Objects.equals(getComptype(), that.getComptype()) &&
+        Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getPtype(), getPos(), getDelay(), getSkip(), getSkipmin(), getSkipafter(), getPlaymethod(), getPlayend(), getClktype(), getMime(), getApi(), getCtype(), getW(), getH(), getUnit(), getMindur(), getMaxdur(), getMaxext(), getMinbitr(), getMaxbitr(), getDelivery(), getMaxseq(), getLinear(), getBoxing(), getComp(), getComptype(), getExt());
+  }
+
+  @Override
+  public String toString() {
+    return "VideoPlacement{" +
+        "ptype=" + ptype +
+        ", pos=" + pos +
+        ", delay=" + delay +
+        ", skip=" + skip +
+        ", skipmin=" + skipmin +
+        ", skipafter=" + skipafter +
+        ", playmethod=" + playmethod +
+        ", playend=" + playend +
+        ", clktype=" + clktype +
+        ", mime=" + mime +
+        ", api=" + api +
+        ", ctype=" + ctype +
+        ", w=" + w +
+        ", h=" + h +
+        ", unit=" + unit +
+        ", mindur=" + mindur +
+        ", maxdur=" + maxdur +
+        ", maxext=" + maxext +
+        ", minbitr=" + minbitr +
+        ", maxbitr=" + maxbitr +
+        ", delivery=" + delivery +
+        ", maxseq=" + maxseq +
+        ", linear=" + linear +
+        ", boxing=" + boxing +
+        ", comp=" + comp +
+        ", comptype=" + comptype +
+        ", ext=" + ext +
+        '}';
   }
 }

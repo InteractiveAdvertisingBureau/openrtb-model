@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -53,6 +54,32 @@ public class Metric {
 
   public Map<String, Object> getExt() {
     return this.ext;
+  }
+
+  @Override
+  public String toString() {
+    return "Metric{" +
+        "type='" + type + '\'' +
+        ", value=" + value +
+        ", vendor='" + vendor + '\'' +
+        ", ext=" + ext +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Metric metric = (Metric) o;
+    return Objects.equals(getType(), metric.getType()) &&
+        Objects.equals(getValue(), metric.getValue()) &&
+        Objects.equals(getVendor(), metric.getVendor()) &&
+        Objects.equals(getExt(), metric.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getType(), getValue(), getVendor(), getExt());
   }
 
   public void setExt(Map<String, Object> ext) {

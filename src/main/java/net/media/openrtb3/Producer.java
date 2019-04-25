@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -53,6 +54,36 @@ public class Producer {
 
   public void setDomain(String domain) {
     this.domain = domain;
+  }
+
+  @Override
+  public String toString() {
+    return "Producer{" +
+        "id='" + id + '\'' +
+        ", name='" + name + '\'' +
+        ", domain='" + domain + '\'' +
+        ", cat=" + cat +
+        ", cattax=" + cattax +
+        ", ext=" + ext +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Producer producer = (Producer) o;
+    return Objects.equals(getId(), producer.getId()) &&
+        Objects.equals(getName(), producer.getName()) &&
+        Objects.equals(getDomain(), producer.getDomain()) &&
+        Objects.equals(getCat(), producer.getCat()) &&
+        Objects.equals(getCattax(), producer.getCattax()) &&
+        Objects.equals(getExt(), producer.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getId(), getName(), getDomain(), getCat(), getCattax(), getExt());
   }
 
   public Collection<String> getCat() {

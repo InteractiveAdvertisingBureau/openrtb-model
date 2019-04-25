@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 import javax.validation.constraints.NotNull;
 
@@ -48,5 +49,29 @@ public class TitleAsset {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    TitleAsset that = (TitleAsset) o;
+    return Objects.equals(getText(), that.getText()) &&
+        Objects.equals(getLen(), that.getLen()) &&
+        Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getText(), getLen(), getExt());
+  }
+
+  @Override
+  public String toString() {
+    return "TitleAsset{" +
+        "text='" + text + '\'' +
+        ", len=" + len +
+        ", ext=" + ext +
+        '}';
   }
 }

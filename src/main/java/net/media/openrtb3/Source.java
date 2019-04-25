@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Source {
   private String tid;
@@ -90,5 +91,39 @@ public class Source {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Source source = (Source) o;
+    return Objects.equals(getTid(), source.getTid()) &&
+        Objects.equals(getTs(), source.getTs()) &&
+        Objects.equals(getDs(), source.getDs()) &&
+        Objects.equals(getDsmap(), source.getDsmap()) &&
+        Objects.equals(getCert(), source.getCert()) &&
+        Objects.equals(getDigest(), source.getDigest()) &&
+        Objects.equals(getPchain(), source.getPchain()) &&
+        Objects.equals(getExt(), source.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getTid(), getTs(), getDs(), getDsmap(), getCert(), getDigest(), getPchain(), getExt());
+  }
+
+  @Override
+  public String toString() {
+    return "Source{" +
+        "tid='" + tid + '\'' +
+        ", ts=" + ts +
+        ", ds='" + ds + '\'' +
+        ", dsmap='" + dsmap + '\'' +
+        ", cert='" + cert + '\'' +
+        ", digest='" + digest + '\'' +
+        ", pchain='" + pchain + '\'' +
+        ", ext=" + ext +
+        '}';
   }
 }

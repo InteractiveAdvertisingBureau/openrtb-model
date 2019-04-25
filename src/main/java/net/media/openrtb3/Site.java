@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import static net.media.utils.CommonConstants.DEFAULT_CATTAX_THREEDOTX;
 
@@ -139,5 +140,49 @@ public class Site extends DistributionChannel {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Site site = (Site) o;
+    return Objects.equals(getDomain(), site.getDomain()) &&
+        Objects.equals(getCat(), site.getCat()) &&
+        Objects.equals(getSectcat(), site.getSectcat()) &&
+        Objects.equals(getPagecat(), site.getPagecat()) &&
+        Objects.equals(getCattax(), site.getCattax()) &&
+        Objects.equals(getPrivpolicy(), site.getPrivpolicy()) &&
+        Objects.equals(getKeywords(), site.getKeywords()) &&
+        Objects.equals(getPage(), site.getPage()) &&
+        Objects.equals(getRef(), site.getRef()) &&
+        Objects.equals(getSearch(), site.getSearch()) &&
+        Objects.equals(getMobile(), site.getMobile()) &&
+        Objects.equals(getAmp(), site.getAmp()) &&
+        Objects.equals(getExt(), site.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getDomain(), getCat(), getSectcat(), getPagecat(), getCattax(), getPrivpolicy(), getKeywords(), getPage(), getRef(), getSearch(), getMobile(), getAmp(), getExt());
+  }
+
+  @Override
+  public String toString() {
+    return "Site{" +
+        "domain='" + domain + '\'' +
+        ", cat=" + cat +
+        ", sectcat=" + sectcat +
+        ", pagecat=" + pagecat +
+        ", cattax=" + cattax +
+        ", privpolicy=" + privpolicy +
+        ", keywords='" + keywords + '\'' +
+        ", page='" + page + '\'' +
+        ", ref='" + ref + '\'' +
+        ", search='" + search + '\'' +
+        ", mobile=" + mobile +
+        ", amp=" + amp +
+        ", ext=" + ext +
+        '}';
   }
 }
