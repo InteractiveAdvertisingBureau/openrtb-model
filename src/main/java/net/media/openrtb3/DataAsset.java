@@ -16,10 +16,10 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /** Created by rajat.go on 14/12/18. */
 public class DataAsset {
@@ -62,52 +62,24 @@ public class DataAsset {
     this.ext = ext;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof DataAsset)) return false;
-    final DataAsset other = (DataAsset) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$value = this.getValue();
-    final Object other$value = other.getValue();
-    if (this$value == null ? other$value != null : !this$value.equals(other$value)) return false;
-    final Object this$len = this.getLen();
-    final Object other$len = other.getLen();
-    if (this$len == null ? other$len != null : !this$len.equals(other$len)) return false;
-    final Object this$type = this.getType();
-    final Object other$type = other.getType();
-    if (this$type == null ? other$type != null : !this$type.equals(other$type)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
-  }
-
-  public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $value = this.getValue();
-    result = result * PRIME + ($value == null ? 43 : $value.hashCode());
-    final Object $len = this.getLen();
-    result = result * PRIME + ($len == null ? 43 : $len.hashCode());
-    final Object $type = this.getType();
-    result = result * PRIME + ($type == null ? 43 : $type.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
   protected boolean canEqual(Object other) {
     return other instanceof DataAsset;
   }
 
-  public String toString() {
-    return "net.media.openrtb3.DataAsset(value="
-        + this.getValue()
-        + ", len="
-        + this.getLen()
-        + ", type="
-        + this.getType()
-        + ", ext="
-        + this.getExt()
-        + ")";
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    DataAsset dataAsset = (DataAsset) o;
+    return Objects.equals(getValue(), dataAsset.getValue())
+        && Objects.equals(getLen(), dataAsset.getLen())
+        && Objects.equals(getType(), dataAsset.getType())
+        && Objects.equals(getExt(), dataAsset.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getValue(), getLen(), getType(), getExt());
   }
 }

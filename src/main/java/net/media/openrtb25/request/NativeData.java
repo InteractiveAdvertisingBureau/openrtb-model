@@ -16,9 +16,8 @@
 
 package net.media.openrtb25.request;
 
-import java.util.Map;
-
 import javax.validation.constraints.NotNull;
+import java.util.Map;
 
 public class NativeData {
 

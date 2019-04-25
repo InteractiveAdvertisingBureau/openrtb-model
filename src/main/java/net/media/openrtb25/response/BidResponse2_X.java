@@ -16,11 +16,10 @@
 
 package net.media.openrtb25.response;
 
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
+import java.util.Map;
 
 /** Created by vishnu on 30/5/16. */
 public class BidResponse2_X {

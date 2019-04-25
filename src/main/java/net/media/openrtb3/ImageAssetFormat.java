@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class ImageAssetFormat {
@@ -101,5 +102,36 @@ public class ImageAssetFormat {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ImageAssetFormat that = (ImageAssetFormat) o;
+    return Objects.equals(getType(), that.getType())
+        && Objects.equals(getMime(), that.getMime())
+        && Objects.equals(getW(), that.getW())
+        && Objects.equals(getH(), that.getH())
+        && Objects.equals(getWmin(), that.getWmin())
+        && Objects.equals(getHmin(), that.getHmin())
+        && Objects.equals(getWratio(), that.getWratio())
+        && Objects.equals(getHratio(), that.getHratio())
+        && Objects.equals(getExt(), that.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getType(),
+        getMime(),
+        getW(),
+        getH(),
+        getWmin(),
+        getHmin(),
+        getWratio(),
+        getHratio(),
+        getExt());
   }
 }

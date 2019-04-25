@@ -16,11 +16,10 @@
 
 package net.media.openrtb25.request;
 
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
+import java.util.Map;
 
 public class NativeVideo {
 

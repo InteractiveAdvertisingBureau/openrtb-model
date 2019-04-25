@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Geo {
 
@@ -136,5 +137,44 @@ public class Geo {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Geo geo = (Geo) o;
+    return Objects.equals(getType(), geo.getType())
+        && Objects.equals(getLat(), geo.getLat())
+        && Objects.equals(getLon(), geo.getLon())
+        && Objects.equals(getAccur(), geo.getAccur())
+        && Objects.equals(getLastfix(), geo.getLastfix())
+        && Objects.equals(getIpserv(), geo.getIpserv())
+        && Objects.equals(getCountry(), geo.getCountry())
+        && Objects.equals(getRegion(), geo.getRegion())
+        && Objects.equals(getMetro(), geo.getMetro())
+        && Objects.equals(getCity(), geo.getCity())
+        && Objects.equals(getZip(), geo.getZip())
+        && Objects.equals(getUtcoffset(), geo.getUtcoffset())
+        && Objects.equals(getExt(), geo.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getType(),
+        getLat(),
+        getLon(),
+        getAccur(),
+        getLastfix(),
+        getIpserv(),
+        getCountry(),
+        getRegion(),
+        getMetro(),
+        getCity(),
+        getZip(),
+        getUtcoffset(),
+        getExt());
   }
 }

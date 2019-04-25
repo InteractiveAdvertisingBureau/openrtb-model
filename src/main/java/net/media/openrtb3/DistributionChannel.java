@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 public abstract class DistributionChannel {
   @NotNull private String id;
@@ -54,5 +55,22 @@ public abstract class DistributionChannel {
 
   public void setContent(Content content) {
     this.content = content;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    DistributionChannel that = (DistributionChannel) o;
+    return Objects.equals(getId(), that.getId())
+        && Objects.equals(getName(), that.getName())
+        && Objects.equals(getPub(), that.getPub())
+        && Objects.equals(getContent(), that.getContent());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getId(), getName(), getPub(), getContent());
   }
 }

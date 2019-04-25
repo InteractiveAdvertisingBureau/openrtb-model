@@ -16,11 +16,10 @@
 
 package net.media.openrtb3;
 
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
+import java.util.Collection;
+import java.util.Map;
 
 /** Created by shiva.b on 14/12/18. */
 public class NativeFormat {

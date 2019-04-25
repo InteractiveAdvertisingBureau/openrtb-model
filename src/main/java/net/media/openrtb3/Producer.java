@@ -16,10 +16,9 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.validation.constraints.NotNull;
 
 import static net.media.utils.CommonConstants.DEFAULT_CATTAX_THREEDOTX;
 

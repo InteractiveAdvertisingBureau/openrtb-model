@@ -16,10 +16,9 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.validation.constraints.NotEmpty;
 
 public class NativeRequestBody {
 

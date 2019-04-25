@@ -18,11 +18,11 @@ package net.media.openrtb3;
 
 import net.media.utils.validator.CheckExactlyOneNotNull;
 
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
+import java.util.Map;
+import java.util.Objects;
 
 import static net.media.utils.CommonConstants.DEFAULT_CATTAX_THREEDOTX;
 
@@ -146,8 +146,7 @@ public class Ad {
     this.lastmod = lastmod;
   }
 
-  public @Valid
-  Display getDisplay() {
+  public @Valid Display getDisplay() {
     return this.display;
   }
 
@@ -155,8 +154,7 @@ public class Ad {
     this.display = display;
   }
 
-  public @Valid
-  Video getVideo() {
+  public @Valid Video getVideo() {
     return this.video;
   }
 
@@ -172,8 +170,7 @@ public class Ad {
     this.audio = audio;
   }
 
-  public @Valid
-  Audit getAudit() {
+  public @Valid Audit getAudit() {
     return this.audit;
   }
 
@@ -189,150 +186,54 @@ public class Ad {
     this.ext = ext;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Ad)) return false;
-    final Ad other = (Ad) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    final Object this$adomain = this.getAdomain();
-    final Object other$adomain = other.getAdomain();
-    if (this$adomain == null ? other$adomain != null : !this$adomain.equals(other$adomain))
-      return false;
-    final Object this$bundle = this.getBundle();
-    final Object other$bundle = other.getBundle();
-    if (this$bundle == null ? other$bundle != null : !this$bundle.equals(other$bundle))
-      return false;
-    final Object this$iurl = this.getIurl();
-    final Object other$iurl = other.getIurl();
-    if (this$iurl == null ? other$iurl != null : !this$iurl.equals(other$iurl)) return false;
-    final Object this$cat = this.getCat();
-    final Object other$cat = other.getCat();
-    if (this$cat == null ? other$cat != null : !this$cat.equals(other$cat)) return false;
-    final Object this$cattax = this.getCattax();
-    final Object other$cattax = other.getCattax();
-    if (this$cattax == null ? other$cattax != null : !this$cattax.equals(other$cattax))
-      return false;
-    final Object this$lang = this.getLang();
-    final Object other$lang = other.getLang();
-    if (this$lang == null ? other$lang != null : !this$lang.equals(other$lang)) return false;
-    final Object this$attr = this.getAttr();
-    final Object other$attr = other.getAttr();
-    if (this$attr == null ? other$attr != null : !this$attr.equals(other$attr)) return false;
-    final Object this$secure = this.getSecure();
-    final Object other$secure = other.getSecure();
-    if (this$secure == null ? other$secure != null : !this$secure.equals(other$secure))
-      return false;
-    final Object this$mrating = this.getMrating();
-    final Object other$mrating = other.getMrating();
-    if (this$mrating == null ? other$mrating != null : !this$mrating.equals(other$mrating))
-      return false;
-    final Object this$init = this.getInit();
-    final Object other$init = other.getInit();
-    if (this$init == null ? other$init != null : !this$init.equals(other$init)) return false;
-    final Object this$lastmod = this.getLastmod();
-    final Object other$lastmod = other.getLastmod();
-    if (this$lastmod == null ? other$lastmod != null : !this$lastmod.equals(other$lastmod))
-      return false;
-    final Object this$display = this.getDisplay();
-    final Object other$display = other.getDisplay();
-    if (this$display == null ? other$display != null : !this$display.equals(other$display))
-      return false;
-    final Object this$video = this.getVideo();
-    final Object other$video = other.getVideo();
-    if (this$video == null ? other$video != null : !this$video.equals(other$video)) return false;
-    final Object this$audio = this.getAudio();
-    final Object other$audio = other.getAudio();
-    if (this$audio == null ? other$audio != null : !this$audio.equals(other$audio)) return false;
-    final Object this$audit = this.getAudit();
-    final Object other$audit = other.getAudit();
-    if (this$audit == null ? other$audit != null : !this$audit.equals(other$audit)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
-  }
-
-  public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final Object $adomain = this.getAdomain();
-    result = result * PRIME + ($adomain == null ? 43 : $adomain.hashCode());
-    final Object $bundle = this.getBundle();
-    result = result * PRIME + ($bundle == null ? 43 : $bundle.hashCode());
-    final Object $iurl = this.getIurl();
-    result = result * PRIME + ($iurl == null ? 43 : $iurl.hashCode());
-    final Object $cat = this.getCat();
-    result = result * PRIME + ($cat == null ? 43 : $cat.hashCode());
-    final Object $cattax = this.getCattax();
-    result = result * PRIME + ($cattax == null ? 43 : $cattax.hashCode());
-    final Object $lang = this.getLang();
-    result = result * PRIME + ($lang == null ? 43 : $lang.hashCode());
-    final Object $attr = this.getAttr();
-    result = result * PRIME + ($attr == null ? 43 : $attr.hashCode());
-    final Object $secure = this.getSecure();
-    result = result * PRIME + ($secure == null ? 43 : $secure.hashCode());
-    final Object $mrating = this.getMrating();
-    result = result * PRIME + ($mrating == null ? 43 : $mrating.hashCode());
-    final Object $init = this.getInit();
-    result = result * PRIME + ($init == null ? 43 : $init.hashCode());
-    final Object $lastmod = this.getLastmod();
-    result = result * PRIME + ($lastmod == null ? 43 : $lastmod.hashCode());
-    final Object $display = this.getDisplay();
-    result = result * PRIME + ($display == null ? 43 : $display.hashCode());
-    final Object $video = this.getVideo();
-    result = result * PRIME + ($video == null ? 43 : $video.hashCode());
-    final Object $audio = this.getAudio();
-    result = result * PRIME + ($audio == null ? 43 : $audio.hashCode());
-    final Object $audit = this.getAudit();
-    result = result * PRIME + ($audit == null ? 43 : $audit.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
   protected boolean canEqual(Object other) {
     return other instanceof Ad;
   }
 
-  public String toString() {
-    return "net.media.openrtb3.Ad(id="
-        + this.getId()
-        + ", adomain="
-        + this.getAdomain()
-        + ", bundle="
-        + this.getBundle()
-        + ", iurl="
-        + this.getIurl()
-        + ", cat="
-        + this.getCat()
-        + ", cattax="
-        + this.getCattax()
-        + ", lang="
-        + this.getLang()
-        + ", attr="
-        + this.getAttr()
-        + ", secure="
-        + this.getSecure()
-        + ", mrating="
-        + this.getMrating()
-        + ", init="
-        + this.getInit()
-        + ", lastmod="
-        + this.getLastmod()
-        + ", display="
-        + this.getDisplay()
-        + ", video="
-        + this.getVideo()
-        + ", audio="
-        + this.getAudio()
-        + ", audit="
-        + this.getAudit()
-        + ", ext="
-        + this.getExt()
-        + ")";
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Ad ad = (Ad) o;
+    return Objects.equals(getId(), ad.getId())
+        && Objects.equals(getAdomain(), ad.getAdomain())
+        && Objects.equals(getBundle(), ad.getBundle())
+        && Objects.equals(getIurl(), ad.getIurl())
+        && Objects.equals(getCat(), ad.getCat())
+        && Objects.equals(getCattax(), ad.getCattax())
+        && Objects.equals(getLang(), ad.getLang())
+        && Objects.equals(getAttr(), ad.getAttr())
+        && Objects.equals(getSecure(), ad.getSecure())
+        && Objects.equals(getMrating(), ad.getMrating())
+        && Objects.equals(getInit(), ad.getInit())
+        && Objects.equals(getLastmod(), ad.getLastmod())
+        && Objects.equals(getDisplay(), ad.getDisplay())
+        && Objects.equals(getVideo(), ad.getVideo())
+        && Objects.equals(getAudio(), ad.getAudio())
+        && Objects.equals(getAudit(), ad.getAudit())
+        && Objects.equals(getExt(), ad.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getId(),
+        getAdomain(),
+        getBundle(),
+        getIurl(),
+        getCat(),
+        getCattax(),
+        getLang(),
+        getAttr(),
+        getSecure(),
+        getMrating(),
+        getInit(),
+        getLastmod(),
+        getDisplay(),
+        getVideo(),
+        getAudio(),
+        getAudit(),
+        getExt());
   }
 }

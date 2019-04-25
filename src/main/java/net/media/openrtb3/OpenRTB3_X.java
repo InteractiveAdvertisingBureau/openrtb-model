@@ -62,8 +62,7 @@ public class OpenRTB3_X {
     this.request = request;
   }
 
-  public @Valid
-  Response getResponse() {
+  public @Valid Response getResponse() {
     return this.response;
   }
 

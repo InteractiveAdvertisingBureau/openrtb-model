@@ -16,10 +16,9 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.validation.constraints.NotNull;
 
 public class Site {
 

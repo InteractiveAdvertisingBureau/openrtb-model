@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Dooh extends DistributionChannel {
 
@@ -64,5 +65,23 @@ public class Dooh extends DistributionChannel {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Dooh dooh = (Dooh) o;
+    return Objects.equals(getVenue(), dooh.getVenue())
+        && Objects.equals(getFixed(), dooh.getFixed())
+        && Objects.equals(getEtime(), dooh.getEtime())
+        && Objects.equals(getDpi(), dooh.getDpi())
+        && Objects.equals(getExt(), dooh.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getVenue(), getFixed(), getEtime(), getDpi(), getExt());
   }
 }

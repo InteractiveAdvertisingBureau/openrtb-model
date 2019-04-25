@@ -16,10 +16,10 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
-
-import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class EventSpec {
@@ -94,5 +94,27 @@ public class EventSpec {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    EventSpec eventSpec = (EventSpec) o;
+    return Objects.equals(getType(), eventSpec.getType())
+        && Objects.equals(getMethod(), eventSpec.getMethod())
+        && Objects.equals(getApi(), eventSpec.getApi())
+        && Objects.equals(getJstrk(), eventSpec.getJstrk())
+        && Objects.equals(getWjs(), eventSpec.getWjs())
+        && Objects.equals(getPxtrk(), eventSpec.getPxtrk())
+        && Objects.equals(getWpx(), eventSpec.getWpx())
+        && Objects.equals(getExt(), eventSpec.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getType(), getMethod(), getApi(), getJstrk(), getWjs(), getPxtrk(), getWpx(), getExt());
   }
 }

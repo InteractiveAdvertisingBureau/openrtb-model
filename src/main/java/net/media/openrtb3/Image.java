@@ -16,6 +16,8 @@
 
 package net.media.openrtb3;
 
+import java.util.Objects;
+
 public class Image {
 
   private String url;
@@ -23,4 +25,62 @@ public class Image {
   private Integer h;
   private Integer type;
   private String ext;
+
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+  public Integer getW() {
+    return w;
+  }
+
+  public void setW(Integer w) {
+    this.w = w;
+  }
+
+  public Integer getH() {
+    return h;
+  }
+
+  public void setH(Integer h) {
+    this.h = h;
+  }
+
+  public Integer getType() {
+    return type;
+  }
+
+  public void setType(Integer type) {
+    this.type = type;
+  }
+
+  public String getExt() {
+    return ext;
+  }
+
+  public void setExt(String ext) {
+    this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Image image = (Image) o;
+    return Objects.equals(getUrl(), image.getUrl())
+        && Objects.equals(getW(), image.getW())
+        && Objects.equals(getH(), image.getH())
+        && Objects.equals(getType(), image.getType())
+        && Objects.equals(getExt(), image.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(getUrl(), getW(), getH(), getType(), getExt());
+  }
 }

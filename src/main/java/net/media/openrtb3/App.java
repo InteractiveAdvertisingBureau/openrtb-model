@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 import static net.media.utils.CommonConstants.DEFAULT_CATTAX_THREEDOTX;
 
@@ -141,5 +142,46 @@ public class App extends DistributionChannel {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    if (!super.equals(o)) return false;
+    App app = (App) o;
+    return Objects.equals(getDomain(), app.getDomain())
+        && Objects.equals(getCat(), app.getCat())
+        && Objects.equals(getSectcat(), app.getSectcat())
+        && Objects.equals(getPagecat(), app.getPagecat())
+        && Objects.equals(getCattax(), app.getCattax())
+        && Objects.equals(getPrivpolicy(), app.getPrivpolicy())
+        && Objects.equals(getKeywords(), app.getKeywords())
+        && Objects.equals(getBundle(), app.getBundle())
+        && Objects.equals(getStoreid(), app.getStoreid())
+        && Objects.equals(getStoreurl(), app.getStoreurl())
+        && Objects.equals(getVer(), app.getVer())
+        && Objects.equals(getPaid(), app.getPaid())
+        && Objects.equals(getExt(), app.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        super.hashCode(),
+        getDomain(),
+        getCat(),
+        getSectcat(),
+        getPagecat(),
+        getCattax(),
+        getPrivpolicy(),
+        getKeywords(),
+        getBundle(),
+        getStoreid(),
+        getStoreurl(),
+        getVer(),
+        getPaid(),
+        getExt());
   }
 }

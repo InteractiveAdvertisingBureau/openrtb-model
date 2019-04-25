@@ -18,9 +18,9 @@ package net.media.openrtb3;
 
 import net.media.utils.validator.CheckExactlyOneNotNull;
 
-import java.util.Map;
-
 import javax.validation.Valid;
+import java.util.Map;
+import java.util.Objects;
 
 @CheckExactlyOneNotNull(fieldNames = {"title", "image", "video", "data", "link"})
 public class Asset {
@@ -52,8 +52,7 @@ public class Asset {
     this.req = req;
   }
 
-  public @Valid
-  TitleAsset getTitle() {
+  public @Valid TitleAsset getTitle() {
     return this.title;
   }
 
@@ -61,8 +60,7 @@ public class Asset {
     this.title = title;
   }
 
-  public @Valid
-  ImageAsset getImage() {
+  public @Valid ImageAsset getImage() {
     return this.image;
   }
 
@@ -70,8 +68,7 @@ public class Asset {
     this.image = image;
   }
 
-  public @Valid
-  VideoAsset getVideo() {
+  public @Valid VideoAsset getVideo() {
     return this.video;
   }
 
@@ -87,8 +84,7 @@ public class Asset {
     this.data = data;
   }
 
-  public @Valid
-  LinkAsset getLink() {
+  public @Valid LinkAsset getLink() {
     return this.link;
   }
 
@@ -104,73 +100,29 @@ public class Asset {
     this.ext = ext;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Asset)) return false;
-    final Asset other = (Asset) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$id = this.getId();
-    final Object other$id = other.getId();
-    if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-    final Object this$req = this.getReq();
-    final Object other$req = other.getReq();
-    if (this$req == null ? other$req != null : !this$req.equals(other$req)) return false;
-    final Object this$title = this.getTitle();
-    final Object other$title = other.getTitle();
-    if (this$title == null ? other$title != null : !this$title.equals(other$title)) return false;
-    final Object this$image = this.getImage();
-    final Object other$image = other.getImage();
-    if (this$image == null ? other$image != null : !this$image.equals(other$image)) return false;
-    final Object this$video = this.getVideo();
-    final Object other$video = other.getVideo();
-    if (this$video == null ? other$video != null : !this$video.equals(other$video)) return false;
-    final Object this$data = this.getData();
-    final Object other$data = other.getData();
-    if (this$data == null ? other$data != null : !this$data.equals(other$data)) return false;
-    final Object this$link = this.getLink();
-    final Object other$link = other.getLink();
-    return this$link == null ? other$link == null : this$link.equals(other$link);
-  }
-
-  public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $id = this.getId();
-    result = result * PRIME + ($id == null ? 43 : $id.hashCode());
-    final Object $req = this.getReq();
-    result = result * PRIME + ($req == null ? 43 : $req.hashCode());
-    final Object $title = this.getTitle();
-    result = result * PRIME + ($title == null ? 43 : $title.hashCode());
-    final Object $image = this.getImage();
-    result = result * PRIME + ($image == null ? 43 : $image.hashCode());
-    final Object $video = this.getVideo();
-    result = result * PRIME + ($video == null ? 43 : $video.hashCode());
-    final Object $data = this.getData();
-    result = result * PRIME + ($data == null ? 43 : $data.hashCode());
-    final Object $link = this.getLink();
-    result = result * PRIME + ($link == null ? 43 : $link.hashCode());
-    return result;
-  }
-
   protected boolean canEqual(Object other) {
     return other instanceof Asset;
   }
 
-  public String toString() {
-    return "net.media.openrtb3.Asset(id="
-        + this.getId()
-        + ", req="
-        + this.getReq()
-        + ", title="
-        + this.getTitle()
-        + ", image="
-        + this.getImage()
-        + ", video="
-        + this.getVideo()
-        + ", data="
-        + this.getData()
-        + ", link="
-        + this.getLink()
-        + ")";
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Asset asset = (Asset) o;
+    return Objects.equals(getId(), asset.getId())
+        && Objects.equals(getReq(), asset.getReq())
+        && Objects.equals(getTitle(), asset.getTitle())
+        && Objects.equals(getImage(), asset.getImage())
+        && Objects.equals(getVideo(), asset.getVideo())
+        && Objects.equals(getData(), asset.getData())
+        && Objects.equals(getLink(), asset.getLink())
+        && Objects.equals(getExt(), asset.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+
+    return Objects.hash(
+        getId(), getReq(), getTitle(), getImage(), getVideo(), getData(), getLink(), getExt());
   }
 }

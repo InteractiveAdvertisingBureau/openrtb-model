@@ -18,13 +18,12 @@ package net.media.openrtb3;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Map;
-
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Map;
 
 public class Request {
 
@@ -116,8 +115,7 @@ public class Request {
     this.cdata = cdata;
   }
 
-  public @NotNull @Valid
-  Source getSource() {
+  public @NotNull @Valid Source getSource() {
     return this.source;
   }
 
