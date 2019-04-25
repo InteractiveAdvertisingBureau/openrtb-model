@@ -16,6 +16,8 @@
 
 package net.media.openrtb3;
 
+import java.util.Objects;
+
 /** Created by shiva.b on 10/04/19. */
 public class OpenRTBWrapper3_X {
 
@@ -31,29 +33,28 @@ public class OpenRTBWrapper3_X {
     this.openrtb = openrtb;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof OpenRTBWrapper3_X)) return false;
-    final OpenRTBWrapper3_X other = (OpenRTBWrapper3_X) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$openrtb = this.getOpenrtb();
-    final Object other$openrtb = other.getOpenrtb();
-    return this$openrtb == null ? other$openrtb == null : this$openrtb.equals(other$openrtb);
+  @Override
+  public String toString() {
+    return "OpenRTBWrapper3_X{" +
+        "openrtb=" + openrtb +
+        '}';
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    OpenRTBWrapper3_X that = (OpenRTBWrapper3_X) o;
+    return Objects.equals(getOpenrtb(), that.getOpenrtb());
+  }
+
+  @Override
   public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $openrtb = this.getOpenrtb();
-    result = result * PRIME + ($openrtb == null ? 43 : $openrtb.hashCode());
-    return result;
+    return Objects.hash(getOpenrtb());
   }
 
   protected boolean canEqual(Object other) {
     return other instanceof OpenRTBWrapper3_X;
   }
 
-  public String toString() {
-    return "net.media.openrtb3.OpenRTBWrapper3_X(openrtb=" + this.getOpenrtb() + ")";
-  }
 }

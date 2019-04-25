@@ -18,8 +18,10 @@ package net.media.openrtb3;
 
 import net.media.utils.validator.CheckAtLeastOneNotNull;
 
-import javax.validation.Valid;
 import java.util.Collection;
+import java.util.Objects;
+
+import javax.validation.Valid;
 
 /** Created by shiva.b on 14/12/18. */
 @CheckAtLeastOneNotNull(fieldNames = {"display", "video", "audio"})
@@ -36,6 +38,51 @@ public class Placement {
   private Collection<String> wlang;
   private Integer secure;
   private Integer admx;
+
+  @Override
+  public String toString() {
+    return "Placement{" +
+        "tagid='" + tagid + '\'' +
+        ", ssai=" + ssai +
+        ", sdk='" + sdk + '\'' +
+        ", sdkver='" + sdkver + '\'' +
+        ", reward=" + reward +
+        ", wlang=" + wlang +
+        ", secure=" + secure +
+        ", admx=" + admx +
+        ", curlx=" + curlx +
+        ", display=" + display +
+        ", video=" + video +
+        ", audio=" + audio +
+        ", ext=" + ext +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Placement placement = (Placement) o;
+    return Objects.equals(getTagid(), placement.getTagid()) &&
+        Objects.equals(getSsai(), placement.getSsai()) &&
+        Objects.equals(getSdk(), placement.getSdk()) &&
+        Objects.equals(getSdkver(), placement.getSdkver()) &&
+        Objects.equals(getReward(), placement.getReward()) &&
+        Objects.equals(getWlang(), placement.getWlang()) &&
+        Objects.equals(getSecure(), placement.getSecure()) &&
+        Objects.equals(getAdmx(), placement.getAdmx()) &&
+        Objects.equals(getCurlx(), placement.getCurlx()) &&
+        Objects.equals(getDisplay(), placement.getDisplay()) &&
+        Objects.equals(getVideo(), placement.getVideo()) &&
+        Objects.equals(getAudio(), placement.getAudio()) &&
+        Objects.equals(getExt(), placement.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getTagid(), getSsai(), getSdk(), getSdkver(), getReward(), getWlang(), getSecure(), getAdmx(), getCurlx(), getDisplay(), getVideo(), getAudio(), getExt());
+  }
+
   private Integer curlx;
   @Valid private DisplayPlacement display;
   @Valid private VideoPlacement video;
@@ -122,7 +169,8 @@ public class Placement {
     this.display = display;
   }
 
-  public @Valid VideoPlacement getVideo() {
+  public @Valid
+  VideoPlacement getVideo() {
     return this.video;
   }
 
@@ -130,7 +178,8 @@ public class Placement {
     this.video = video;
   }
 
-  public @Valid AudioPlacement getAudio() {
+  public @Valid
+  AudioPlacement getAudio() {
     return this.audio;
   }
 

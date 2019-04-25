@@ -18,6 +18,7 @@ package net.media.openrtb3;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 public class Media {
 
@@ -33,29 +34,27 @@ public class Media {
     this.ad = ad;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Media)) return false;
-    final Media other = (Media) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$ad = this.getAd();
-    final Object other$ad = other.getAd();
-    return this$ad == null ? other$ad == null : this$ad.equals(other$ad);
-  }
-
-  public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $ad = this.getAd();
-    result = result * PRIME + ($ad == null ? 43 : $ad.hashCode());
-    return result;
-  }
-
   protected boolean canEqual(Object other) {
     return other instanceof Media;
   }
 
+  @Override
   public String toString() {
-    return "net.media.openrtb3.Media(ad=" + this.getAd() + ")";
+    return "Media{" +
+        "ad=" + ad +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Media media = (Media) o;
+    return Objects.equals(getAd(), media.getAd());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getAd());
   }
 }

@@ -16,8 +16,10 @@
 
 package net.media.openrtb3;
 
-import javax.validation.constraints.NotNull;
 import java.util.Map;
+import java.util.Objects;
+
+import javax.validation.constraints.NotNull;
 
 public class Macro {
 
@@ -47,34 +49,32 @@ public class Macro {
     return this.value;
   }
 
-  public void setValue(String value) {
-    this.value = value;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (!(o instanceof Macro)) return false;
-
+    if (o == null || getClass() != o.getClass()) return false;
     Macro macro = (Macro) o;
-
-    if (getKey() != null ? !getKey().equals(macro.getKey()) : macro.getKey() != null) return false;
-    if (getValue() != null ? !getValue().equals(macro.getValue()) : macro.getValue() != null)
-      return false;
-    return getExt() != null ? getExt().equals(macro.getExt()) : macro.getExt() == null;
+    return Objects.equals(getKey(), macro.getKey()) &&
+        Objects.equals(getValue(), macro.getValue()) &&
+        Objects.equals(getExt(), macro.getExt());
   }
 
   @Override
   public int hashCode() {
-    int result = getKey() != null ? getKey().hashCode() : 0;
-    result = 31 * result + (getValue() != null ? getValue().hashCode() : 0);
-    result = 31 * result + (getExt() != null ? getExt().hashCode() : 0);
-    return result;
+    return Objects.hash(getKey(), getValue(), getExt());
   }
 
   @Override
   public String toString() {
-    return "Macro{" + "key='" + key + '\'' + ", value='" + value + '\'' + ", ext=" + ext + '}';
+    return "Macro{" +
+        "key='" + key + '\'' +
+        ", value='" + value + '\'' +
+        ", ext=" + ext +
+        '}';
+  }
+
+  public void setValue(String value) {
+    this.value = value;
   }
 
   protected boolean canEqual(Object other) {

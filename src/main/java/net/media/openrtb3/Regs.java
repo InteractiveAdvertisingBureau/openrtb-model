@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class Regs {
 
@@ -38,6 +39,30 @@ public class Regs {
 
   public void setGdpr(Integer gdpr) {
     this.gdpr = gdpr;
+  }
+
+  @Override
+  public String toString() {
+    return "Regs{" +
+        "coppa=" + coppa +
+        ", gdpr=" + gdpr +
+        ", ext=" + ext +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Regs regs = (Regs) o;
+    return Objects.equals(getCoppa(), regs.getCoppa()) &&
+        Objects.equals(getGdpr(), regs.getGdpr()) &&
+        Objects.equals(getExt(), regs.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getCoppa(), getGdpr(), getExt());
   }
 
   public Map<String, Object> getExt() {

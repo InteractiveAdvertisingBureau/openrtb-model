@@ -20,6 +20,7 @@ import net.media.utils.validator.CheckAtLeastOneNotNull;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
 
 @CheckAtLeastOneNotNull(fieldNames = {"id", "buyeruid"})
 public class User {
@@ -103,5 +104,41 @@ public class User {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    User user = (User) o;
+    return Objects.equals(getId(), user.getId()) &&
+        Objects.equals(getBuyeruid(), user.getBuyeruid()) &&
+        Objects.equals(getYob(), user.getYob()) &&
+        Objects.equals(getGender(), user.getGender()) &&
+        Objects.equals(getKeywords(), user.getKeywords()) &&
+        Objects.equals(getConsent(), user.getConsent()) &&
+        Objects.equals(getGeo(), user.getGeo()) &&
+        Objects.equals(getData(), user.getData()) &&
+        Objects.equals(getExt(), user.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getId(), getBuyeruid(), getYob(), getGender(), getKeywords(), getConsent(), getGeo(), getData(), getExt());
+  }
+
+  @Override
+  public String toString() {
+    return "User{" +
+        "id='" + id + '\'' +
+        ", buyeruid='" + buyeruid + '\'' +
+        ", yob=" + yob +
+        ", gender='" + gender + '\'' +
+        ", keywords='" + keywords + '\'' +
+        ", consent='" + consent + '\'' +
+        ", geo=" + geo +
+        ", data=" + data +
+        ", ext=" + ext +
+        '}';
   }
 }

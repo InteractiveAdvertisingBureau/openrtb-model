@@ -18,10 +18,12 @@ package net.media.openrtb3;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Objects;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class Seatbid {
 
@@ -67,53 +69,33 @@ public class Seatbid {
     this.ext = ext;
   }
 
-  public boolean equals(Object o) {
-    if (o == this) return true;
-    if (!(o instanceof Seatbid)) return false;
-    final Seatbid other = (Seatbid) o;
-    if (!other.canEqual(this)) return false;
-    final Object this$seat = this.getSeat();
-    final Object other$seat = other.getSeat();
-    if (this$seat == null ? other$seat != null : !this$seat.equals(other$seat)) return false;
-    final Object this$_package = this.get_package();
-    final Object other$_package = other.get_package();
-    if (this$_package == null ? other$_package != null : !this$_package.equals(other$_package))
-      return false;
-    final Object this$bid = this.getBid();
-    final Object other$bid = other.getBid();
-    if (this$bid == null ? other$bid != null : !this$bid.equals(other$bid)) return false;
-    final Object this$ext = this.getExt();
-    final Object other$ext = other.getExt();
-    return this$ext == null ? other$ext == null : this$ext.equals(other$ext);
-  }
-
-  public int hashCode() {
-    final int PRIME = 59;
-    int result = 1;
-    final Object $seat = this.getSeat();
-    result = result * PRIME + ($seat == null ? 43 : $seat.hashCode());
-    final Object $_package = this.get_package();
-    result = result * PRIME + ($_package == null ? 43 : $_package.hashCode());
-    final Object $bid = this.getBid();
-    result = result * PRIME + ($bid == null ? 43 : $bid.hashCode());
-    final Object $ext = this.getExt();
-    result = result * PRIME + ($ext == null ? 43 : $ext.hashCode());
-    return result;
-  }
-
   protected boolean canEqual(Object other) {
     return other instanceof Seatbid;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Seatbid seatbid = (Seatbid) o;
+    return Objects.equals(getSeat(), seatbid.getSeat()) &&
+        Objects.equals(get_package(), seatbid.get_package()) &&
+        Objects.equals(getBid(), seatbid.getBid()) &&
+        Objects.equals(getExt(), seatbid.getExt());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getSeat(), get_package(), getBid(), getExt());
+  }
+
+  @Override
   public String toString() {
-    return "net.media.openrtb3.Seatbid(seat="
-        + this.getSeat()
-        + ", _package="
-        + this.get_package()
-        + ", bid="
-        + this.getBid()
-        + ", ext="
-        + this.getExt()
-        + ")";
+    return "Seatbid{" +
+        "seat='" + seat + '\'' +
+        ", _package=" + _package +
+        ", bid=" + bid +
+        ", ext=" + ext +
+        '}';
   }
 }

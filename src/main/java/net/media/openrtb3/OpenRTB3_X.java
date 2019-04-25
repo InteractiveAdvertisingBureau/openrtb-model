@@ -20,6 +20,7 @@ import net.media.utils.validator.CheckExactlyOneNotNull;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 @CheckExactlyOneNotNull(fieldNames = {"request", "response"})
 public class OpenRTB3_X {
@@ -62,7 +63,36 @@ public class OpenRTB3_X {
     this.request = request;
   }
 
-  public @Valid Response getResponse() {
+  @Override
+  public String toString() {
+    return "OpenRTB3_X{" +
+        "ver='" + ver + '\'' +
+        ", domainSpec='" + domainSpec + '\'' +
+        ", domainVer='" + domainVer + '\'' +
+        ", request=" + request +
+        ", response=" + response +
+        '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    OpenRTB3_X that = (OpenRTB3_X) o;
+    return Objects.equals(getVer(), that.getVer()) &&
+        Objects.equals(getDomainSpec(), that.getDomainSpec()) &&
+        Objects.equals(getDomainVer(), that.getDomainVer()) &&
+        Objects.equals(getRequest(), that.getRequest()) &&
+        Objects.equals(getResponse(), that.getResponse());
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getVer(), getDomainSpec(), getDomainVer(), getRequest(), getResponse());
+  }
+
+  public @Valid
+  Response getResponse() {
     return this.response;
   }
 
