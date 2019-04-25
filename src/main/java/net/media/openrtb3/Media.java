@@ -38,12 +38,6 @@ public class Media {
     return other instanceof Media;
   }
 
-  @Override
-  public String toString() {
-    return "Media{" +
-        "ad=" + ad +
-        '}';
-  }
 
   @Override
   public boolean equals(Object o) {

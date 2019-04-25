@@ -56,11 +56,4 @@ public class TitleAssetFormat {
     return Objects.hash(getLen(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "TitleAssetFormat{" +
-        "len=" + len +
-        ", ext=" + ext +
-        '}';
-  }
 }

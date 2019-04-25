@@ -73,12 +73,4 @@ public class VideoAsset {
     return Objects.hash(getAdm(), getCurl(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "VideoAsset{" +
-        "adm='" + adm + '\'' +
-        ", curl='" + curl + '\'' +
-        ", ext=" + ext +
-        '}';
-  }
 }

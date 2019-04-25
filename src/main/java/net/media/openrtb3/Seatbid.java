@@ -89,13 +89,4 @@ public class Seatbid {
     return Objects.hash(getSeat(), get_package(), getBid(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "Seatbid{" +
-        "seat='" + seat + '\'' +
-        ", _package=" + _package +
-        ", bid=" + bid +
-        ", ext=" + ext +
-        '}';
-  }
 }

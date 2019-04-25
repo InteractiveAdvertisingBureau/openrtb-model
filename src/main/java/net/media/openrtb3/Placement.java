@@ -39,24 +39,6 @@ public class Placement {
   private Integer secure;
   private Integer admx;
 
-  @Override
-  public String toString() {
-    return "Placement{" +
-        "tagid='" + tagid + '\'' +
-        ", ssai=" + ssai +
-        ", sdk='" + sdk + '\'' +
-        ", sdkver='" + sdkver + '\'' +
-        ", reward=" + reward +
-        ", wlang=" + wlang +
-        ", secure=" + secure +
-        ", admx=" + admx +
-        ", curlx=" + curlx +
-        ", display=" + display +
-        ", video=" + video +
-        ", audio=" + audio +
-        ", ext=" + ext +
-        '}';
-  }
 
   @Override
   public boolean equals(Object o) {

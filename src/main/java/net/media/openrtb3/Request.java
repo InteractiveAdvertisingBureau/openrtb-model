@@ -48,25 +48,6 @@ public class Request {
   @NotNull @Valid private Collection<Item> item;
 
   @Override
-  public String toString() {
-    return "Request{" +
-        "id='" + id + '\'' +
-        ", test=" + test +
-        ", tmax=" + tmax +
-        ", at=" + at +
-        ", cur=" + cur +
-        ", seat=" + seat +
-        ", wseat=" + wseat +
-        ", cdata='" + cdata + '\'' +
-        ", source=" + source +
-        ", item=" + item +
-        ", pack=" + pack +
-        ", context=" + context +
-        ", ext=" + ext +
-        '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;

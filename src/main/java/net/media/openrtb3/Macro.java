@@ -64,14 +64,6 @@ public class Macro {
     return Objects.hash(getKey(), getValue(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "Macro{" +
-        "key='" + key + '\'' +
-        ", value='" + value + '\'' +
-        ", ext=" + ext +
-        '}';
-  }
 
   public void setValue(String value) {
     this.value = value;

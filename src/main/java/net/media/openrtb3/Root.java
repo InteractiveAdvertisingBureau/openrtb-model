@@ -36,10 +36,4 @@ public class Root {
     return Objects.hash(openrtb);
   }
 
-  @Override
-  public String toString() {
-    return "Root{" +
-        "openrtb=" + openrtb +
-        '}';
-  }
 }

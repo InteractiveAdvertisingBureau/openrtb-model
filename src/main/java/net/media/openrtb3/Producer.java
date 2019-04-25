@@ -56,18 +56,6 @@ public class Producer {
   }
 
   @Override
-  public String toString() {
-    return "Producer{" +
-        "id='" + id + '\'' +
-        ", name='" + name + '\'' +
-        ", domain='" + domain + '\'' +
-        ", cat=" + cat +
-        ", cattax=" + cattax +
-        ", ext=" + ext +
-        '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;

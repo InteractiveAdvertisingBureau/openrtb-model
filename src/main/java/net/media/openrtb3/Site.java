@@ -167,22 +167,4 @@ public class Site extends DistributionChannel {
     return Objects.hash(getDomain(), getCat(), getSectcat(), getPagecat(), getCattax(), getPrivpolicy(), getKeywords(), getPage(), getRef(), getSearch(), getMobile(), getAmp(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "Site{" +
-        "domain='" + domain + '\'' +
-        ", cat=" + cat +
-        ", sectcat=" + sectcat +
-        ", pagecat=" + pagecat +
-        ", cattax=" + cattax +
-        ", privpolicy=" + privpolicy +
-        ", keywords='" + keywords + '\'' +
-        ", page='" + page + '\'' +
-        ", ref='" + ref + '\'' +
-        ", search='" + search + '\'' +
-        ", mobile=" + mobile +
-        ", amp=" + amp +
-        ", ext=" + ext +
-        '}';
-  }
 }

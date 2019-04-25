@@ -58,15 +58,6 @@ public class Native {
   }
 
   @Override
-  public String toString() {
-    return "Native{" +
-        "link=" + link +
-        ", asset=" + asset +
-        ", ext=" + ext +
-        '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;

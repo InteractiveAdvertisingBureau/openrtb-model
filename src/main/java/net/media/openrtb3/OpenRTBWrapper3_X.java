@@ -33,12 +33,6 @@ public class OpenRTBWrapper3_X {
     this.openrtb = openrtb;
   }
 
-  @Override
-  public String toString() {
-    return "OpenRTBWrapper3_X{" +
-        "openrtb=" + openrtb +
-        '}';
-  }
 
   @Override
   public boolean equals(Object o) {

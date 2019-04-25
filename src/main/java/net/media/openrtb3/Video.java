@@ -111,16 +111,4 @@ public class Video {
     return Objects.hash(getMime(), getApi(), getCtype(), getDur(), getAdm(), getCurl(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "Video{" +
-        "mime=" + mime +
-        ", api=" + api +
-        ", ctype=" + ctype +
-        ", dur=" + dur +
-        ", adm=" + adm +
-        ", curl='" + curl + '\'' +
-        ", ext=" + ext +
-        '}';
-  }
 }

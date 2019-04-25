@@ -46,10 +46,4 @@ public class Spec {
     return Objects.hash(getPlacement());
   }
 
-  @Override
-  public String toString() {
-    return "Spec{" +
-        "placement=" + placement +
-        '}';
-  }
 }

@@ -46,14 +46,6 @@ public class NativeFormat {
   }
 
   @Override
-  public String toString() {
-    return "NativeFormat{" +
-        "asset=" + asset +
-        ", ext=" + ext +
-        '}';
-  }
-
-  @Override
   public int hashCode() {
     return Objects.hash(getAsset(), getExt());
   }

@@ -74,13 +74,4 @@ public class Segment {
     return Objects.hash(getId(), getName(), getValue(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "Segment{" +
-        "id='" + id + '\'' +
-        ", name='" + name + '\'' +
-        ", value='" + value + '\'' +
-        ", ext=" + ext +
-        '}';
-  }
 }

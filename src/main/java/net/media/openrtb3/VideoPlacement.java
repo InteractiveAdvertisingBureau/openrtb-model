@@ -309,36 +309,4 @@ public class VideoPlacement {
     return Objects.hash(getPtype(), getPos(), getDelay(), getSkip(), getSkipmin(), getSkipafter(), getPlaymethod(), getPlayend(), getClktype(), getMime(), getApi(), getCtype(), getW(), getH(), getUnit(), getMindur(), getMaxdur(), getMaxext(), getMinbitr(), getMaxbitr(), getDelivery(), getMaxseq(), getLinear(), getBoxing(), getComp(), getComptype(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "VideoPlacement{" +
-        "ptype=" + ptype +
-        ", pos=" + pos +
-        ", delay=" + delay +
-        ", skip=" + skip +
-        ", skipmin=" + skipmin +
-        ", skipafter=" + skipafter +
-        ", playmethod=" + playmethod +
-        ", playend=" + playend +
-        ", clktype=" + clktype +
-        ", mime=" + mime +
-        ", api=" + api +
-        ", ctype=" + ctype +
-        ", w=" + w +
-        ", h=" + h +
-        ", unit=" + unit +
-        ", mindur=" + mindur +
-        ", maxdur=" + maxdur +
-        ", maxext=" + maxext +
-        ", minbitr=" + minbitr +
-        ", maxbitr=" + maxbitr +
-        ", delivery=" + delivery +
-        ", maxseq=" + maxseq +
-        ", linear=" + linear +
-        ", boxing=" + boxing +
-        ", comp=" + comp +
-        ", comptype=" + comptype +
-        ", ext=" + ext +
-        '}';
-  }
 }

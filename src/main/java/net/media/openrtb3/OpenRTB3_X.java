@@ -64,17 +64,6 @@ public class OpenRTB3_X {
   }
 
   @Override
-  public String toString() {
-    return "OpenRTB3_X{" +
-        "ver='" + ver + '\'' +
-        ", domainSpec='" + domainSpec + '\'' +
-        ", domainVer='" + domainVer + '\'' +
-        ", request=" + request +
-        ", response=" + response +
-        '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;

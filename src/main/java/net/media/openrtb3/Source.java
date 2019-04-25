@@ -113,17 +113,4 @@ public class Source {
     return Objects.hash(getTid(), getTs(), getDs(), getDsmap(), getCert(), getDigest(), getPchain(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "Source{" +
-        "tid='" + tid + '\'' +
-        ", ts=" + ts +
-        ", ds='" + ds + '\'' +
-        ", dsmap='" + dsmap + '\'' +
-        ", cert='" + cert + '\'' +
-        ", digest='" + digest + '\'' +
-        ", pchain='" + pchain + '\'' +
-        ", ext=" + ext +
-        '}';
-  }
 }

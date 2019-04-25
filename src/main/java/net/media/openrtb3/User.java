@@ -127,18 +127,4 @@ public class User {
     return Objects.hash(getId(), getBuyeruid(), getYob(), getGender(), getKeywords(), getConsent(), getGeo(), getData(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "User{" +
-        "id='" + id + '\'' +
-        ", buyeruid='" + buyeruid + '\'' +
-        ", yob=" + yob +
-        ", gender='" + gender + '\'' +
-        ", keywords='" + keywords + '\'' +
-        ", consent='" + consent + '\'' +
-        ", geo=" + geo +
-        ", data=" + data +
-        ", ext=" + ext +
-        '}';
-  }
 }

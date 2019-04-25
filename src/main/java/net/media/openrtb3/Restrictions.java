@@ -80,18 +80,6 @@ public class Restrictions {
   }
 
   @Override
-  public String toString() {
-    return "Restrictions{" +
-        "bcat=" + bcat +
-        ", cattax=" + cattax +
-        ", badv=" + badv +
-        ", bapp=" + bapp +
-        ", battr=" + battr +
-        ", ext=" + ext +
-        '}';
-  }
-
-  @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;

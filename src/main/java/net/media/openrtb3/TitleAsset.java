@@ -66,12 +66,4 @@ public class TitleAsset {
     return Objects.hash(getText(), getLen(), getExt());
   }
 
-  @Override
-  public String toString() {
-    return "TitleAsset{" +
-        "text='" + text + '\'' +
-        ", len=" + len +
-        ", ext=" + ext +
-        '}';
-  }
 }
