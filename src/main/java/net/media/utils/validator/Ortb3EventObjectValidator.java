@@ -25,8 +25,11 @@ import javax.validation.ConstraintValidatorContext;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
-/** Created by rohit.ji on 23/04/19. */
 
+/**
+ * @author rohit.ji
+ * @since 23/04/2019
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
 @Constraint(validatedBy = Ortb3EventObjectValidator.Validator.class)
