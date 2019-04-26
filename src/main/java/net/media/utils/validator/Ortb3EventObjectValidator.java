@@ -48,7 +48,7 @@ public @interface Ortb3EventObjectValidator {
                 return true;
             }
             int method = event.getMethod();
-            if (1 <= method && method <= 2) {
+            if (1 == method || 2 == method) {
                 if (StringUtils.isNotBlank(event.getUrl())) {
                     return true;
                 } else {
