@@ -15,12 +15,14 @@
  */
 
 package net.media.openrtb3;
+import javax.validation.Valid;
 
 import java.util.Objects;
 
 /** Created by shiva.b on 10/04/19. */
 public class OpenRTBWrapper3_X {
 
+  @Valid
   private OpenRTB3_X openrtb;
 
   public OpenRTBWrapper3_X() {}
@@ -44,9 +46,5 @@ public class OpenRTBWrapper3_X {
   @Override
   public int hashCode() {
     return Objects.hash(getOpenrtb());
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof OpenRTBWrapper3_X;
   }
 }

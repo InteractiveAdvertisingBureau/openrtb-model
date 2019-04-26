@@ -16,6 +16,7 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
@@ -23,18 +24,18 @@ import java.util.Objects;
 
 /** Created by rajat.go on 14/12/18. */
 public class DataAsset {
-  @NotNull private Collection<String> value = null;
+  @NotBlank private String value;
   private Integer len;
   private Integer type;
   private Map<String, Object> ext;
 
   public DataAsset() {}
 
-  public @NotNull Collection<String> getValue() {
+  public String getValue() {
     return this.value;
   }
 
-  public void setValue(@NotNull Collection<String> value) {
+  public void setValue(String value) {
     this.value = value;
   }
 
@@ -60,10 +61,6 @@ public class DataAsset {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof DataAsset;
   }
 
   @Override
