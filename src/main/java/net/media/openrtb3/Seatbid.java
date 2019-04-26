@@ -19,7 +19,7 @@ package net.media.openrtb3;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -31,7 +31,7 @@ public class Seatbid {
   @JsonProperty("package")
   private Integer _package;
 
-  @NotNull @Valid private Collection<Bid> bid = null;
+  @NotEmpty @Valid private Collection<Bid> bid = null;
   private Map<String, Object> ext;
 
   public Seatbid() {}
@@ -52,11 +52,11 @@ public class Seatbid {
     this._package = _package;
   }
 
-  public @NotNull @Valid Collection<Bid> getBid() {
+  public @NotEmpty @Valid Collection<Bid> getBid() {
     return this.bid;
   }
 
-  public void setBid(@NotNull @Valid Collection<Bid> bid) {
+  public void setBid(@NotEmpty @Valid Collection<Bid> bid) {
     this.bid = bid;
   }
 

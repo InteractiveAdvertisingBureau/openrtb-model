@@ -17,6 +17,7 @@
 package net.media.openrtb3;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
@@ -24,8 +25,8 @@ import java.util.Objects;
 
 public class Bid {
 
-  @NotNull private String id;
-  @NotNull private String item;
+  private String id;
+  @NotBlank private String item;
   private String deal;
   @NotNull private Double price;
   private String cid;
@@ -37,24 +38,24 @@ public class Bid {
   private String mid;
   // Todo code change  for  this  field
   @Valid private Collection<Macro> macro = null;
-  @NotNull @Valid private Media media;
+  @Valid private Media media;
   private Map<String, Object> ext;
 
   public Bid() {}
 
-  public @NotNull String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotNull String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public @NotNull String getItem() {
+  public String getItem() {
     return this.item;
   }
 
-  public void setItem(@NotNull String item) {
+  public void setItem(String item) {
     this.item = item;
   }
 
@@ -138,11 +139,11 @@ public class Bid {
     this.macro = macro;
   }
 
-  public @NotNull @Valid Media getMedia() {
+  public Media getMedia() {
     return this.media;
   }
 
-  public void setMedia(@NotNull @Valid Media media) {
+  public void setMedia(@Valid Media media) {
     this.media = media;
   }
 
@@ -152,10 +153,6 @@ public class Bid {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Bid;
   }
 
   @Override

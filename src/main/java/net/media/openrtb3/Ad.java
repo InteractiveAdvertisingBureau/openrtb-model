@@ -19,7 +19,7 @@ package net.media.openrtb3;
 import net.media.utils.validator.CheckExactlyOneNotNull;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -30,7 +30,7 @@ import static net.media.utils.CommonConstants.DEFAULT_CATTAX_THREEDOTX;
 @CheckExactlyOneNotNull(fieldNames = {"video", "audio", "display"})
 public class Ad {
 
-  @NotNull private String id;
+  @NotBlank private String id;
   private Collection<String> adomain = null;
   private Collection<String> bundle = null;
   private String iurl;
@@ -50,11 +50,11 @@ public class Ad {
 
   public Ad() {}
 
-  public @NotNull String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotNull String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -184,10 +184,6 @@ public class Ad {
 
   public void setExt(Map<String, Object> ext) {
     this.ext = ext;
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Ad;
   }
 
   @Override

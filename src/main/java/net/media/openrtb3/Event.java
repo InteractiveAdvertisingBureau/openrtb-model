@@ -16,11 +16,14 @@
 
 package net.media.openrtb3;
 
+import net.media.utils.validator.Ortb3EventObjectValidator;
+
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
 
+@Ortb3EventObjectValidator
 public class Event {
 
   @NotNull private Integer type;
@@ -80,10 +83,6 @@ public class Event {
     this.ext = ext;
   }
 
-  protected boolean canEqual(Object other) {
-    return other instanceof Event;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -99,7 +98,6 @@ public class Event {
 
   @Override
   public int hashCode() {
-
     return Objects.hash(getType(), getMethod(), getUrl(), getApi(), getCdata(), getExt());
   }
 }

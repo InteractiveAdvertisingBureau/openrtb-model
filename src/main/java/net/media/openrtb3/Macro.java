@@ -16,23 +16,23 @@
 
 package net.media.openrtb3;
 
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import java.util.Map;
 import java.util.Objects;
 
 public class Macro {
 
-  @NotNull private String key;
+  @NotBlank private String key;
   private String value;
   private Map<String, Object> ext;
 
   public Macro() {}
 
-  public @NotNull String getKey() {
+  public String getKey() {
     return this.key;
   }
 
-  public void setKey(@NotNull String key) {
+  public void setKey(String key) {
     this.key = key;
   }
 
@@ -65,9 +65,5 @@ public class Macro {
   @Override
   public int hashCode() {
     return Objects.hash(getKey(), getValue(), getExt());
-  }
-
-  protected boolean canEqual(Object other) {
-    return other instanceof Macro;
   }
 }
