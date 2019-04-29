@@ -16,7 +16,10 @@
 
 package net.media.openrtb25.request;
 
+import net.media.utils.validator.CheckAtLeastOneNotNull;
 import net.media.utils.validator.CheckAtMostOneNotNull;
+import net.media.utils.validator.CheckExactlyOneNotNull;
+import net.media.utils.validator.CheckExactlyOneWithExt;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
@@ -24,7 +27,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
 
-// @CheckAtLeastOneNotNull(fieldNames = {"site", "app"})
+@CheckExactlyOneWithExt(fieldNames = {"site","app"},extFieldNames = {"dooh"})
 @CheckAtMostOneNotNull(fieldNames = {"wseat", "bseat"})
 public class BidRequest2_X {
 
