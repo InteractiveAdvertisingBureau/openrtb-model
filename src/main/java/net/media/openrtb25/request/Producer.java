@@ -24,7 +24,7 @@ import java.util.Objects;
 /** Created by vishnu on 6/5/16. */
 public class Producer {
 
-  @NotNull private String id;
+  private String id;
 
   private String name;
 
@@ -36,11 +36,11 @@ public class Producer {
 
   public Producer() {}
 
-  public @NotNull String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotNull String id) {
+  public void setId(String id) {
     this.id = id;
   }
 

@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import net.media.utils.JacksonObjectMapper;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.Collection;
@@ -42,6 +43,7 @@ public class Native {
 
   private Map<String, Object> ext;
 
+  @Valid
   private transient NativeRequestBody nativeRequestBody;
 
   private transient String requestAsString;

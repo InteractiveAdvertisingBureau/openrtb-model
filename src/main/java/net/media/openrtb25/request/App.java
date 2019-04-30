@@ -23,7 +23,7 @@ import java.util.Objects;
 
 public class App {
 
-  @NotNull private String id;
+  private String id;
 
   private String name;
 
@@ -55,11 +55,11 @@ public class App {
 
   public App() {}
 
-  public @NotNull String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotNull String id) {
+  public void setId(String id) {
     this.id = id;
   }
 

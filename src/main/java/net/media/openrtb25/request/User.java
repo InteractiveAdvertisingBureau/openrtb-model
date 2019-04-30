@@ -22,7 +22,6 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
 
-@CheckAtLeastOneNotNull(fieldNames = {"id", "buyeruid"})
 public class User {
 
   public String id;

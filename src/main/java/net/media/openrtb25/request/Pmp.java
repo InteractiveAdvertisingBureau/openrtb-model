@@ -16,6 +16,7 @@
 
 package net.media.openrtb25.request;
 
+import javax.validation.Valid;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -25,6 +26,7 @@ public class Pmp {
 
   private Integer private_auction;
 
+  @Valid
   private Collection<Deal> deals;
 
   private Map<String, Object> ext;

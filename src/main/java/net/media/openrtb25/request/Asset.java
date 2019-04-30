@@ -17,13 +17,14 @@
 package net.media.openrtb25.request;
 
 import net.media.utils.validator.CheckAtLeastOneNotNull;
+import net.media.utils.validator.CheckExactlyOneNotNull;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
 
-@CheckAtLeastOneNotNull(fieldNames = {"title", "img", "video", "data"})
+@CheckExactlyOneNotNull(fieldNames = {"title", "img", "video", "data"})
 public class Asset {
 
   @NotNull private Integer id;
