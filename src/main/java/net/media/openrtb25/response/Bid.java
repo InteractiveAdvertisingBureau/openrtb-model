@@ -16,6 +16,7 @@
 
 package net.media.openrtb25.response;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
 import java.util.Map;
@@ -24,9 +25,9 @@ import java.util.Objects;
 /** Created by vishnu on 30/5/16. */
 public class Bid {
 
-  @NotNull private String id;
-  @NotNull private String impid;
-  @NotNull private double price;
+  @NotBlank private String id;
+  @NotBlank private String impid;
+  @NotNull private Double price;
   private String adid;
   private String nurl;
   private Object adm;
@@ -54,27 +55,27 @@ public class Bid {
 
   public Bid() {}
 
-  public @NotNull String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotNull String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public @NotNull String getImpid() {
+  public String getImpid() {
     return this.impid;
   }
 
-  public void setImpid(@NotNull String impid) {
+  public void setImpid(String impid) {
     this.impid = impid;
   }
 
-  public @NotNull double getPrice() {
+  public @NotNull Double getPrice() {
     return this.price;
   }
 
-  public void setPrice(@NotNull double price) {
+  public void setPrice(@NotNull Double price) {
     this.price = price;
   }
 

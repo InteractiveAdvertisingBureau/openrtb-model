@@ -17,7 +17,7 @@
 package net.media.openrtb25.response;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -25,7 +25,7 @@ import java.util.Objects;
 /** Created by vishnu on 30/5/16. */
 public class SeatBid {
 
-  @NotNull @Valid private Collection<Bid> bid;
+  @NotEmpty @Valid private Collection<Bid> bid;
 
   private String seat;
 
@@ -35,11 +35,11 @@ public class SeatBid {
 
   public SeatBid() {}
 
-  public @NotNull @Valid Collection<Bid> getBid() {
+  public @NotEmpty Collection<Bid> getBid() {
     return this.bid;
   }
 
-  public void setBid(@NotNull @Valid Collection<Bid> bid) {
+  public void setBid(@NotEmpty Collection<Bid> bid) {
     this.bid = bid;
   }
 
