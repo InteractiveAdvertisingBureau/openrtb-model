@@ -16,9 +16,7 @@
 
 package net.media.openrtb25.request;
 
-import net.media.utils.validator.CheckAtLeastOneNotNull;
 import net.media.utils.validator.CheckAtMostOneNotNull;
-import net.media.utils.validator.CheckExactlyOneNotNull;
 import net.media.utils.validator.CheckExactlyOneWithExt;
 
 import javax.validation.Valid;

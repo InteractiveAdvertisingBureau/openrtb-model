@@ -68,11 +68,11 @@ public @interface CheckExactlyOneNotNull {
           return true;
         }
         ValidatorErrorHandler.setErrorMessage(
-            context, "Exactly one of the following should be present: " + fieldNames);
+            context, "Exactly one of the following should be present: " + Arrays.toString(fieldNames));
         return false;
       } catch (Exception e) {
         ValidatorErrorHandler.setErrorMessage(
-            context, "Exactly one of the following should be present: " + fieldNames);
+            context, "Exactly one of the following should be present: " + Arrays.toString(fieldNames));
         return false;
       }
     }
