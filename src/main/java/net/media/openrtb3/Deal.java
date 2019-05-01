@@ -16,13 +16,14 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class Deal {
-  private String id;
+  @NotEmpty private String id;
   private Double flr;
   private String flrcur;
   private Integer at;

@@ -67,7 +67,7 @@ public @interface CheckAtMostOneNotNull {
         return true;
       } catch (Exception e) {
         ValidatorErrorHandler.setErrorMessage(
-            context, "At most one of the following should be present: " + fieldNames);
+            context, "At most one of the following should be present: " + Arrays.toString(fieldNames));
         return false;
       }
     }

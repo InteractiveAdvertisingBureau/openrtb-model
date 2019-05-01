@@ -25,11 +25,11 @@ public class Spec {
 
   @NotNull @Valid private Placement placement;
 
-  public @NotNull @Valid Placement getPlacement() {
+  public @NotNull Placement getPlacement() {
     return this.placement;
   }
 
-  public void setPlacement(@NotNull @Valid Placement placement) {
+  public void setPlacement(@NotNull Placement placement) {
     this.placement = placement;
   }
 

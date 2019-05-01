@@ -16,6 +16,7 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -34,7 +35,7 @@ public class AudioPlacement {
   private Integer playend;
   private Integer feed;
   private Integer nvol;
-  private Collection<String> mime;
+  @NotEmpty private Collection<String> mime;
   private Collection<Integer> api;
   private Collection<Integer> ctype;
   private Integer mindur;

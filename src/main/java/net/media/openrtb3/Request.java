@@ -19,8 +19,8 @@ package net.media.openrtb3;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class Request {
 
   private static final Integer DEFAULT_WSEAT = 1;
 
-  @NotEmpty private String id;
+  @NotBlank private String id;
   private Integer test;
   private Integer tmax;
   private Integer at;
@@ -43,11 +43,11 @@ public class Request {
   private Collection<String> seat;
   private Integer wseat = DEFAULT_WSEAT;
   private String cdata;
-  @NotNull @Valid private Source source;
-  @NotNull @Valid private Collection<Item> item;
+  @Valid private Source source;
+  @NotEmpty @Valid private Collection<Item> item;
   @JsonProperty("package")
   private Integer pack;
-  @NotNull @Valid private Context context;
+  @Valid private Context context;
   private Map<String, Object> ext;
 
   @Override
@@ -88,11 +88,11 @@ public class Request {
         getExt());
   }
 
-  public @NotEmpty String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotEmpty String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -152,19 +152,19 @@ public class Request {
     this.cdata = cdata;
   }
 
-  public @NotNull @Valid Source getSource() {
+  public Source getSource() {
     return this.source;
   }
 
-  public void setSource(@NotNull @Valid Source source) {
+  public void setSource(Source source) {
     this.source = source;
   }
 
-  public @NotNull @Valid Collection<Item> getItem() {
+  public Collection<Item> getItem() {
     return this.item;
   }
 
-  public void setItem(@NotNull @Valid Collection<Item> item) {
+  public void setItem(Collection<Item> item) {
     this.item = item;
   }
 
@@ -176,11 +176,11 @@ public class Request {
     this.pack = pack;
   }
 
-  public @NotNull @Valid Context getContext() {
+  public Context getContext() {
     return this.context;
   }
 
-  public void setContext(@NotNull @Valid Context context) {
+  public void setContext(Context context) {
     this.context = context;
   }
 

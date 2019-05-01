@@ -16,13 +16,14 @@
 
 package net.media.openrtb3;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Map;
 import java.util.Objects;
 
 /** Created by shiva.b on 14/12/18. */
 public class Metric {
-  private String type;
+  @NotBlank private String type;
   @NotNull private Double value;
   private String vendor;
   private Map<String, Object> ext;
