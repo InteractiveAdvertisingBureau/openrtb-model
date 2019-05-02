@@ -1,0 +1,12 @@
+language: java
+before_install:
+   - echo "$GPG_PUBLIC_KEYS" | base64 --decode | tr '@' '\n' | $GPG_EXECUTABLE --import
+   - echo "$GPG_SECRET_KEYS" | base64 --decode | tr '@' '\n' | $GPG_EXECUTABLE --import
+   - echo "$GPG_OWNERTRUST" | base64 --decode | tr '@' '\n' | $GPG_EXECUTABLE --import-ownertrust
+install:
+    mvn --settings .maven.xml install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
+sudo: disable
+git:
+  depth: 500
+on:
+  tags: true
