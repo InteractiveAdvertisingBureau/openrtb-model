@@ -25,7 +25,7 @@ import java.util.Objects;
 /** Created by shiva.b on 14/12/18. */
 public class NativeFormat {
   @NotEmpty @Valid private Collection<AssetFormat> asset;
-  public Map<String, Object> ext;
+  private Map<String, Object> ext;
 
   public Collection<AssetFormat> getAsset() {
     return this.asset;

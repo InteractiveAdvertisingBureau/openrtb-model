@@ -34,43 +34,46 @@ public class BidRequest2_X {
   public static final Integer DEFAULT_ALL_IMPS = 0;
 
   @NotBlank
-  public String id;
+  private String id;
 
-  @NotEmpty @Valid public Collection<Imp> imp;
+  @NotEmpty @Valid
+  private Collection<Imp> imp;
 
-  public Site site;
+  private Site site;
 
-  public App app;
+  private App app;
 
-  public Device device;
+  private Device device;
 
-  @Valid public User user;
+  @Valid
+  private User user;
 
-  public Collection<String> badv;
+  private Collection<String> badv;
 
-  public Integer at;
+  private Integer at;
 
-  public Integer test;
+  private Integer test;
 
-  public Collection<String> wseat;
+  private Collection<String> wseat;
 
-  public Collection<String> bseat;
+  private Collection<String> bseat;
 
-  public Integer tmax;
+  private Integer tmax;
 
-  @Valid public Source source;
+  @Valid
+  private Source source;
 
-  public Collection<String> bcat;
+  private Collection<String> bcat;
 
-  public Integer allimps = DEFAULT_ALL_IMPS;
+  private Integer allimps = DEFAULT_ALL_IMPS;
 
-  public Collection<String> cur;
+  private Collection<String> cur;
 
-  public Collection<String> wlang;
+  private Collection<String> wlang;
 
-  public Collection<String> bapp;
+  private Collection<String> bapp;
 
-  public Regs regs;
+  private Regs regs;
 
   private Map<String, Object> ext;
 
