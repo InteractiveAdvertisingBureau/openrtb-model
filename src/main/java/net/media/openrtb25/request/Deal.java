@@ -18,6 +18,7 @@ package net.media.openrtb25.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -27,7 +28,7 @@ public class Deal {
 
   private static final double DEFAULT_BIDFLOOR = 0.0;
 
-  private String id;
+  @NotBlank private String id;
 
   @JsonProperty("bidfloor")
   private double bidFloor = DEFAULT_BIDFLOOR;

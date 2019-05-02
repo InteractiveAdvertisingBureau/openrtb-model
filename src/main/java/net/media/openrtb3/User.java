@@ -16,13 +16,11 @@
 
 package net.media.openrtb3;
 
-import net.media.utils.validator.CheckAtLeastOneNotNull;
 
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
 
-@CheckAtLeastOneNotNull(fieldNames = {"id", "buyeruid"})
 public class User {
   private String id;
   private String buyeruid;

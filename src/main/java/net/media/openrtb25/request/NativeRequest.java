@@ -18,10 +18,12 @@ package net.media.openrtb25.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.Valid;
 import java.util.Objects;
 
 public class NativeRequest {
 
+  @Valid
   @JsonProperty("native")
   private NativeRequestBody nativeRequestBody;
 

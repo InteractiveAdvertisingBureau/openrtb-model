@@ -38,8 +38,8 @@ public class Item {
   private Integer exp;
   private Integer dt;
   private Integer dlvy = DEFAULT_DELIVERY_METHOD;
-  private Collection<Metric> metric;
-  private Collection<Deal> deal;
+  @Valid private Collection<Metric> metric;
+  @Valid private Collection<Deal> deal;
 
   @JsonProperty("private")
   private Integer priv;
@@ -47,11 +47,11 @@ public class Item {
   @NotNull @Valid private Spec spec;
   private Map<String, Object> ext;
 
-  public @NotBlank String getId() {
+  public String getId() {
     return this.id;
   }
 
-  public void setId(@NotBlank String id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -135,11 +135,11 @@ public class Item {
     this.priv = priv;
   }
 
-  public @NotNull @Valid Spec getSpec() {
+  public @NotNull Spec getSpec() {
     return this.spec;
   }
 
-  public void setSpec(@NotNull @Valid Spec spec) {
+  public void setSpec(@NotNull Spec spec) {
     this.spec = spec;
   }
 

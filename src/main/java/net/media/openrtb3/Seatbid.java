@@ -52,11 +52,11 @@ public class Seatbid {
     this._package = _package;
   }
 
-  public @NotEmpty @Valid Collection<Bid> getBid() {
+  public @NotEmpty Collection<Bid> getBid() {
     return this.bid;
   }
 
-  public void setBid(@NotEmpty @Valid Collection<Bid> bid) {
+  public void setBid(@NotEmpty Collection<Bid> bid) {
     this.bid = bid;
   }
 

@@ -19,6 +19,9 @@ package net.media.openrtb25.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import net.media.utils.validator.CheckAtLeastOneNotNull;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Objects;
@@ -28,14 +31,19 @@ public class Imp {
 
   private static final double DEFAULT_BIDFLOOR = 0.0;
 
+  @NotBlank
   private String id;
 
+  @Valid
   private Video video;
 
+  @Valid
   private Banner banner;
 
+  @Valid
   private Audio audio;
 
+  @Valid
   @JsonProperty("native")
   private Native nat;
 
@@ -56,12 +64,13 @@ public class Imp {
 
   private Collection<String> iframebuster;
 
-  private Pmp pmp;
+  @Valid private Pmp pmp;
 
   private Integer clickbrowser;
 
   private Integer exp;
 
+  @Valid
   private Collection<Metric> metric;
 
   private Map<String, Object> ext;

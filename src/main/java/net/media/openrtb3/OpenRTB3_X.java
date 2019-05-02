@@ -19,7 +19,7 @@ package net.media.openrtb3;
 import net.media.utils.validator.CheckExactlyOneNotNull;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @CheckExactlyOneNotNull(fieldNames = {"request", "response"})
@@ -27,7 +27,7 @@ public class OpenRTB3_X {
 
   private String ver = "3.0";
   private String domainSpec = "adcom";
-  @NotNull private String domainVer = "1.0";
+  @NotBlank private String domainVer = "1.0";
   @Valid private Request request;
   @Valid private Response response;
 
@@ -47,11 +47,11 @@ public class OpenRTB3_X {
     this.domainSpec = domainSpec;
   }
 
-  public @NotNull String getDomainVer() {
+  public String getDomainVer() {
     return this.domainVer;
   }
 
-  public void setDomainVer(@NotNull String domainVer) {
+  public void setDomainVer(String domainVer) {
     this.domainVer = domainVer;
   }
 

@@ -16,12 +16,11 @@
 
 package net.media.openrtb25.request;
 
-import net.media.utils.validator.CheckAtLeastOneNotNull;
 import net.media.utils.validator.CheckAtMostOneNotNull;
-import net.media.utils.validator.CheckExactlyOneNotNull;
 import net.media.utils.validator.CheckExactlyOneWithExt;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.Map;
@@ -34,13 +33,14 @@ public class BidRequest2_X {
   // BidRequest2_X parameters
   public static final Integer DEFAULT_ALL_IMPS = 0;
 
-  @NotEmpty public String id;
+  @NotBlank
+  public String id;
 
   @NotEmpty @Valid public Collection<Imp> imp;
 
-  @Valid public Site site;
+  public Site site;
 
-  @Valid public App app;
+  public App app;
 
   public Device device;
 
