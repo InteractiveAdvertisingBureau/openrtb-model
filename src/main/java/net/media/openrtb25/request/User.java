@@ -26,13 +26,13 @@ public class User {
 
   public String id;
 
-  public String buyeruid;
+  private String buyeruid;
 
-  public Integer yob;
+  private Integer yob;
 
-  public String gender;
+  private String gender;
 
-  public Geo geo;
+  private Geo geo;
 
   private String keywords;
 
