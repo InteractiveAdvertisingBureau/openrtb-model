@@ -53,7 +53,7 @@ public class Pmp {
     return this.ext;
   }
 
-  public void setExt(Map ext) {
+  public void setExt(Map<String, Object> ext) {
     this.ext = ext;
   }
 
