@@ -27,7 +27,7 @@ public class NativeResponseBody {
 
   private String ver;
 
-  private Collection<AssetResponse> asset;
+  private Collection<AssetResponse> assets;
 
   private Link link;
 
@@ -47,12 +47,12 @@ public class NativeResponseBody {
     this.ver = ver;
   }
 
-  public Collection<AssetResponse> getAsset() {
-    return this.asset;
+  public Collection<AssetResponse> getAssets() {
+    return this.assets;
   }
 
-  public void setAsset(Collection<AssetResponse> asset) {
-    this.asset = asset;
+  public void setAssets(Collection<AssetResponse> assets) {
+    this.assets = assets;
   }
 
   public Link getLink() {
@@ -93,7 +93,7 @@ public class NativeResponseBody {
     if (o == null || getClass() != o.getClass()) return false;
     NativeResponseBody that = (NativeResponseBody) o;
     return Objects.equals(getVer(), that.getVer())
-        && Objects.equals(getAsset(), that.getAsset())
+        && Objects.equals(getAssets(), that.getAssets())
         && Objects.equals(getLink(), that.getLink())
         && Objects.equals(getImptrackers(), that.getImptrackers())
         && Objects.equals(getJstracker(), that.getJstracker())
@@ -103,6 +103,6 @@ public class NativeResponseBody {
   @Override
   public int hashCode() {
     return Objects.hash(
-        getVer(), getAsset(), getLink(), getImptrackers(), getJstracker(), getExt());
+        getVer(), getAssets(), getLink(), getImptrackers(), getJstracker(), getExt());
   }
 }
